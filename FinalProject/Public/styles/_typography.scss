@@ -1,0 +1,207 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;        
+    .type-main-image {
+        background: url("../images/breadcrumbs-typography.jpg");
+        background-position: center 50%;
+        padding: 102px 15px;
+        background-size: cover;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#headings{
+    margin-bottom: 50px;
+    .head{
+        p {
+            color: $textcolor;
+            font-weight: bold;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 777;
+            padding: 15px 0px;
+            color: $textcolor;            
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        :last-child {
+            margin-bottom: 15px;
+        }
+    }
+    .blockquote {
+        h2 {
+            font-weight: 777;
+            color: $textcolor;
+            padding: 30px 0px;
+            border-bottom: 1px solid $bordercolor;            
+        }
+        .quote {                                
+            i {
+                color: $maincolor;
+                font-weight: 777;
+            }
+            p {
+                color: $textcolor;                                           
+            }
+        }  
+        .quote-bottom {
+            span {
+                color: $textcolor;                                                                
+            }
+        }      
+    }
+    .elements {
+        .header {
+            font-weight: 777;
+            color: $textcolor;
+            padding: 30px 0px;
+        }
+        p {
+            font-size: 11.5px;
+            display: inline-block;
+            line-height: 1.5;
+        }
+        .boldtext {
+            font-weight: 700;
+        }
+        .linktext {
+            color: lighten($maincolor, 7);
+        }
+        a {
+            color: $maincolor;
+            font-weight: 700;
+            &:hover {
+                color: $maincolor;
+            }
+        }
+        .tooltip-span {
+            color: $simpletext;
+        }
+        .span-bg {
+            background: $maincolor;
+            color: white;
+        }
+        .line-through {
+            text-decoration: line-through;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    }
+    .list {
+        .header {
+            font-weight: 777;
+            color: $textcolor;
+            padding: 30px 0px;
+            margin-top: 40px;
+        }
+        p {
+            color: $textcolor;
+            font-size: 13px;
+        }
+        ul {
+            li {
+                padding-left: 26px;
+                font-size: 13px;
+                padding-top: 10px;
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+        span {
+            margin-right: 10px;            
+        }
+    }
+    .icon-list {
+        h3 {
+            font-weight: 777;
+            padding: 30px 0px;
+            margin-top: 40px;
+        }
+        .text-center {
+            margin-top: 50px;
+        }
+        h4 {
+            color: $textcolor;
+            font-weight: 777;
+            font-size: 24px;
+        }
+        .blueline {
+            width: 36px;
+            height: 4px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #5fc3d5;
+            margin-bottom: 15px;
+            margin-top: 15px; 
+        }
+        i {
+            font-size: 53px;
+        }
+        p {
+            color: $textcolor;
+            font-size: 13px;
+            padding: 0px 40px;
+        }
+    }  
+    .images {
+        h1 {
+            font-weight: 777;
+            padding: 30px 0px;
+            margin-top: 40px;            
+        }
+        .image-centered {
+            padding-left: 0px;
+            img {
+                width: 100%;
+            }
+            h5 {
+                margin-top: 15px;
+                margin-bottom: 20px;           
+                font-size: 13px;
+                color: $simpletext;
+            }
+            p {
+                color: $textcolor;
+                font-size: 13px;
+            }
+        }
+        .padding-left {
+            padding-left: 0px;
+        }   
+    } 
+}
+@import '_footer.scss';

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c877b31d2bac4bf1a416921ab8444111" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="BlogInspireModel.AboutUsBg" Width="1.5" PointX="5.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Author" Width="1.5" PointX="14.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Banner" Width="1.5" PointX="14.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.BeautyBg" Width="1.5" PointX="5.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Bg404" Width="1.5" PointX="0.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Bg503" Width="1.5" PointX="2.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.BrandImg" Width="1.5" PointX="16.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Career" Width="1.5" PointX="16.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.CareersBg" Width="1.5" PointX="16.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ComingSoon" Width="1.5" PointX="12.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.CompetitionsImg" Width="1.5" PointX="10" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Contact" Width="1.5" PointX="16.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ContactsBg" Width="1.5" PointX="17.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Cooperation" Width="1.5" PointX="14.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.FitnessBg" Width="1.5" PointX="16.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.FoodBg" Width="1.5" PointX="18.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Footer" Width="1.5" PointX="4.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.FreeOffer" Width="1.5" PointX="18.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.GreenIconSection" Width="1.5" PointX="6.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.HealthBg" Width="1.5" PointX="18.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.HomePageImg" Width="1.5" PointX="10" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.HowItAllBegan" Width="1.5" PointX="18.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.InstagramPic" Width="1.5" PointX="18.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.LoveBg" Width="1.5" PointX="19.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.MaintenanceBg" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.MiniPic" Width="1.5" PointX="18.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.NewsLetter" Width="1.5" PointX="20.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.OurPartner" Width="1.5" PointX="20.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.OurTeam" Width="1.5" PointX="20.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PartnerProgram" Width="1.5" PointX="20.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PartnerWithUsBg" Width="1.5" PointX="12.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Position" Width="1.5" PointX="14.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PostCategory" Width="1.5" PointX="12.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PostImgLarge" Width="1.5" PointX="7.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PostImgMedium" Width="1.5" PointX="10" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PostImgSmall" Width="1.5" PointX="10" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Post" Width="1.5" PointX="12.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PrivacyPolicy" Width="1.5" PointX="20.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.PrivacyPolicyBg" Width="1.5" PointX="20.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Product_to_Brands" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Product_to_Categories" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Product_to_SingleLarge" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Product_to_SingleMini" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ProductBrand" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ProductCategory" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ProductImgMedium" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ProductImgMini" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ProductImgSingleLarge" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ProductImgSingleMini" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ProductImgSmall" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Product" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.ShopBg" Width="1.5" PointX="21.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Sidebar" Width="1.5" PointX="6.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.SinglePost" Width="1.5" PointX="10" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.SinglePostBg" Width="1.5" PointX="8.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.SiteMapBg" Width="1.5" PointX="20.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Slider" Width="1.5" PointX="12.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.SliderCategory" Width="1.5" PointX="12.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.sysdiagram" Width="1.5" PointX="0.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Trending" Width="1.5" PointX="2.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogInspireModel.Vacancy" Width="1.5" PointX="22.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__ImgCompet__6EC0713C" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__ImgHomePa__6FB49575" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__SinglePos__Img_i__57DD0BE4" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__ImgMedium__6CD828CA" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__ImgSmall___6DCC4D03" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__SinglePos__6BE40491" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Brand__339FAB6E" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Produ__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Categ__3A4CA8FD" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Produ__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Produ__489AC854" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Singl__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Produ__4C6B5938" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Product_t__Singl__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Products__ImgMed__58D1301D" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Products__ImgMin__5AB9788F" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Products__ImgSma__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="BlogInspireModel.FK__Slider__Category__19AACF41" />
+        <AssociationConnector Association="BlogInspireModel.FK__Slider__Category__1A9EF37A" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Category1__1B9317B3" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Category2__1C873BEC" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Author_id__2610A626" />
+        <EntityTypeShape EntityType="BlogInspireModel.LookingForWork" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BlogInspireModel.CompetitionsBg" Width="1.5" PointX="23.375" PointY="7.75" />
+        <EntityTypeShape EntityType="BlogInspireModel.Page" Width="1.5" PointX="10" PointY="25.625" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Page_Comp__56B3DD81" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Page_home__55BFB948" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Page_Isot__59904A2C" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Page_List__57A801BA" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Page_Part__5A846E65" />
+        <AssociationConnector Association="BlogInspireModel.FK__Posts__Page_Sing__589C25F3" />
+        <EntityTypeShape EntityType="BlogInspireModel.AdminInfo" Width="1.5" PointX="23.375" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

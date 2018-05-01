@@ -1,0 +1,217 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 single-pro-main-image text-center" style="background: url(../../Public/images/@Model.ShopBg.Img);background-position: center 50%;background-size: cover;">
+            <h1>
+                Single Product
+            </h1>
+            <a href="index.html">
+                Home
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <a href="index.html">
+                Additional Pages
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <span>
+                Single Product
+            </span>
+        </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- PRODUCT SECTION STARTS HERE -->
+<section id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12">
+                <!-- product image -->
+                <div class="col-md-5 col-xs-12 imgs">
+                    <div class="main-img">
+                        <img src="~/Public/images/product-10-421x388.jpg" alt="">
+                    </div>
+                    <div class="mini-bottom-imgs col-md-12">
+                        @foreach (var item in Model.ProductImgSingleMini)
+                        {
+                        <div class="col-md-3 col-xs-3">
+                            <img src="~/Public/images/@item.Img" alt="">
+                        </div>
+                        }
+                    </div>
+                </div>
+                <!-- product review -->
+                <div class="col-md-7 col-xs-12 product-description">
+                    <h4>iStep Fitness Tracker</h4>
+                    <div class="stars">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="price">
+                        <span>$40.00</span>
+                    </div>
+                    <div class="tabs">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                                    SHIPPING
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">DESCRIPTION</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                To select a desired shipment & delivery method, please add this product to cart and follow the steps on the next page. You
+                                can contact our administratorsand ask a question about the product delviery cycle.
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                This fitness tracker not only counts steps, calories, floors climbed and intensity minutes, it uses GPS satellites to track
+                                how far and how fast you go during almost any activity.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="color">
+                            <p>Color:</p>
+                            <span>
+                                <a href="#" class="color-one active"></a>
+                                <a href="#" class="color-two"></a>
+                            </span>
+                        </div>
+                        <div class="quantity">
+                            <p>Quantity:</p>
+                            <div class="form-input">
+                                <input type="text" name="" id="" value="1">
+                                <span class="input-arrow plus up">+</span>
+                                <span class="input-arrow minus down">-</span>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <a href="cart-page.html" class="btn btn-default">
+                                ADD TO CART
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PRODUCT SECTION ENDS HERE -->
+<!-- REVIEW SECTION STARTS HERE -->
+<section id="review">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12">
+                <div class="text-center">
+                    <p class="border-bttm">2 REVIEWS</p>
+                </div>
+                <div class="user-review">
+                    <div class="name-wrapper">
+                        <p>EDWARD</p>
+                        <div class="icon-stars">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <p class="comment">
+                        For months I had been researching activity trackers that were also fairly decent in tracking heart
+                        rate and sleep, and could fit my small wrist. I've had the HR+ for almost two weeks now, and
+                        I love this thing! A lot of the features are already described in the specs, in the manual, and
+                        in other reviews, so I'll just add that this fitness tracker is really worth the money I paid.
+                        I recommend it to everyone who is looking for a high quality fitness activity monitoring.
+                    </p>
+                </div>
+                <div class="user-review">
+                    <div class="name-wrapper">
+                        <p>NINA</p>
+                        <div class="icon-stars">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <p class="comment">
+                        This item was ordered for my husband. He likes to run at lunch, and the GPS function of this tracker sealed the deal. The
+                        GPS seems to work just like any other device we have, we were concerned being it is in such a
+                        small watch there would be some compromise. The device is more or less waterproof, it can be
+                        left on while showering or swimming. Also, the delivery was really quick and secure, and if you
+                        want to buy a fitness tracker, I recommend to do it here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- REVIEW SECTION ENDS HERE -->
+<!-- RELATED PRODUCTS SECTION STARTS HERE -->
+<section id="related-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12">
+                <div class="text-center">
+                    <p>RELATED PRODUCTS</p>
+                </div>
+                <div class="row">
+                    @foreach (var item in Model.products.OrderBy(p => p.Id).Take(3).ToList())
+                    {
+                    <div class="col-md-4 col-xs-12 product-column">
+                        <div class="product-box">
+                            <a href="single-product.html">
+                                <img src="~/Public/images/@item.ProductImgSmall.Img" alt="">
+                            </a>
+                            <h5>
+                                <a href="single-product.html">
+                                    @item.Name
+                                </a>
+                            </h5>
+                             @if (item.Old_price != null)
+                          {
+                             <span class="line">
+                                $@item.Old_price
+                             </span>
+                          }
+                            <span>
+                                $@item.Price
+                            </span>
+                            <div class="right-side-items">
+                                <a href="#">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- RELATED PRODUCTS SECTION ENDS HERE -->

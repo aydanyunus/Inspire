@@ -1,0 +1,149 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 aboutus-main-image text-center" style="background: url(../../Public/images/@Model.aboutUsBg.Img); background-size: cover; background-position: center 50%;">
+            <h1>
+                About Us
+            </h1>
+            <a href="index.html">
+                Home
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <a href="index.html">
+                Additional Pages
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <span>
+                About Us
+            </span>
+        </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- ABOUT SECTION STARTS HERE -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-xs-12 our-team">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 team">
+                        <h3>Our Team</h3>
+                        <p>
+                            @Model.ourTeam.Content
+                        </p>
+                        <img src="~/Public/images/@Model.ourTeam.Img" alt="">
+                    </div>
+                    <div class="col-md-6 col-xs-12 how-it-began">
+                        <h3>How it all began...</h3>
+                        <p>
+                            @Model.howItAllBegan.Content1
+                        </p>
+                        <p>
+                           @Model.howItAllBegan.Content2
+                        </p>
+                        <div class="icons">
+                            <h5>Follow Us</h5>
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="@Model.howItAllBegan.Facebook_link">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Model.howItAllBegan.Twitter_link">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Model.howItAllBegan.Facebook_link">
+                                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Model.howItAllBegan.Instagram_link">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12 join">
+                            <div class="image">
+                                <img src="~/Public/images/@Model.newsLetter.Img" alt="">
+                            </div>
+                            <div class="layout col-md-12 col-xs-12 text-center">
+                                <h3>Join Our Newsletter</h3>
+                                <p class="col-md-offset-3">
+                                    @Model.newsLetter.Subtitle
+                                </p>
+                                <div class="col-md-12 col-xs-12 form">
+                                    <div class="col-md-8 col-xs-12">
+                                        <input type="email" placeholder="E-mail">
+                                    </div>
+                                    <div class="col-md-4 col-xs-12">
+                                        <button class="btn btn-default">SUBSCRIBE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 sidebar">
+                <div class="row bordered-sidebar">
+                    <div class="col-md-12 col-xs-12">
+                        <p class="free-offer">FREE OFFER</p>
+                        <h4>@Model.freeOffer.SupTitle</h4>
+                        <h5>@Model.freeOffer.Title</h5>
+                        <form action="" method="POST">
+                            <div class="col-md-12 col-xs-12 form-group">
+                                <input type="email" class="form-control" placeholder="Email">
+                                <button type="submit" class="btn-lg gray-btn">SUBSCRIBE</button>
+                            </div>
+                        </form>
+                        <h5>@Model.freeOffer.SubTitle</h5>
+                    </div>
+                </div>
+                <div class="row popular-posts-p">
+                    <p>POPULAR POSTS</p>
+                </div>
+                @foreach (var item in Model.sidebar)
+                {
+                    <div class="row popular-posts">
+                    <div class="col-md-12 col-xs-12">
+                        <a href="single-post.html">
+                            <img src="~/Public/images/@item.Img" alt="">
+                        </a>
+                        <a href="single-post.html" class="text-color">
+                            @item.Title
+                        </a>
+                        <div class="icon-date">
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>
+                                    @item.Written_date
+                                </span>
+                            </p>
+                            <p class="margin-left text-right">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>@item.View_Count</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ABOUT SECTION ENDS HERE -->

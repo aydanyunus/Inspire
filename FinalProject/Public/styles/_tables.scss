@@ -1,0 +1,107 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;        
+    .tables-main-image {
+        background: url("../images/breadcrumbs-typography.jpg");
+        background-position: center 50%;
+        padding: 102px 15px;
+        background-size: cover;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#tables-header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    h2 {
+        font-weight: 700;
+    }
+    p {
+        font-size: 17px;
+        line-height: 1.38;
+        font-weight: 700;        
+        color: $simpletext;
+    }
+}
+#tables {
+    margin-bottom: 20px;
+    margin-top: 50px;
+    table {
+        border: none;
+        thead {
+            background: $maincolor;
+            font-weight: 700;            
+            color: white;
+            tr {
+                th {
+                    padding: 25px 24px;
+                    border: none;
+                }
+            }          
+        }
+        tbody {
+            tr {               
+                td {
+                    padding: 25px 24px;    
+                }                
+            }         
+            .last-items {
+                font-weight: 700;                
+            }
+            .without-border {
+                border-top: none;
+                border-left: none;
+            }
+            .without-border-right {
+                border-right: none;
+            }
+        }
+        .bg {
+            background: #f2f3f8;
+            color: black;
+        }
+    }
+    .table-striped {
+        > tbody > tr:nth-child(even) {
+          > td,
+          > th {
+            background-color: #f2f3f8;
+          }
+        }
+        td {
+            border: none;
+        }
+      }
+}
+@import '_footer.scss';

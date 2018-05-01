@@ -1,0 +1,40 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 main-image text-center" style="background: url(../../Public/images/@Model.bg404.Bg_img) !important; background-position: center 50% !important;background-size: cover !important;">
+        <h1>
+            404
+        </h1>
+    </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- BODY SECTION STARTS HERE -->
+<section id="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 col-md-offset-3">
+                <h1>Sorry, but the page was not found</h1>
+                <p>You may have mistyped the address or the page may have moved.</p>
+                <div class="button-group">
+                    <a href="index.html" class="btn btn-default go-home">
+                        GO TO HOME PAGE
+                    </a>
+                    <span>or</span>
+                    <a href="contacts.html" class="btn btn-default contact">
+                        CONTACT US
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BODY SECTION ENDS HERE -->

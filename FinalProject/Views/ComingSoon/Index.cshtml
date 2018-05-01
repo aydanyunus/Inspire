@@ -1,0 +1,129 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+    @{
+        Layout = null;
+    }
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Coming Soon</title>
+        <link rel="shortcut icon" href="~/Public/images/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/Public/styles/bootstrap.min.css">
+        <link rel="stylesheet" href="~/Public/styles/style.css">
+    </head>
+    <body>
+
+
+        <!-- COMING SOON SECTION STARTS HERE-->
+        <section id="coming-soon" style="background: url(../../Public/images/@Model.comingSoon.Bg_img); background-size: cover;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 text-center">
+                        <a href="index.html">
+                            <img src="~/Public/images/logo-white-165x53.png" alt="">
+                        </a>
+                        <h3>We're getting ready to launch in</h3>
+                    </div>
+                </div>
+                <!-- timer -->
+                <section id="timer">
+                    <!-- countdown -->
+                    <div class="countdown-container container">
+                        <div class="clock row col-md-8 col-md-offset-2 col-xs-6 col-xs-offset-3">
+                            <!-- days -->
+                            <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3 col-xs-12">
+                                <div class="wrap">
+                                    <div class="inner">
+                                        <div id="canvas_days" class="clock-canvas"></div>
+                                        <div class="text">
+                                            <p class="val">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="type-days type-time">DAYS</p>
+                            </div>
+                            <!-- hours -->
+                            <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3 col-xs-12">
+                                <div class="wrap">
+                                    <div class="inner">
+                                        <div id="canvas_hours" class="clock-canvas"></div>
+                                        <div class="text">
+                                            <p class="val">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="type-hours type-time">HOURS</p>
+                            </div>
+                            <!-- minutes -->
+                            <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3 col-xs-12">
+                                <div class="wrap">
+                                    <div class="inner">
+                                        <div id="canvas_minutes" class="clock-canvas"></div>
+                                        <div class="text">
+                                            <p class="val">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="type-minutes type-time">MINUTES</p>
+                            </div>
+                            <!-- seconds -->
+                            <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3 col-xs-12">
+                                <div class="wrap">
+                                    <div class="inner">
+                                        <div id="canvas_seconds" class="clock-canvas"></div>
+                                        <div class="text">
+                                            <p class="val">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="type-seconds type-time">SECONDS</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="footer-form col-md-8 col-md-offset-2 col-xs-12 text-center">
+                    <p>
+                        @Model.comingSoon.SubTitle
+                    </p>
+                    <form action="">
+                        <div class="form-group col-md-8">
+                            <input type="text" class="form-control" placeholder="info@demolink.org">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <button class="btn btn-default">SUBSCRIBE</button>
+                        </div>
+                    </form>
+                    <footer class="text-center">
+                        <p class="footer-text">
+                            Inspire ©
+                            <span class="year">
+                                @Model.comingSoon.Copywrite
+                            </span>
+                            <span>.</span>
+                            <a href="privacy-policy.html">
+                                Privacy Policy
+                            </a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+        <!-- COMING SOON SECTION ENDS HERE-->
+        <!-- return to top -->
+        <a href="javascript:" id="return-to-top">
+            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+        </a>
+        <!-- Js scripts -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="~/Public/scripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/Public/scripts/kinetic.js"></script>
+        <script type="text/javascript" src="~/Public/scripts/jquery.final-countdown.js"></script>
+        <script src="~/Public/scripts/timer.js"></script>
+        <script src="~/Public/scripts/scrool-top.js"></script>
+    </body>
+</html>

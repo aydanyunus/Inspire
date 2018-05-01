@@ -1,0 +1,119 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .privacy-main-image {     
+        padding: 102px 15px;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#accordion {
+    margin-top: 50px;
+    .accordion-div {    
+        margin-left: auto;
+        margin-right: auto;   
+        max-width: 700px; 
+        border-radius: 6px;   
+        .panel-default {
+            background: #f7f8f9 !important;
+            border: none !important;    
+            margin-bottom: 30px;  
+            box-shadow: 0px 2px 5px 1px rgba(68, 73, 83, 0.12);
+            .panel-heading {
+                padding: 24px 82px 23px 15px;
+                background: #f7f8f9 !important;  
+                position: relative;                         
+                .panel-title {
+                    a {
+                        padding: 24px 82px 23px 15px;
+                        color: $textcolor;
+                        font-size: 16px;
+                        font-weight: 700;
+                        line-height: 1.25;
+                        letter-spacing: -0.025em;
+                        .panel-arrow {
+                            position: absolute;
+                            top: 0;
+                            bottom: -1px;
+                            right: -1px;
+                            z-index: 2;
+                            width: 70px;
+                            background: #5fc3d5;
+                            border-radius: 0 6px 6px 0;
+                            transition: .33s all ease;
+                            &::before, &::after{
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                z-index: 4;
+                                transform: translateY(-50%);
+                                background: #fff;
+                            }
+                            &::before {
+                                width: 14px;
+                                height: 2px;
+                                right: 28px;                           
+                            }
+                            &::after {
+                                width: 2px;
+                                height: 14px;
+                                right: 34px;
+                                opacity: 1;                                                             
+                            }
+                        }
+                    }  
+                    a[aria-expanded="true"] {
+                        .panel-arrow {
+                            border-radius: 0 6px 0 0;                 
+                            &::after {
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }    
+            .panel-collapse {
+                .panel-body {
+                    padding: 25px 44px 25px 32px;
+                    p {
+                        color: $simpletext;
+                        font-size: 13px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }          
+    }
+}
+@import '_footer.scss';

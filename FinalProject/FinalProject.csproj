@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BE1AF8D-C7DA-437E-B089-9C3B097B6008}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalProject</RootNamespace>
+    <AssemblyName>FinalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutUsBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminAccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\CareersController.cs" />
+    <Compile Include="Controllers\ComingSoonController.cs" />
+    <Compile Include="Controllers\CompetitionsController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\Error404Controller.cs" />
+    <Compile Include="Controllers\Error503Controller.cs" />
+    <Compile Include="Controllers\FitnessController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MaintenanceController.cs" />
+    <Compile Include="Controllers\PartnerWithUsController.cs" />
+    <Compile Include="Controllers\PrivacyPolicyController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\SiteMapController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AboutUsBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminInfo.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Author.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Banner.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BeautyBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bg404.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bg503.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BrandImg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Career.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CareersBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComingSoon.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompetitionsBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompetitionsImg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContactsBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cooperation.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FitnessBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FoodBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Footer.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FreeOffer.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GreenIconSection.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HealthBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HomePageImg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HowItAllBegan.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InstagramPic.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LookingForWork.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoveBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaintenanceBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MiniPic.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsLetter.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OurPartner.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OurTeam.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Page.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PartnerProgram.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PartnerWithUsBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Position.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostCategory.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostImgLarge.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostImgMedium.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostImgSmall.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrivacyPolicy.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrivacyPolicyBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductBrand.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductCategory.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImgMedium.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImgMini.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImgSingleLarge.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImgSingleMini.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImgSmall.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_to_Brands.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_to_Categories.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_to_SingleLarge.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_to_SingleMini.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sidebar.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SinglePost.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SinglePostBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SiteMapBg.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Slider.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SliderCategory.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trending.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vacancy.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HomeViewModel\HomeViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Public\css\sb-admin.css" />
+    <Content Include="Areas\Admin\Public\css\sb-admin.min.css" />
+    <Content Include="Areas\Admin\Public\js\sb-admin-charts.js" />
+    <Content Include="Areas\Admin\Public\js\sb-admin-charts.min.js" />
+    <Content Include="Areas\Admin\Public\js\sb-admin-datatables.js" />
+    <Content Include="Areas\Admin\Public\js\sb-admin-datatables.min.js" />
+    <Content Include="Areas\Admin\Public\js\sb-admin.js" />
+    <Content Include="Areas\Admin\Public\js\sb-admin.min.js" />
+    <Content Include="Areas\Admin\Public\Login\css\main.css" />
+    <Content Include="Areas\Admin\Public\Login\css\util.css" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Areas\Admin\Public\Login\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Areas\Admin\Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\OFL.txt" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\OFL.txt" />
+    <Content Include="Areas\Admin\Public\Login\js\main.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\animate\animate.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\select2\select2.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\select2\select2.js" />
+    <Content Include="Areas\Admin\Public\Login\vendor\select2\select2.min.css" />
+    <Content Include="Areas\Admin\Public\Login\vendor\select2\select2.min.js" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.bundle.js" />
+    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.bundle.min.js" />
+    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.js" />
+    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.min.js" />
+    <Content Include="Areas\Admin\Public\vendor\datatables\dataTables.bootstrap4.css" />
+    <Content Include="Areas\Admin\Public\vendor\datatables\dataTables.bootstrap4.js" />
+    <Content Include="Areas\Admin\Public\vendor\datatables\jquery.dataTables.js" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Public\vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="Areas\Admin\Public\vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="Areas\Admin\Public\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.js" />
+    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.min.js" />
+    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.slim.js" />
+    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.cs</LastGenOutput>
+    </Content>
+    <Content Include="Public\images\18514260_210511379459486_5227500697070600192_n.jpg" />
+    <Content Include="Public\images\18579555_111589536092225_2690306444074418176_n.jpg" />
+    <Content Include="Public\images\18580372_1834573263530458_5410462442704601088_n.jpg" />
+    <Content Include="Public\images\18580784_433190300380717_2727867294582571008_n.jpg" />
+    <Content Include="Public\images\18581146_1770433496602061_179455278498971648_n.jpg" />
+    <Content Include="Public\images\18645014_691147511080987_3451970425314082816_n.jpg" />
+    <Content Include="Public\images\about-464x263.jpg" />
+    <Content Include="Public\images\banner-2-381x238.jpg" />
+    <Content Include="Public\images\beauty-1-347x241.jpg" />
+    <Content Include="Public\images\beauty-2-347x241.jpg" />
+    <Content Include="Public\images\beauty-3-347x241.jpg" />
+    <Content Include="Public\images\beauty-4-733x241.jpg" />
+    <Content Include="Public\images\beauty-5-347x241.jpg" />
+    <Content Include="Public\images\beauty-6-559x433.jpg" />
+    <Content Include="Public\images\beauty-7-559x433.jpg" />
+    <Content Include="Public\images\beauty-8-559x433.jpg" />
+    <Content Include="Public\images\beauty-9-559x433.jpg" />
+    <Content Include="Public\images\bg-banner-02-369x411.jpg" />
+    <Content Include="Public\images\bg-forms-1600x1000.jpg" />
+    <Content Include="Public\images\bg-home2-1920x1200.jpg" />
+    <Content Include="Public\images\bg-sidebar-form-381x525.jpg" />
+    <Content Include="Public\images\bg-sidebar-form2-381x525.jpg" />
+    <Content Include="Public\images\bg-soon-1920x955.jpg" />
+    <Content Include="Public\images\breadcrumbs-404.jpg" />
+    <Content Include="Public\images\breadcrumbs-503.jpg" />
+    <Content Include="Public\images\breadcrumbs-about.jpg" />
+    <Content Include="Public\images\breadcrumbs-beauty.jpg" />
+    <Content Include="Public\images\breadcrumbs-careers.jpg" />
+    <Content Include="Public\images\breadcrumbs-competitions.jpg" />
+    <Content Include="Public\images\breadcrumbs-contacts.jpg" />
+    <Content Include="Public\images\breadcrumbs-fitness.jpg" />
+    <Content Include="Public\images\breadcrumbs-food.jpg" />
+    <Content Include="Public\images\breadcrumbs-health.jpg" />
+    <Content Include="Public\images\breadcrumbs-love.jpg" />
+    <Content Include="Public\images\breadcrumbs-maintenance.jpg" />
+    <Content Include="Public\images\breadcrumbs-map.jpg" />
+    <Content Include="Public\images\breadcrumbs-partner.jpg" />
+    <Content Include="Public\images\breadcrumbs-post.jpg" />
+    <Content Include="Public\images\breadcrumbs-privacy.jpg" />
+    <Content Include="Public\images\breadcrumbs-shop.jpg" />
+    <Content Include="Public\images\breadcrumbs-typography.jpg" />
+    <Content Include="Public\images\careers-1-466x398.jpg" />
+    <Content Include="Public\images\favicon.ico" />
+    <Content Include="Public\images\fitness-1-347x241.jpg" />
+    <Content Include="Public\images\fitness-2-347x241.jpg" />
+    <Content Include="Public\images\fitness-3-347x241.jpg" />
+    <Content Include="Public\images\fitness-4-347x241.jpg" />
+    <Content Include="Public\images\fitness-5-1119x593.jpg" />
+    <Content Include="Public\images\food-1-347x241.jpg" />
+    <Content Include="Public\images\food-2-347x241.jpg" />
+    <Content Include="Public\images\food-3-347x241.jpg" />
+    <Content Include="Public\images\food-4-733x241.jpg" />
+    <Content Include="Public\images\food-5-347x241.jpg" />
+    <Content Include="Public\images\food-6-1119x593.jpg" />
+    <Content Include="Public\images\health-1-347x241.jpg" />
+    <Content Include="Public\images\health-2-347x241.jpg" />
+    <Content Include="Public\images\health-3-347x241.jpg" />
+    <Content Include="Public\images\health-4-733x241.jpg" />
+    <Content Include="Public\images\health-5-347x241.jpg" />
+    <Content Include="Public\images\health-6-1119x593.jpg" />
+    <Content Include="Public\images\home1-4-733x241.jpg" />
+    <Content Include="Public\images\home1-6-1119x593.jpg" />
+    <Content Include="Public\images\home3-1-299x280.jpg" />
+    <Content Include="Public\images\home3-2-299x280.jpg" />
+    <Content Include="Public\images\home3-3-299x280.jpg" />
+    <Content Include="Public\images\home3-5-1169x593.jpg" />
+    <Content Include="Public\images\home3-6-585x433.jpg" />
+    <Content Include="Public\images\home3-7-585x433.jpg" />
+    <Content Include="Public\images\logo-dark-165x53.png" />
+    <Content Include="Public\images\logo-white-165x53.png" />
+    <Content Include="Public\images\love-1-347x241.jpg" />
+    <Content Include="Public\images\love-2-347x241.jpg" />
+    <Content Include="Public\images\love-3-347x241.jpg" />
+    <Content Include="Public\images\love-4-733x241.jpg" />
+    <Content Include="Public\images\love-5-347x241.jpg" />
+    <Content Include="Public\images\love-6-1119x593.jpg" />
+    <Content Include="Public\images\partner-1-1120x436.jpg" />
+    <Content Include="Public\images\partner-2-169x68.png" />
+    <Content Include="Public\images\partner-3-121x97.png" />
+    <Content Include="Public\images\partner-4-126x68.png" />
+    <Content Include="Public\images\partner-5-138x55.png" />
+    <Content Include="Public\images\post-1-1024x453.jpg" />
+    <Content Include="Public\images\post-1-490x346.jpg" />
+    <Content Include="Public\images\post-2-490x346.jpg" />
+    <Content Include="Public\images\post-sidebar-1-90x98.jpg" />
+    <Content Include="Public\images\post-sidebar-2-90x98.jpg" />
+    <Content Include="Public\images\post-sidebar-3-90x98.jpg" />
+    <Content Include="Public\images\product-1-240x235.png" />
+    <Content Include="Public\images\product-10-421x388.jpg" />
+    <Content Include="Public\images\product-11-421x388.jpg" />
+    <Content Include="Public\images\product-12-421x388.jpg" />
+    <Content Include="Public\images\product-13-421x388.jpg" />
+    <Content Include="Public\images\product-14-101x100.jpg" />
+    <Content Include="Public\images\product-15-101x100.jpg" />
+    <Content Include="Public\images\product-2-240x235.png" />
+    <Content Include="Public\images\product-3-240x235.png" />
+    <Content Include="Public\images\product-4-240x235.png" />
+    <Content Include="Public\images\product-5-240x235.png" />
+    <Content Include="Public\images\product-6-240x235.png" />
+    <Content Include="Public\images\product-7-301x306.jpg" />
+    <Content Include="Public\images\product-8-301x306.jpg" />
+    <Content Include="Public\images\product-9-301x306.jpg" />
+    <Content Include="Public\images\product-mini-10-92x91.jpg" />
+    <Content Include="Public\images\product-mini-11-92x91.jpg" />
+    <Content Include="Public\images\product-mini-12-92x91.jpg" />
+    <Content Include="Public\images\product-mini-13-92x91.jpg" />
+    <Content Include="Public\images\slide-5-1170x616.jpg" />
+    <Content Include="Public\images\slide-6-1170x616.jpg" />
+    <Content Include="Public\images\slide-7-1170x616.jpg" />
+    <Content Include="Public\images\typography-1-770x485.jpg" />
+    <Content Include="Public\images\user-1-65x65.jpg" />
+    <Content Include="Public\images\user-2-65x65.jpg" />
+    <Content Include="Public\images\user-3-65x65.jpg" />
+    <Content Include="Public\images\user-4-65x65.jpg" />
+    <Content Include="Public\scripts\accordion.js" />
+    <Content Include="Public\scripts\bootstrap.min.js" />
+    <Content Include="Public\scripts\cart-page.js" />
+    <Content Include="Public\scripts\competitions.js" />
+    <Content Include="Public\scripts\counter.js" />
+    <Content Include="Public\scripts\isotope.js" />
+    <Content Include="Public\scripts\isotope.pkgd.min.js" />
+    <Content Include="Public\scripts\jquery.final-countdown.js" />
+    <Content Include="Public\scripts\kinetic.js" />
+    <Content Include="Public\scripts\main.js" />
+    <Content Include="Public\scripts\scrool-top.js" />
+    <Content Include="Public\scripts\swiper.min.js" />
+    <Content Include="Public\scripts\tabs.js" />
+    <Content Include="Public\scripts\timer.js" />
+    <Content Include="Public\scripts\tooltip.js" />
+    <Content Include="Public\styles\bootstrap.min.css" />
+    <Content Include="Public\styles\style.css" />
+    <Content Include="Public\styles\swiper.min.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\db.edmx.diagram">
+      <DependentUpon>db.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminAccount\Login.cshtml" />
+    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_colors.scss" />
+    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_fixed.scss" />
+    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_global.scss" />
+    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_static.scss" />
+    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_toggle.scss" />
+    <Content Include="Areas\Admin\Public\scss\sb-admin.scss" />
+    <Content Include="Areas\Admin\Public\scss\_cards.scss" />
+    <Content Include="Areas\Admin\Public\scss\_footer.scss" />
+    <Content Include="Areas\Admin\Public\scss\_global.scss" />
+    <Content Include="Areas\Admin\Public\scss\_login.scss" />
+    <Content Include="Areas\Admin\Public\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\Public\scss\_utilities.scss" />
+    <Content Include="Areas\Admin\Public\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\animated.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\core.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\icons.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\larger.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\list.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\mixins.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\path.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\stacked.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\variables.less" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.min.map" />
+    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Areas\Admin\Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Areas\Admin\Public\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-Thin.ttf" />
+    <Content Include="Areas\Admin\Public\Login\fonts\raleway\Raleway-ThinItalic.ttf" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Public\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\Views\AboutUsBgs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutUsBgs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutUsBgs\Index.cshtml" />
+    <None Include="packages.config" />
+    <Content Include="Public\images\.DS_Store" />
+    <Content Include="Public\scripts\.DS_Store" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Public\styles\.DS_Store" />
+    <Content Include="Public\styles\style.css.map" />
+    <Content Include="Public\styles\style.scss" />
+    <Content Include="Public\styles\_404.scss" />
+    <Content Include="Public\styles\_503.scss" />
+    <Content Include="Public\styles\_about-us.scss" />
+    <Content Include="Public\styles\_beauty-list.scss" />
+    <Content Include="Public\styles\_beauty.scss" />
+    <Content Include="Public\styles\_buttons.scss" />
+    <Content Include="Public\styles\_careers.scss" />
+    <Content Include="Public\styles\_cart-page.scss" />
+    <Content Include="Public\styles\_coming-soon.scss" />
+    <Content Include="Public\styles\_commonpages.scss" />
+    <Content Include="Public\styles\_competitions.scss" />
+    <Content Include="Public\styles\_contacts.scss" />
+    <Content Include="Public\styles\_fitness.scss" />
+    <Content Include="Public\styles\_food.scss" />
+    <Content Include="Public\styles\_footer.scss" />
+    <Content Include="Public\styles\_forms.scss" />
+    <Content Include="Public\styles\_grid.scss" />
+    <Content Include="Public\styles\_header.scss" />
+    <Content Include="Public\styles\_health.scss" />
+    <Content Include="Public\styles\_homepage.scss" />
+    <Content Include="Public\styles\_love.scss" />
+    <Content Include="Public\styles\_maintenance.scss" />
+    <Content Include="Public\styles\_partner-with-us.scss" />
+    <Content Include="Public\styles\_privacy-policy.scss" />
+    <Content Include="Public\styles\_scroll-top.scss" />
+    <Content Include="Public\styles\_search-results.scss" />
+    <Content Include="Public\styles\_shop-list.scss" />
+    <Content Include="Public\styles\_shop.scss" />
+    <Content Include="Public\styles\_sidebar.scss" />
+    <Content Include="Public\styles\_single-post.scss" />
+    <Content Include="Public\styles\_single-product.scss" />
+    <Content Include="Public\styles\_site-map.scss" />
+    <Content Include="Public\styles\_tables.scss" />
+    <Content Include="Public\styles\_typography.scss" />
+    <Content Include="Public\styles\_variables.scss" />
+    <Content Include="Views\Careers\Index.cshtml" />
+    <Content Include="Views\Competitions\Index.cshtml" />
+    <Content Include="Views\PartnerWithUs\Index.cshtml" />
+    <Content Include="Views\ComingSoon\Index.cshtml" />
+    <Content Include="Views\Error503\Index.cshtml" />
+    <Content Include="Views\Error404\Index.cshtml" />
+    <Content Include="Views\SiteMap\Index.cshtml" />
+    <Content Include="Views\PrivacyPolicy\Index.cshtml" />
+    <Content Include="Views\Maintenance\Index.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\Fitness\Index.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\ShopList.cshtml" />
+    <Content Include="Views\Shop\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49834</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49834/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

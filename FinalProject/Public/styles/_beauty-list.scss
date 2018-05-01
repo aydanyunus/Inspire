@@ -1,0 +1,262 @@
+@import '_variables.scss';
+@import '_header.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .beauty-list-main-image {
+        background: url("../images/breadcrumbs-beauty.jpg");
+        background-position: center 50%;
+        padding: 102px 15px;
+        background-size: cover;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#isotop-posts {
+    .isotop {
+        margin-bottom: 100px;
+        .beauty-list-posts {
+            .without-padding {
+                margin-bottom: 30px;                 
+                padding-left: 0px;
+                padding-right: 0px;
+                .beauty-img-part { 
+                    @media screen and (max-width: 400px) {
+                        padding-left: 0px;
+                        padding-right: 0px;                                          
+                    }              
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+                .content-with-border {
+                    position: relative;
+                    background: #f7f8f9;
+                    margin-left: -15px;
+                    max-width: 813px;
+                    padding: 50px 30px;
+                    max-height: 349px;
+                    min-height: 349px;
+                    @media screen and (max-width: 400px) {
+                        margin-left: 0px;                                          
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0; 
+                        height: 0; 
+                        left: -18px;   
+                        top: 40%;                                     
+                        border-right: 18px solid #f7f8f9;
+                        border-top: 15px solid transparent;
+                        border-bottom: 18px solid transparent;
+                    }
+                    .beauty-text-panel {
+                        color: $maincolor;
+                        margin-bottom: 40px;                    
+                        a {
+                            color: $maincolor;
+                            font-size: 13px;
+                            font-weight: 700;
+                            &:hover {
+                                color: $hovercolor;
+                                transition: 0.3s all ease-in-out;
+                            }                        
+                        }
+                    }  
+                    .big-a-content {
+                        color: $textcolor;
+                        font-size: 24px;
+                        &:hover {
+                            color: $hovercolor;
+                            transition: 0.3s all ease-in-out;
+                        }  
+                    }    
+                    .icon-date {
+                        color: $simpletext;
+                        margin-top: 20px;
+                        font-weight: 700;
+                        font-size: 13px;
+                        p {
+                            display: inline-block;                        
+                        }
+                        .margin-left {
+                            margin-left: 10px;
+                        }
+                    }   
+                    .bottom-content {
+                        color: $simpletext;
+                        font-size: 13px;
+                        font-weight: 700;
+                        margin-top: 20px;
+                    }      
+                }
+                
+            }     
+            .without-padding-2 {
+                margin-bottom: 30px;                 
+                padding-left: 15px;
+                padding-right: 0px;
+                @media screen and (max-width: 400px) {
+                    padding-left: 0px;
+                    padding-right: 0px;                                          
+                } 
+                .content-with-border-2 {
+                    position: relative;
+                    background: #f7f8f9;
+                    padding: 50px 30px;
+                    max-height: 366px;
+                    min-height: 366px;
+                    @media screen and (max-width: 400px) {
+                        padding: 30px 30px;
+                    } 
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        z-index: 1;
+                        right: -3px;
+                        top: 50%;
+                        border-left: 18px solid #f7f8f9;
+                        border-top: 15px solid transparent;
+                        border-bottom: 18px solid transparent;
+                    }
+                    .beauty-text-panel {
+                        color: $maincolor;
+                        margin-bottom: 40px;                    
+                        a {
+                            color: $maincolor;
+                            font-size: 13px;
+                            font-weight: 700;
+                            &:hover {
+                                color: $hovercolor;
+                                transition: 0.3s all ease-in-out;
+                            }                        
+                        }
+                    }  
+                    .big-a-content {
+                        color: $textcolor;
+                        font-size: 24px;
+                        &:hover {
+                            color: $hovercolor;
+                            transition: 0.3s all ease-in-out;
+                        }  
+                    }    
+                    .icon-date {
+                        color: $simpletext;
+                        margin-top: 20px;
+                        font-weight: 700;
+                        font-size: 13px;
+                        p {
+                            display: inline-block;                        
+                        }
+                        .margin-left {
+                            margin-left: 10px;
+                        }
+                    }   
+                    .bottom-content {
+                        color: $simpletext;
+                        font-size: 13px;
+                        font-weight: 700;
+                        margin-top: 20px;
+                    }      
+                }
+                .beauty-img-part-2 {     
+                    padding-right: 0px;  
+                    padding-left: 0px;                                                       
+                    margin-left: -15px;
+                    max-height: 372px;
+                    min-height: 372px;
+                    @media screen and (max-width: 400px) {
+                        margin-left: 0px;                                          
+                    }
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+                .must-read {
+                    a {
+                        color: white !important;                        
+                        background: $maincolor;
+                        position: relative;
+                        padding: 5px 10px;
+                        transition: .3s all ease-in-out;
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            right: -8px;
+                            top: 0;
+                            bottom: 0;
+                            border-left: 8px solid $maincolor;
+                            border-top: 12px solid transparent;
+                            border-bottom: 12px solid transparent;
+                            transition: 0.3s all ease-in-out;
+                        }
+                        &:hover {
+                            background: $hovercolor;                        
+                            &::before {
+                                border-left-color: $hovercolor;
+                                border-top-color: transparent;
+                                border-bottom-color: transparent;                            
+                            }
+                        }
+                    }                   
+                }
+            }            
+        }
+        .btn-part-more {        
+            a {
+                background: #3e3e3e;
+                color: white;
+                padding: 20px 70px;
+                border-radius: 0px;
+                border: none;
+                font-size: 14px;
+                font-weight: 777;
+                overflow: hidden;
+                position: relative;
+                @media screen and (max-width: 400px) {
+                    margin-left: 90px;                                         
+                } 
+                &:hover {
+                    background: $maincolor;
+                    transition: 0.3s all ease-in-out;
+                }
+            }            
+        }
+    }
+}
+@import '_footer.scss';

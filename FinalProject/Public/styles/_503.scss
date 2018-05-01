@@ -1,0 +1,70 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .main-image {       
+        padding: 102px 15px !important;
+        h1 {
+            color: white;
+            font-size: 50px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+    }
+}
+#body {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    h1 {
+        color: $textcolor;
+        padding: 10px 0px;
+        font-size: 45px;       
+    }
+    p {
+        color: $simpletext;
+        font-size: 19px;
+        margin-bottom: 30px;
+        margin-top: 25px;
+    }
+    .button-group {
+        a {
+            color: white;
+            border-radius: 0px;
+            border: none;
+            padding: 19px 23px;
+            font-weight: 777;
+            @media screen and (max-width: 400px){                
+                width: 100%;                
+            } 
+            &:hover {
+                background: $maincolor;
+                transition: 0.3s all ease-in-out;
+                border-color: $maincolor;
+            }               
+        }
+        .go-home {
+            background: #2b2c2f;
+            border: 1px solid #2b2c2f;
+        }
+        .contact {
+            background: $hovercolor;   
+            border: 1px solid $hovercolor;                     
+        }
+        span {
+            color: $simpletext;
+            padding-left: 5px;
+            padding-right: 5px;            
+        }
+    }
+}
+@import '_footer.scss';

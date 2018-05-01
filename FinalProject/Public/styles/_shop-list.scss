@@ -1,0 +1,253 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;        
+    .shoplist-main-image {
+        background: url("../images/breadcrumbs-shop.jpg");
+        background-position: center 50%;
+        padding: 102px 15px;
+        background-size: cover;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#shop-list {
+    margin-top: 50px;
+    .categories {
+        @media screen and (max-width: 400px){
+            margin-bottom: 30px;
+        }
+        .category-name {
+            font-size: 18px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $bordercolor;
+        }
+        .filters {
+            margin-top: 30px;
+            ul {
+                li {
+                    label {
+                        color: $simpletext;
+                        cursor: pointer;
+                        &:hover{
+                            .filter-name {
+                                color: $textcolor;
+                                transition: 0.2s all ease-in-out;                                
+                            }
+                        }
+                        .filter-name {
+                            margin-left: 10px;
+                        }
+                        // input[type='checkbox']{
+                        //     -webkit-appearance: none;
+                        //     -moz-appearance: none;
+                        //     -o-appearance: none;
+                        //     appearance:none;
+                        //     box-shadow: none;
+                        //     width: 12px !important;
+                        //     height: 12px !important;
+                        //     outline: none;
+                        //     cursor: pointer;
+                        //     border: 1px solid $bordercolor;
+                        //     color: $maincolor;
+                        // }
+                        // input[type='checkbox']:checked {
+                        //     color: $maincolor;
+                        // }
+                    }
+
+                }
+            }
+        }      
+    }
+    .shop-items {
+        .panel-top {
+            .view-panel {
+                .text-view {
+                    font-size: 13px;
+                    display: inline-block;
+                }                
+                .icon-span {
+                    padding: 7px 5px;
+                    margin-left: 5px;
+                    a {
+                        i {
+                            color: $simpletext;
+                            background: #f5f5f5;
+                            padding: 10px;
+                            &:hover {
+                                color: white;
+                                background: $maincolor;
+                                transition: 0.3s all ease-in-out;
+                            }                            
+                        }  
+                        .active {
+                            background: $maincolor;
+                            color: white;
+                        }                    
+                    }                             
+                }   
+                .span-column {
+                    margin-left: 0px;
+                }                     
+            }            
+            .sort-by {
+                @media screen and (max-width: 400px){
+                    float: left !important;
+                    margin-top: 20px;
+                }
+                select {
+                    width: 150px;
+                    padding: 5px 35px 5px 5px;
+                    border: none;
+                    background: white;
+                    color: $simpletext;
+                    border: 1px solid $bordercolor;
+                    border-radius: 0px;
+                    font-size: 13px;
+                    height: 34px;
+                    -webkit-appearance: none;
+                    appearance: none;
+                }                                            
+                select::-ms-expand { 
+                    display: none; /* remove default arrow in IE 10 and 11 */
+                }                  
+            }
+        }
+        .product {              
+            margin-top: 50px; 
+            .product-img {
+                padding-right: 0px;
+                a {
+                    img {
+                        max-width: 100%;
+                        width: 100%;
+                        height: 306px;
+                    } 
+                }                
+            }         
+            .product-content {
+                border: 1px solid $bordercolor;
+                border-left: 0px;
+                padding: 42px 30px;
+                min-height: 306px;
+                max-height: 306px;                
+                @media screen and (max-width: 400px) {
+                    border: none;
+                }
+                a {
+                    display: block;
+                    color: $textcolor;
+                    font-size: 24px;
+                    margin-bottom: 15px;   
+                    &:hover {
+                        color: $hovercolor;
+                        transition: 0.3s all ease-in-out;
+                    }                 
+                }
+                span {
+                    color: $maincolor;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                .line {
+                    text-decoration: line-through;
+                    color: $simpletext;
+                    padding-right: 10px;
+
+                }
+                p {
+                    color: $simpletext;
+                    margin-top: 15px;  
+                    margin-bottom: 15px;                                                          
+                    font-size: 13px;
+                    font-weight: 700;
+                }          
+                .btn {
+                    color: white;
+                    display: inline-block;
+                    width: auto;
+                    max-width: 100%;
+                    background-color: #3e3e3e;
+                    border-radius: 0px;
+                    border-color: #3e3e3e;
+                    padding: 11px 27px;
+                    font-size: 13px;
+                    line-height: 24px;
+                    font-weight: 700;
+                    &:hover {
+                        color: white;
+                        background: $maincolor;
+                        border-color: $maincolor;
+                    }
+                }                            
+            }                       
+        }
+        nav {
+            margin-top: 70px;
+            margin-bottom: 50px;      
+            ul {
+                font-size: 16px;
+                font-weight: 700;
+                li {   
+                    .active {
+                        background: $maincolor;
+                        color: white;
+                    }                                  
+                    a{
+                        margin-right: 5px;                        
+                        background-color: transparent;
+                        color: #aaa;
+                        border: none;
+                        border-radius: 0px;
+                        &:hover {
+                            background: $maincolor;
+                            color: white;
+                        }
+                    }
+                    span {
+                        background-color: transparent;
+                        color: #aaa;
+                        border: none;
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                    
+                }
+                
+            }
+        }  
+    }
+}
+@import '_footer.scss';

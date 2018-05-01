@@ -1,0 +1,204 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .aboutus-main-image {       
+        padding: 102px 15px;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#about {
+    margin-top: 50px;
+    .our-team {
+        h3 {
+            font-size: 36px;
+        }
+        p {
+            color: $simpletext;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 25px;            
+        }
+        .team {
+            padding: 40px 30px;
+            min-height: 495px;
+            margin-left: -20px;
+            border: 1px solid $bordercolor;
+            @media screen and (max-width: 400px) {
+                margin-left: 0px;
+            }
+            img {
+                width: 100%;
+                max-width: 100%;
+            }         
+        }
+        .how-it-began {
+            padding: 40px 30px;            
+            min-height: 495px;            
+            margin-left: 10px;         
+            border: 1px solid $bordercolor;
+            @media screen and (max-width: 400px) {
+                margin-left: 0px;
+            }
+            .icons {
+                h5 {
+                    display: inline;
+                    font-size: 18px;
+                }
+                .list-inline {
+                    display: inline;
+                    margin-left: 30px;
+                    li {
+                        padding-right: 0px;
+                        a {
+                            color: white;
+                            font-size: 18px;
+                            i {
+                                padding: 9px 10px;
+                            }
+                            .fa-facebook {
+                                background: #3b5998;
+                                border: 2px solid #3b5998;
+                                padding: 9px 13px;   
+                                &:hover {
+                                    background: white;
+                                    color: #3b5998;
+                                }                           
+                            }
+                            .fa-twitter {
+                                background: #00abf0;
+                                border: 2px solid #00abf0;                       
+                                border-color: #00abf0;
+                                &:hover {
+                                    background: white;
+                                    transition: 0.3s all ease-in-out;
+                                    color: #00abf0;
+                                }    
+                            }
+                            .fa-pinterest {
+                                background: #dd4b39;
+                                border: 2px solid #dd4b39;                                                     
+                                border-color: #dd4b39;
+                                &:hover {
+                                    background: white;
+                                    color: #dd4b39;
+                                }    
+                            }
+                            .fa-instagram {
+                                background: #398aaa;
+                                border: 2px solid #398aaa;                                                   
+                                border-color: #398aaa;
+                                &:hover {
+                                    background: white;
+                                    color: #398aaa;
+                                }    
+                            }
+                        }
+                    }
+                }             
+            }
+
+        }
+        .join {
+            margin-left: -20px;
+            padding-right: 5px;
+            margin-top: 50px;
+            .image {
+                position: relative;
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                    @media screen and (max-width: 400px) {
+                        height: 400px;
+                    }
+                }   
+                
+            }
+            .layout {
+                position: absolute;
+                top: 30%;
+                @media screen and (max-width: 400px) {
+                    top: 0px;
+                }
+                h3 {
+                    color: white;
+                    margin-left: 30px;
+                }
+                p {
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 700;
+                    max-width: 500px;
+                    margin-bottom: 50px;
+                }
+                .form {
+                    input {
+                        background: rgba(247, 248, 249, 0.47);
+                        color: black;
+                        border: none;
+                        padding: 17px 15px;
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 24px;                        
+                    }
+                    button {
+                        padding: 16px 49px;
+                        font-size: 14px;
+                        line-height: 24px;
+                        border-radius: 0;
+                        border: 1px solid $hovercolor;
+                        color: white;
+                        background: $hovercolor;
+                        margin-left: -50px;
+                        @media screen and (max-width: 400px) {
+                            margin-top: 20px;
+                            margin-left: 0px;
+                        }
+                        &:hover {
+                            border: 1px solid $maincolor;
+                            background: $maincolor;
+                            transition: 0.3s all ease-in-out;
+                        }
+                    }
+                }
+
+            }
+           
+               
+        }
+        @import '_sidebar.scss';
+    }
+}
+@import '_footer.scss';

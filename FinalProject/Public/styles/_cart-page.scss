@@ -1,0 +1,194 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .cart-page-main-image {
+        background: url("../images/breadcrumbs-shop.jpg");
+        background-position: center 50%;
+        padding: 102px 15px;
+        background-size: cover;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#cart {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    h4 {
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .table {
+        margin-top: 30px;
+        .table-cart {    
+           tr {
+               border-bottom: 1px solid $bordercolor;
+               height: 150px;
+               td {
+                .counter {
+                    margin-right: 50px;
+                    position: relative;
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                    input {
+                        padding: 0px 5px;
+                        height: 65px;
+                        font-size: 17px;
+                        min-height: 65px;
+                        line-height: 30px;
+                        background: #fff;
+                        text-align: center;
+                        width: 100%;
+                        color: #2b2c2f;
+                        border: none;
+                        
+                    }
+                    span.plus-minus {
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        line-height: 20px;
+                        cursor: pointer;
+                        transition: .3s all ease;
+                        font-weight: 400;
+                        left: 50%;
+                        font-size: 22px;
+                        text-align: center;
+                        transform: translateX(-50%);
+                        color: $simpletext;
+                    }
+                    span.up {
+                        top: 0;
+                        font-size: 22px;
+                        text-align: center;
+                    }
+                    span.down {
+                        bottom: 0;
+                        font-size: 22px;
+                        text-align: center;
+                    }                     
+                }
+                .image {
+                    margin-right: 50px;
+                }
+                h5 {
+                    a{
+                        font-size: 18px;
+                        color: $textcolor;
+                        &:hover{
+                            color: $maincolor;
+                            transition: 0.3s all ease-in-out;
+                        }
+                    }
+                }
+                p {
+                    color: $simpletext;
+                }
+                .price {
+                    color: $textcolor;
+                    font-size: 20px;
+                    font-weight: 700;
+                    padding-right: 50px;                    
+                }
+                .close {
+                    color: $simpletext;
+                    font-size: 20px;
+                    &:hover {
+                        color: $maincolor;
+                    }
+                }
+               }             
+            }
+            :nth-child(2) {
+                margin-right: 318px;
+            }
+           
+        }
+    
+    }
+    .total-price {
+        h5 {
+            color: $simpletext;
+            font-size: 20px;
+            font-weight: 700;
+            span {
+                color: $textcolor;
+                font-weight: 700;
+                font-size: 30px;
+            }
+        }
+    }
+    .checkout {
+        margin-top: 15px;
+        button {
+            padding: 18px 30px;
+            color: #fff;
+            background-color: #3e3e3e;
+            border-color: #3e3e3e;
+            border-radius: 0px;
+            font-size: 16px;
+            font-weight: 700;
+            &:hover {
+                background: $maincolor;
+                color: white;
+                transition: 0.3s all ease-in-out;
+                border-color: $maincolor;                
+            }
+        }
+    }
+}
+@media screen and(max-width: 400px){
+    #cart {
+        .table {
+            .table-cart {
+                tr {
+                    td {
+                        .image {
+                            margin-right: 0px;
+                        }
+                        .price {
+                            padding-right: 0px;
+                        }               
+                    }
+                }
+                :nth-child(2) {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }                        
+}
+@import '_footer.scss';

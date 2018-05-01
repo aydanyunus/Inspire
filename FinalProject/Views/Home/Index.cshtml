@@ -1,0 +1,309 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+@using FinalProject.Models;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- SWIPER SLIDE STARTS HERE -->
+<section id="slider">
+    <div class="swiper-container" data-simulate-touch="false">
+        <div class="swiper-wrapper">
+            @foreach (var item in Model.Slider)
+            {
+                  <div class="swiper-slide slide-2" style=" background: url(../../Public/images/@item.Background_img); background-size: cover;" data-swiper-slide-index="0">
+                <div class="borders"></div>
+                <div class="slide-content">
+                    <p>
+                        <a href="#">@item.SliderCategory.Name</a>
+                        <span>, </span>
+                        <a href="#">@item.SliderCategory1.Name</a>
+                    </p>
+                    <h2>
+                        <a href="single-post.html">
+                            @item.Title
+                        </a>
+                    </h2>
+                    <div class="icon-date">
+                        <p>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <span>@item.Written_date</span>
+                        </p>
+                        <p>
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>@item.View_Count</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</section>
+<!-- SWIPER SLIDE ENDS HERE -->
+<!-- POST SECTION STARTS HERE -->
+<section id="postssection">
+    <div class="container posts">
+        <div class="row">
+            <!-- latest posts -->
+            <div class="col-md-8 col-xs-12 latest-posts">
+                <p class="with-border">LATEST POSTS</p>
+                @foreach (var item in Model.posts.Where(p => p.Page_home_id != null).OrderBy(t => t.Id).Take(3).ToList())
+                {
+                <div class="row margin-top">
+                    <div class="col-md-5 col-xs-12 left-side">
+                        <a href="single-post.html">
+                            <img src="~/Public/images/@item.HomePageImg.Img" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-7 col-xs-12 right-side">
+                        <div class="main-a">
+                            <a href="#">
+                                @item.PostCategory.Name ,
+                            </a>
+                            <a href="#">
+                                @item.PostCategory1.Name
+                            </a>
+                        </div>
+                        <a href="single-post.html">
+                            <h4>@item.Title</h4>
+                        </a>
+                        <div class="icon-date">
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>@item.Written_date</span>
+                            </p>
+                            <p class="margin-left">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>@item.Wiew_Count</span>
+                            </p>
+                        </div>
+                        <p class="simple-text">
+                            @item.Content
+                        </p>
+                    </div>
+                </div>
+                }
+            </div>
+            <!-- popular posts -->
+
+            <div class="col-md-4 col-xs-12 popular-posts">
+                <p>POPULAR POSTS</p>
+                <div class="row with-border">
+                    @foreach (var item in Model.sidebar)
+                    {
+                         <div class="col-md-12 col-xs-12 wrapper">
+                        <div class="col-md-12 col-xs-12 posts-sidebar">
+                            <div class="posts-sidebar-left col-md-3 col-xs-3">
+                                <a href="single-post.html">
+                                    <img src="~/Public/images/@item.Img" alt="">
+                                </a>
+                            </div>
+                            <div class="posts-sidebar-right col-md-9 col-xs-9">
+                                <a href="single-post.html">
+                                    @item.Title
+                                </a>
+                                <div class="icon-date">
+                                    <p>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <span>@item.Written_date</span>
+                                    </p>
+                                    <p class="margin-left">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        <span>
+                                            @item.View_Count
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <div class="row">
+                    <p class="trending">TRENDING</p>
+                    <span class="brand">NEW</span>
+                </div>
+                <div class="banner-image-wrapper">
+                    <div class="col-md-12 col-xs-12 banner-image" style="background: url(../../Public/images/@Model.trending.Img);background-size: cover;">
+                        <div class="borders">
+                        </div>
+                        <div class="banner-text">
+                            <a href="single-post.html">
+                                @Model.trending.Title
+                            </a>
+                            <div class="icon-date">
+                                <p>
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>@Model.trending.Written_date</span>
+                                </p>
+                                <p class="margin-left">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <span>
+                                        @Model.trending.View_Count
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- POST SECTION ENDS HERE -->
+
+<!-- VIDEO SECTION STARTS HERE -->
+<section id="video-review">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 border-bottom-text">
+                <p>VIDEO REVIEW</p>
+            </div>
+        </div>
+        @foreach (var item in Model.posts.Where(p => p.ImgHomePage_id == 4).ToList())
+        {
+        <div class="row">
+            <div class="col-md-12 col-xs-12 bg-video">
+                <img src="~/Public/images/@item.HomePageImg.Img" alt="">
+                <div class="content-body">
+                    <div class="border-100-percent col-md-offset-5 col-xs-offset-5">
+                        <a href="https://player.vimeo.com/video/59474227?color=ff9933&title=0&byline=0&portrait=0">
+                            <i class="fa fa-play fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <h1>@item.Title</h1>
+                    <p>@item.SubTitle</p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section>
+<!-- VIDEO SECTION ENDS HERE -->
+
+<!-- MUST READ SECTION STARTS HERE -->
+<section id="must-read">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <p class="border-bottom">MUST READ</p>
+            </div>
+        </div>
+        <div class="row">
+            @Session["ad"]
+            
+                    <div class="col-md-12 col-xs-12 without-padding">
+                <div class="col-md-6 col-xs-12 beauty-img-part">
+                    <a href="single-post.html">
+                        <img src="~/Public/images/home3-6-585x433.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-xs-12 content-with-border">
+                    <div class="beauty-text-panel">
+                        <a href="#">
+                            BEAUTY
+                        </a>
+                        <span>,</span>
+                        <a href="#">
+                            MAKEUP
+                        </a>
+                    </div>
+                    <a href="single-post.html" class="big-a-content">
+                       
+                    </a>
+                    <div class="icon-date">
+                        <p>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <span>APRIL 27, 2017</span>
+                        </p>
+                        <p class="margin-left">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>6424</span>
+                        </p>
+                    </div>
+                    <p class="bottom-content">
+                        Discover the latest clothing trends from fashion's top designers—and see what brands and what clothes we recommend you to look at.
+                    </p>
+                </div>
+                </div>  
+            
+               
+                                                               
+            <div class="col-md-12 col-xs-12 without-padding-2">
+                <div class="col-md-6 col-xs-12 content-with-border-2">
+                    <div class="beauty-text-panel">
+                        <a href="#">
+                            LIFESTYLE
+                        </a>
+                        <span>,</span>
+                        <a href="#">
+                            HEALTH
+                        </a>
+                    </div>
+                    <a href="single-post.html" class="big-a-content">
+                        How To Increase Workflow and Reduce Stress
+                    </a>
+                    <div class="icon-date">
+                        <p>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <span>JUNE 25, 2017</span>
+                        </p>
+                        <p class="margin-left">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            <span>898</span>
+                        </p>
+                    </div>
+                    <p class="bottom-content">
+                        Stress influences our lives not in the best way, and to avoid its effect, everyone needs to learn some stress management techniques.
+                    </p>
+                </div>
+                <div class="col-md-6 col-xs-12 beauty-img-part-2">
+                    <a href="single-post.html">
+                        <img src="~/Public/images/home3-7-585x433.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+<!-- MUST READ SECTION ENDS HERE -->
+
+<!-- PICS SECTION STARTS HERE -->
+<section id="insta-pics">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 followlink text-center">
+            <a class="inspire-link" href="#">
+                FOLLOW US
+                <span>&commat;INSPIRE</span>
+            </a>
+        </div>
+    </div>
+    <!-- mini pics -->
+    <div class="row">
+        <div class="col-md-12">
+            @foreach (var item in Model.instagramPics)
+            {
+                <div class="col-md-3 col-xs-12 mini-pic">
+                <div class="pic-wrapper">
+                    <div class="borders">
+                    </div>
+                    <a href="https://scontent.cdninstagram.com/vp/573dc0a812923c0088d65d0939a08156/5B593EB1/t51.2885-15/s640x640/sh0.08/e35/18581146_1770433496602061_179455278498971648_n.jpg"
+                       data-images-standard_resolution-url="href">
+                        <img src="@item.Img" data-images-standard_resolution-url="src" alt="">
+                    </a>
+                    <div class="pic-content">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span>@item.Like_count</span>
+                    </div>
+                </div>
+            </div>
+            }     
+        </div>
+    </div>
+</section>
+<!-- PICS SECTION ENDS HERE -->

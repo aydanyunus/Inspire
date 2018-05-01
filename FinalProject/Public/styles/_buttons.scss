@@ -1,0 +1,227 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .buttons-main-image {
+        background: url("../images/breadcrumbs-typography.jpg");
+        background-position: center 50%;
+        padding: 102px 15px;
+        background-size: cover;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#buttons-content {
+    .row {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        h2, h3 {
+            font-weight: 700;
+            color: black;
+        }
+        p {
+            font-weight: bold;
+            color: $simpletext;
+        }
+    }
+    .buttons {
+        text-align: right;
+        button {
+            border: $maincolor;
+            background: $maincolor;
+            color: white;
+            font-weight: 700;
+            border-radius: 4px;
+            font-size: 15px;
+            &:hover {
+                background: $hovercolor;
+                border-color: $hovercolor;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        .btn-xl {
+           padding: 30px 85px;
+        }
+        .btn-lg {
+            padding: 23px 50px;
+            margin-top: 9px;
+        }
+        .btn-dflt {
+            padding: 16px 28px;
+            margin-top: 17px;
+        }
+        .btn-sm {
+            margin-top: 27px;
+            padding: 10px 25px;
+            font-size: 13px;
+        }
+    }
+}
+#button-shapes {
+    .row {
+        margin-bottom: 50px;
+        h2, h3 {
+            font-weight: 700;
+            color: black;
+        }
+        p {
+            font-weight: bold;
+            color: $simpletext;
+        }
+        button {
+            padding: 16px 40px;
+            margin-top: 17px;
+            border: $maincolor;
+            background: $maincolor;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            &:hover {
+                background: $hovercolor;
+                border-color: $hovercolor;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        .dflt {
+            border-radius: 4px;
+        }
+        .round {
+            border-radius: 10px;
+        }
+        .square {
+            border-radius: 0px;
+        }
+        .circle {
+            border-radius: 35px;
+        }
+    }
+}
+#buttons-with-icons {
+    .row {
+        margin-bottom: 50px;
+        h2, h3 {
+            font-weight: 700;
+            color: black;
+        }
+        p {
+            font-weight: bold;
+            color: $simpletext;
+        }
+        button {
+            padding: 16px 40px;
+            margin-top: 17px;
+            border: $maincolor;
+            background: $maincolor;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            &:hover {
+                background: $hovercolor;
+                border-color: $hovercolor;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        .i-right, .i-left {
+            color: #151515;
+            background-color: transparent;
+            border: 2px solid #ccc;
+            &:hover {
+                background: $maincolor;
+                border-color: $maincolor;
+                transition: 0.3s all ease-in-out;
+                color: white;
+            }
+        }
+        .padding-btm {
+            padding: 15px 40px;
+        }
+        .i-right {
+            padding: 12px 40px;
+        }
+        .i-left {
+            padding: 11px 40px;
+        }
+    }
+}
+#buttons-with-shadow {
+    .row {
+        margin-bottom: 50px;
+        h2, h3 {
+            font-weight: 700;
+            color: black;
+        }
+        p {
+            font-weight: bold;
+            color: $simpletext;
+        }
+        button {
+            padding: 13px 35px;
+            margin-top: 17px;
+            font-weight: 700;
+            font-size: 14px;
+            color: black;
+            border-radius: 35px;   
+            border: none;
+            font-weight: 700; 
+            box-shadow: 0 9px 21px 0 rgba(30, 30, 30, 0.15);        
+            &:hover {
+                background: $maincolor;
+                border-color: $maincolor;
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        .with-bg {
+            color: white;
+            background: $maincolor; 
+            border-color: $maincolor;
+            &:hover {
+                background: $hovercolor;
+                border-color: $hovercolor;
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }           
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    #buttons-content {
+        .buttons {
+            text-align: center;
+        }
+    }
+    #buttons-with-shadow {
+        
+    }
+}
+@import '_footer.scss';

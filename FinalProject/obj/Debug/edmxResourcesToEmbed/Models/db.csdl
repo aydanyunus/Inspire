@@ -1,0 +1,1112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogInspireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AboutUsBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="BlogInspireModel.FK__Posts__Author_id__2610A626" FromRole="Author" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeautyBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bg404">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bg_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bg503">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bg_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BrandImg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CareersBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ComingSoon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bg_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Copywrite" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CompetitionsImg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__ImgCompet__6EC0713C" FromRole="CompetitionsImgs" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Google_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Youtube_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContactsBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Cooperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FitnessBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FoodBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Footer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Copywrite_date" Type="Int32" />
+    <Property Name="Instagram_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FreeOffer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GreenIconSection">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HealthBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HomePageImg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__ImgHomePa__6FB49575" FromRole="HomePageImgs" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="HowItAllBegan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Facebook_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pinterest_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Instagram_link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InstagramPic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Like_count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LoveBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MaintenanceBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MiniPic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Like_count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NewsLetter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Subtitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OurPartner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Background_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OurTeam">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PartnerProgram">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PartnerWithUsBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Work_time" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PostCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="BlogInspireModel.FK__Posts__Category1__1B9317B3" FromRole="PostCategory" ToRole="Post" />
+    <NavigationProperty Name="Posts1" Relationship="BlogInspireModel.FK__Posts__Category2__1C873BEC" FromRole="PostCategory" ToRole="Post" />
+  </EntityType>
+  <EntityType Name="PostImgLarge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SinglePosts" Relationship="Self.FK__SinglePos__Img_i__57DD0BE4" FromRole="PostImgLarge" ToRole="SinglePost" />
+  </EntityType>
+  <EntityType Name="PostImgMedium">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__ImgMedium__6CD828CA" FromRole="PostImgMedium" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="PostImgSmall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__ImgSmall___6DCC4D03" FromRole="PostImgSmall" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Written_date" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Wiew_Count" Type="Int32" />
+    <Property Name="SinglePost_id" Type="Int32" />
+    <Property Name="ImgMedium_id" Type="Int32" />
+    <Property Name="ImgSmall_id" Type="Int32" />
+    <Property Name="ImgCompetitions_id" Type="Int32" />
+    <Property Name="ImgHomePage_id" Type="Int32" />
+    <Property Name="SubTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CompetitionsImg" Relationship="Self.FK__Posts__ImgCompet__6EC0713C" FromRole="Posts" ToRole="CompetitionsImgs" />
+    <NavigationProperty Name="HomePageImg" Relationship="Self.FK__Posts__ImgHomePa__6FB49575" FromRole="Posts" ToRole="HomePageImgs" />
+    <NavigationProperty Name="PostImgMedium" Relationship="Self.FK__Posts__ImgMedium__6CD828CA" FromRole="Posts" ToRole="PostImgMedium" />
+    <NavigationProperty Name="PostImgSmall" Relationship="Self.FK__Posts__ImgSmall___6DCC4D03" FromRole="Posts" ToRole="PostImgSmall" />
+    <NavigationProperty Name="SinglePost" Relationship="Self.FK__Posts__SinglePos__6BE40491" FromRole="Posts" ToRole="SinglePost" />
+    <Property Name="Category1_id" Type="Int32" />
+    <Property Name="Category2_id" Type="Int32" />
+    <NavigationProperty Name="PostCategory" Relationship="BlogInspireModel.FK__Posts__Category1__1B9317B3" FromRole="Post" ToRole="PostCategory" />
+    <NavigationProperty Name="PostCategory1" Relationship="BlogInspireModel.FK__Posts__Category2__1C873BEC" FromRole="Post" ToRole="PostCategory" />
+    <Property Name="Author_id" Type="Int32" />
+    <NavigationProperty Name="Author" Relationship="BlogInspireModel.FK__Posts__Author_id__2610A626" FromRole="Post" ToRole="Author" />
+    <Property Name="Page_home_id" Type="Int32" />
+    <Property Name="Page_Competitions_id" Type="Int32" />
+    <Property Name="Page_List_id" Type="Int32" />
+    <Property Name="Page_SinglePost_id" Type="Int32" />
+    <Property Name="Page_Isotop_id" Type="Int32" />
+    <Property Name="Page_Partner_id" Type="Int32" />
+    <NavigationProperty Name="Page" Relationship="BlogInspireModel.FK__Posts__Page_Comp__56B3DD81" FromRole="Post" ToRole="Page" />
+    <NavigationProperty Name="Page1" Relationship="BlogInspireModel.FK__Posts__Page_home__55BFB948" FromRole="Post" ToRole="Page" />
+    <NavigationProperty Name="Page2" Relationship="BlogInspireModel.FK__Posts__Page_Isot__59904A2C" FromRole="Post" ToRole="Page" />
+    <NavigationProperty Name="Page3" Relationship="BlogInspireModel.FK__Posts__Page_List__57A801BA" FromRole="Post" ToRole="Page" />
+    <NavigationProperty Name="Page4" Relationship="BlogInspireModel.FK__Posts__Page_Part__5A846E65" FromRole="Post" ToRole="Page" />
+    <NavigationProperty Name="Page5" Relationship="BlogInspireModel.FK__Posts__Page_Sing__589C25F3" FromRole="Post" ToRole="Page" />
+  </EntityType>
+  <EntityType Name="PrivacyPolicy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PrivacyPolicyBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product_to_Brands">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brand_id" Type="Int32" />
+    <Property Name="Product_id" Type="Int32" />
+    <NavigationProperty Name="ProductBrand" Relationship="Self.FK__Product_t__Brand__339FAB6E" FromRole="Product_to_Brands" ToRole="ProductBrands" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product_t__Produ__3493CFA7" FromRole="Product_to_Brands" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product_to_Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_id" Type="Int32" />
+    <Property Name="Category_id" Type="Int32" />
+    <NavigationProperty Name="ProductCategory" Relationship="Self.FK__Product_t__Categ__3A4CA8FD" FromRole="Product_to_Categories" ToRole="ProductCategories" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product_t__Produ__395884C4" FromRole="Product_to_Categories" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product_to_SingleLarge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_id" Type="Int32" />
+    <Property Name="SingleLargeImg_id" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product_t__Produ__489AC854" FromRole="Product_to_SingleLarge" ToRole="Products" />
+    <NavigationProperty Name="ProductImgSingleLarge" Relationship="Self.FK__Product_t__Singl__498EEC8D" FromRole="Product_to_SingleLarge" ToRole="ProductImgSingleLarge" />
+  </EntityType>
+  <EntityType Name="Product_to_SingleMini">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_id" Type="Int32" />
+    <Property Name="SingleMiniImg_id" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product_t__Produ__4C6B5938" FromRole="Product_to_SingleMini" ToRole="Products" />
+    <NavigationProperty Name="ProductImgSingleMini" Relationship="Self.FK__Product_t__Singl__4D5F7D71" FromRole="Product_to_SingleMini" ToRole="ProductImgSingleMini" />
+  </EntityType>
+  <EntityType Name="ProductBrand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product_to_Brands" Relationship="Self.FK__Product_t__Brand__339FAB6E" FromRole="ProductBrands" ToRole="Product_to_Brands" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product_to_Categories" Relationship="Self.FK__Product_t__Categ__3A4CA8FD" FromRole="ProductCategories" ToRole="Product_to_Categories" />
+  </EntityType>
+  <EntityType Name="ProductImgMedium">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__ImgMed__58D1301D" FromRole="ProductImgMedium" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ProductImgMini">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__ImgMin__5AB9788F" FromRole="ProductImgMini" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="ProductImgSingleLarge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product_to_SingleLarge" Relationship="Self.FK__Product_t__Singl__498EEC8D" FromRole="ProductImgSingleLarge" ToRole="Product_to_SingleLarge" />
+  </EntityType>
+  <EntityType Name="ProductImgSingleMini">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product_to_SingleMini" Relationship="Self.FK__Product_t__Singl__4D5F7D71" FromRole="ProductImgSingleMini" ToRole="Product_to_SingleMini" />
+  </EntityType>
+  <EntityType Name="ProductImgSmall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__ImgSma__59C55456" FromRole="ProductImgSmall" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Old_price" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Count" Type="Int32" />
+    <Property Name="Icon1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Icon2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Icon3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Icon4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Icon5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImgMedium_id" Type="Int32" />
+    <Property Name="ImgSmall_id" Type="Int32" />
+    <Property Name="ImgMini_id" Type="Int32" />
+    <NavigationProperty Name="Product_to_Brands" Relationship="Self.FK__Product_t__Produ__3493CFA7" FromRole="Products" ToRole="Product_to_Brands" />
+    <NavigationProperty Name="Product_to_Categories" Relationship="Self.FK__Product_t__Produ__395884C4" FromRole="Products" ToRole="Product_to_Categories" />
+    <NavigationProperty Name="Product_to_SingleLarge" Relationship="Self.FK__Product_t__Produ__489AC854" FromRole="Products" ToRole="Product_to_SingleLarge" />
+    <NavigationProperty Name="Product_to_SingleMini" Relationship="Self.FK__Product_t__Produ__4C6B5938" FromRole="Products" ToRole="Product_to_SingleMini" />
+    <NavigationProperty Name="ProductImgMedium" Relationship="Self.FK__Products__ImgMed__58D1301D" FromRole="Products" ToRole="ProductImgMedium" />
+    <NavigationProperty Name="ProductImgMini" Relationship="Self.FK__Products__ImgMin__5AB9788F" FromRole="Products" ToRole="ProductImgMini" />
+    <NavigationProperty Name="ProductImgSmall" Relationship="Self.FK__Products__ImgSma__59C55456" FromRole="Products" ToRole="ProductImgSmall" />
+  </EntityType>
+  <EntityType Name="ShopBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sidebar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="View_Count" Type="Int32" />
+    <Property Name="Written_date" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SinglePost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Content4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GreenTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BottomImg1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BottomImg2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Img_id" Type="Int32" />
+    <NavigationProperty Name="PostImgLarge" Relationship="Self.FK__SinglePos__Img_i__57DD0BE4" FromRole="SinglePost" ToRole="PostImgLarge" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__SinglePos__6BE40491" FromRole="SinglePost" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="SinglePostBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SiteMapBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Background_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Written_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="View_Count" Type="Int32" />
+    <Property Name="Category1_id" Type="Int32" />
+    <Property Name="Category2_id" Type="Int32" />
+    <NavigationProperty Name="SliderCategory" Relationship="BlogInspireModel.FK__Slider__Category__19AACF41" FromRole="Slider" ToRole="SliderCategory" />
+    <NavigationProperty Name="SliderCategory1" Relationship="BlogInspireModel.FK__Slider__Category__1A9EF37A" FromRole="Slider" ToRole="SliderCategory" />
+  </EntityType>
+  <EntityType Name="SliderCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sliders" Relationship="BlogInspireModel.FK__Slider__Category__19AACF41" FromRole="SliderCategory" ToRole="Slider" />
+    <NavigationProperty Name="Sliders1" Relationship="BlogInspireModel.FK__Slider__Category__1A9EF37A" FromRole="SliderCategory" ToRole="Slider" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Trending">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="View_Count" Type="Int32" />
+    <Property Name="Written_date" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Vacancy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Posts__ImgCompet__6EC0713C">
+    <End Role="CompetitionsImgs" Type="Self.CompetitionsImg" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompetitionsImgs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="ImgCompetitions_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__ImgHomePa__6FB49575">
+    <End Role="HomePageImgs" Type="Self.HomePageImg" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HomePageImgs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="ImgHomePage_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SinglePos__Img_i__57DD0BE4">
+    <End Role="PostImgLarge" Type="Self.PostImgLarge" Multiplicity="0..1" />
+    <End Role="SinglePost" Type="Self.SinglePost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostImgLarge">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SinglePost">
+        <PropertyRef Name="Img_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__ImgMedium__6CD828CA">
+    <End Role="PostImgMedium" Type="Self.PostImgMedium" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostImgMedium">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="ImgMedium_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__ImgSmall___6DCC4D03">
+    <End Role="PostImgSmall" Type="Self.PostImgSmall" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostImgSmall">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="ImgSmall_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__SinglePos__6BE40491">
+    <End Role="SinglePost" Type="Self.SinglePost" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SinglePost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="SinglePost_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Brand__339FAB6E">
+    <End Role="ProductBrands" Type="Self.ProductBrand" Multiplicity="0..1" />
+    <End Role="Product_to_Brands" Type="Self.Product_to_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductBrands">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_Brands">
+        <PropertyRef Name="Brand_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Produ__3493CFA7">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product_to_Brands" Type="Self.Product_to_Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_Brands">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Categ__3A4CA8FD">
+    <End Role="ProductCategories" Type="Self.ProductCategory" Multiplicity="0..1" />
+    <End Role="Product_to_Categories" Type="Self.Product_to_Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_Categories">
+        <PropertyRef Name="Category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Produ__395884C4">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product_to_Categories" Type="Self.Product_to_Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_Categories">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Produ__489AC854">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product_to_SingleLarge" Type="Self.Product_to_SingleLarge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_SingleLarge">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Singl__498EEC8D">
+    <End Role="ProductImgSingleLarge" Type="Self.ProductImgSingleLarge" Multiplicity="0..1" />
+    <End Role="Product_to_SingleLarge" Type="Self.Product_to_SingleLarge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImgSingleLarge">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_SingleLarge">
+        <PropertyRef Name="SingleLargeImg_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Produ__4C6B5938">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product_to_SingleMini" Type="Self.Product_to_SingleMini" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_SingleMini">
+        <PropertyRef Name="Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_t__Singl__4D5F7D71">
+    <End Role="ProductImgSingleMini" Type="Self.ProductImgSingleMini" Multiplicity="0..1" />
+    <End Role="Product_to_SingleMini" Type="Self.Product_to_SingleMini" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImgSingleMini">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_to_SingleMini">
+        <PropertyRef Name="SingleMiniImg_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__ImgMed__58D1301D">
+    <End Role="ProductImgMedium" Type="Self.ProductImgMedium" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImgMedium">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ImgMedium_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__ImgMin__5AB9788F">
+    <End Role="ProductImgMini" Type="Self.ProductImgMini" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImgMini">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ImgMini_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__ImgSma__59C55456">
+    <End Role="ProductImgSmall" Type="Self.ProductImgSmall" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImgSmall">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ImgSmall_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BlogInspireEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AboutUsBgs" EntityType="Self.AboutUsBg" />
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="Banners" EntityType="Self.Banner" />
+    <EntitySet Name="BeautyBgs" EntityType="Self.BeautyBg" />
+    <EntitySet Name="Bg404" EntityType="Self.Bg404" />
+    <EntitySet Name="Bg503" EntityType="Self.Bg503" />
+    <EntitySet Name="BrandImgs" EntityType="Self.BrandImg" />
+    <EntitySet Name="Careers" EntityType="Self.Career" />
+    <EntitySet Name="CareersBgs" EntityType="Self.CareersBg" />
+    <EntitySet Name="ComingSoons" EntityType="Self.ComingSoon" />
+    <EntitySet Name="CompetitionsImgs" EntityType="Self.CompetitionsImg" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="ContactsBgs" EntityType="Self.ContactsBg" />
+    <EntitySet Name="Cooperations" EntityType="Self.Cooperation" />
+    <EntitySet Name="FitnessBgs" EntityType="Self.FitnessBg" />
+    <EntitySet Name="FoodBgs" EntityType="Self.FoodBg" />
+    <EntitySet Name="Footers" EntityType="Self.Footer" />
+    <EntitySet Name="FreeOffers" EntityType="Self.FreeOffer" />
+    <EntitySet Name="GreenIconSections" EntityType="Self.GreenIconSection" />
+    <EntitySet Name="HealthBgs" EntityType="Self.HealthBg" />
+    <EntitySet Name="HomePageImgs" EntityType="Self.HomePageImg" />
+    <EntitySet Name="HowItAllBegans" EntityType="Self.HowItAllBegan" />
+    <EntitySet Name="InstagramPics" EntityType="Self.InstagramPic" />
+    <EntitySet Name="LoveBgs" EntityType="Self.LoveBg" />
+    <EntitySet Name="MaintenanceBgs" EntityType="Self.MaintenanceBg" />
+    <EntitySet Name="MiniPics" EntityType="Self.MiniPic" />
+    <EntitySet Name="NewsLetters" EntityType="Self.NewsLetter" />
+    <EntitySet Name="OurPartners" EntityType="Self.OurPartner" />
+    <EntitySet Name="OurTeams" EntityType="Self.OurTeam" />
+    <EntitySet Name="PartnerPrograms" EntityType="Self.PartnerProgram" />
+    <EntitySet Name="PartnerWithUsBgs" EntityType="Self.PartnerWithUsBg" />
+    <EntitySet Name="Positions" EntityType="Self.Position" />
+    <EntitySet Name="PostCategories" EntityType="Self.PostCategory" />
+    <EntitySet Name="PostImgLarges" EntityType="Self.PostImgLarge" />
+    <EntitySet Name="PostImgMediums" EntityType="Self.PostImgMedium" />
+    <EntitySet Name="PostImgSmalls" EntityType="Self.PostImgSmall" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="PrivacyPolicies" EntityType="Self.PrivacyPolicy" />
+    <EntitySet Name="PrivacyPolicyBgs" EntityType="Self.PrivacyPolicyBg" />
+    <EntitySet Name="Product_to_Brands" EntityType="Self.Product_to_Brands" />
+    <EntitySet Name="Product_to_Categories" EntityType="Self.Product_to_Categories" />
+    <EntitySet Name="Product_to_SingleLarge" EntityType="Self.Product_to_SingleLarge" />
+    <EntitySet Name="Product_to_SingleMini" EntityType="Self.Product_to_SingleMini" />
+    <EntitySet Name="ProductBrands" EntityType="Self.ProductBrand" />
+    <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
+    <EntitySet Name="ProductImgMediums" EntityType="Self.ProductImgMedium" />
+    <EntitySet Name="ProductImgMinis" EntityType="Self.ProductImgMini" />
+    <EntitySet Name="ProductImgSingleLarges" EntityType="Self.ProductImgSingleLarge" />
+    <EntitySet Name="ProductImgSingleMinis" EntityType="Self.ProductImgSingleMini" />
+    <EntitySet Name="ProductImgSmalls" EntityType="Self.ProductImgSmall" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ShopBgs" EntityType="Self.ShopBg" />
+    <EntitySet Name="Sidebars" EntityType="Self.Sidebar" />
+    <EntitySet Name="SinglePosts" EntityType="Self.SinglePost" />
+    <EntitySet Name="SinglePostBgs" EntityType="Self.SinglePostBg" />
+    <EntitySet Name="SiteMapBgs" EntityType="Self.SiteMapBg" />
+    <EntitySet Name="Sliders" EntityType="Self.Slider" />
+    <EntitySet Name="SliderCategories" EntityType="Self.SliderCategory" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Trendings" EntityType="Self.Trending" />
+    <EntitySet Name="Vacancies" EntityType="Self.Vacancy" />
+    <AssociationSet Name="FK__Posts__ImgCompet__6EC0713C" Association="Self.FK__Posts__ImgCompet__6EC0713C">
+      <End Role="CompetitionsImgs" EntitySet="CompetitionsImgs" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__ImgHomePa__6FB49575" Association="Self.FK__Posts__ImgHomePa__6FB49575">
+      <End Role="HomePageImgs" EntitySet="HomePageImgs" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SinglePos__Img_i__57DD0BE4" Association="Self.FK__SinglePos__Img_i__57DD0BE4">
+      <End Role="PostImgLarge" EntitySet="PostImgLarges" />
+      <End Role="SinglePost" EntitySet="SinglePosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__ImgMedium__6CD828CA" Association="Self.FK__Posts__ImgMedium__6CD828CA">
+      <End Role="PostImgMedium" EntitySet="PostImgMediums" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__ImgSmall___6DCC4D03" Association="Self.FK__Posts__ImgSmall___6DCC4D03">
+      <End Role="PostImgSmall" EntitySet="PostImgSmalls" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__SinglePos__6BE40491" Association="Self.FK__Posts__SinglePos__6BE40491">
+      <End Role="SinglePost" EntitySet="SinglePosts" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Brand__339FAB6E" Association="Self.FK__Product_t__Brand__339FAB6E">
+      <End Role="ProductBrands" EntitySet="ProductBrands" />
+      <End Role="Product_to_Brands" EntitySet="Product_to_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Produ__3493CFA7" Association="Self.FK__Product_t__Produ__3493CFA7">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_to_Brands" EntitySet="Product_to_Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Categ__3A4CA8FD" Association="Self.FK__Product_t__Categ__3A4CA8FD">
+      <End Role="ProductCategories" EntitySet="ProductCategories" />
+      <End Role="Product_to_Categories" EntitySet="Product_to_Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Produ__395884C4" Association="Self.FK__Product_t__Produ__395884C4">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_to_Categories" EntitySet="Product_to_Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Produ__489AC854" Association="Self.FK__Product_t__Produ__489AC854">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_to_SingleLarge" EntitySet="Product_to_SingleLarge" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Singl__498EEC8D" Association="Self.FK__Product_t__Singl__498EEC8D">
+      <End Role="ProductImgSingleLarge" EntitySet="ProductImgSingleLarges" />
+      <End Role="Product_to_SingleLarge" EntitySet="Product_to_SingleLarge" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Produ__4C6B5938" Association="Self.FK__Product_t__Produ__4C6B5938">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_to_SingleMini" EntitySet="Product_to_SingleMini" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_t__Singl__4D5F7D71" Association="Self.FK__Product_t__Singl__4D5F7D71">
+      <End Role="ProductImgSingleMini" EntitySet="ProductImgSingleMinis" />
+      <End Role="Product_to_SingleMini" EntitySet="Product_to_SingleMini" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__ImgMed__58D1301D" Association="Self.FK__Products__ImgMed__58D1301D">
+      <End Role="ProductImgMedium" EntitySet="ProductImgMediums" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__ImgMin__5AB9788F" Association="Self.FK__Products__ImgMin__5AB9788F">
+      <End Role="ProductImgMini" EntitySet="ProductImgMinis" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__ImgSma__59C55456" Association="Self.FK__Products__ImgSma__59C55456">
+      <End Role="ProductImgSmall" EntitySet="ProductImgSmalls" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Slider__Category__19AACF41" Association="BlogInspireModel.FK__Slider__Category__19AACF41">
+      <End Role="SliderCategory" EntitySet="SliderCategories" />
+      <End Role="Slider" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Slider__Category__1A9EF37A" Association="BlogInspireModel.FK__Slider__Category__1A9EF37A">
+      <End Role="SliderCategory" EntitySet="SliderCategories" />
+      <End Role="Slider" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Category1__1B9317B3" Association="BlogInspireModel.FK__Posts__Category1__1B9317B3">
+      <End Role="PostCategory" EntitySet="PostCategories" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Category2__1C873BEC" Association="BlogInspireModel.FK__Posts__Category2__1C873BEC">
+      <End Role="PostCategory" EntitySet="PostCategories" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Author_id__2610A626" Association="BlogInspireModel.FK__Posts__Author_id__2610A626">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <EntitySet Name="LookingForWorks" EntityType="BlogInspireModel.LookingForWork" />
+    <EntitySet Name="CompetitionsBgs" EntityType="BlogInspireModel.CompetitionsBg" />
+    <EntitySet Name="Pages" EntityType="BlogInspireModel.Page" />
+    <AssociationSet Name="FK__Posts__Page_Comp__56B3DD81" Association="BlogInspireModel.FK__Posts__Page_Comp__56B3DD81">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Page_home__55BFB948" Association="BlogInspireModel.FK__Posts__Page_home__55BFB948">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Page_Isot__59904A2C" Association="BlogInspireModel.FK__Posts__Page_Isot__59904A2C">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Page_List__57A801BA" Association="BlogInspireModel.FK__Posts__Page_List__57A801BA">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Page_Part__5A846E65" Association="BlogInspireModel.FK__Posts__Page_Part__5A846E65">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Posts__Page_Sing__589C25F3" Association="BlogInspireModel.FK__Posts__Page_Sing__589C25F3">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK__Slider__Category__19AACF41">
+    <End Type="BlogInspireModel.SliderCategory" Role="SliderCategory" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Slider" Role="Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SliderCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="Category1_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Slider__Category__1A9EF37A">
+    <End Type="BlogInspireModel.SliderCategory" Role="SliderCategory" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Slider" Role="Slider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SliderCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Slider">
+        <PropertyRef Name="Category2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Category1__1B9317B3">
+    <End Type="BlogInspireModel.PostCategory" Role="PostCategory" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Category1_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Category2__1C873BEC">
+    <End Type="BlogInspireModel.PostCategory" Role="PostCategory" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Category2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Author_id__2610A626">
+    <End Type="BlogInspireModel.Author" Role="Author" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Author_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LookingForWork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CompetitionsBg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="BlogInspireModel.FK__Posts__Page_Comp__56B3DD81" FromRole="Page" ToRole="Post" />
+    <NavigationProperty Name="Posts1" Relationship="BlogInspireModel.FK__Posts__Page_home__55BFB948" FromRole="Page" ToRole="Post" />
+    <NavigationProperty Name="Posts2" Relationship="BlogInspireModel.FK__Posts__Page_Isot__59904A2C" FromRole="Page" ToRole="Post" />
+    <NavigationProperty Name="Posts3" Relationship="BlogInspireModel.FK__Posts__Page_List__57A801BA" FromRole="Page" ToRole="Post" />
+    <NavigationProperty Name="Posts4" Relationship="BlogInspireModel.FK__Posts__Page_Part__5A846E65" FromRole="Page" ToRole="Post" />
+    <NavigationProperty Name="Posts5" Relationship="BlogInspireModel.FK__Posts__Page_Sing__589C25F3" FromRole="Page" ToRole="Post" />
+  </EntityType>
+  <Association Name="FK__Posts__Page_Comp__56B3DD81">
+    <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Page_Competitions_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Page_home__55BFB948">
+    <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Page_home_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Page_Isot__59904A2C">
+    <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Page_Isotop_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Page_List__57A801BA">
+    <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Page_List_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Page_Part__5A846E65">
+    <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Page_Partner_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Posts__Page_Sing__589C25F3">
+    <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="Page_SinglePost_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

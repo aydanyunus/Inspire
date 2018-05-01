@@ -1,0 +1,154 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .contacts-main-image {       
+        padding: 102px 15px;       
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#contacts {
+    margin-bottom: 30px;
+    .forms {
+        line-height: 1.5;
+        h2, p {
+            text-align: center;
+            font-weight: 700;            
+        }
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 12px;
+            padding: 0px 36px;
+            color: $simpletext;
+        }
+        form {
+            color: $simpletext;    
+            margin-top: 30px; 
+            font-weight: bold;
+            input {
+                width: 100%;
+                margin-bottom: 20px;
+                background: #fff;
+                border: 1px solid #ebebeb;
+                padding: 15px;
+            }
+            textarea {
+                width: 100%;
+                margin-bottom: 20px;
+                background: #fff;
+                border: 1px solid #ebebeb;
+                padding: 15px;               
+            }
+            button {
+                margin-bottom: 20px;
+                width: 100%;
+                padding: 15px;
+                color: white;
+                background: #3e3e3e;
+                border: 1px solid #3e3e3e;
+                border-radius: 0px;  
+                &:hover {
+                    color: white;
+                    background: $maincolor;
+                    border: 1px solid $maincolor;
+                    transition: 0.2s all ease-in-out;
+                }              
+            }
+        }
+    }
+    .get-social {
+        margin-top: 50px;
+        .with-padding {
+            padding: 0px 25px;
+            border-left: 1px solid $bordercolor;
+            margin-left: 20px;                   
+            .sidebar-items {                
+                border-top: 1px solid $bordercolor;
+                line-height: 2;
+                padding: 15px 0px;
+                i {
+                    color: $maincolor;
+                    font-size: 18px;
+                }
+                a {
+                    color: $textcolor;
+                    font-weight: 700;       
+                    font-size: 13px;        
+                    margin-left: 3px;     
+                    &:hover {
+                        color: $maincolor;
+                        transition: 0.2s all ease-in-out;
+                    }                    
+                }
+                li {
+                    display: inline-block;
+                    a {
+                        margin-left: 0px; 
+                        i {
+                            color: $simpletext;
+                            font-size: 21px;
+                            margin-right: 5px;
+                            &:hover {
+                                color: $maincolor;
+                                transition: 0.2s all ease-in-out;
+                            }
+                        }
+                       
+                    }
+                    
+                }
+                &:first-child {
+                    border-top: 0px;
+                }
+                .adress {
+                    padding-left: 0px;                    
+                    .px0 {
+                        padding-left: 0px;
+                    }
+                }                
+            }
+            @media screen and(max-width: 400px) {
+                border-left: 0px;
+                text-align: center;
+            }
+        }
+        
+        
+        
+    }
+}
+@import '_footer.scss';

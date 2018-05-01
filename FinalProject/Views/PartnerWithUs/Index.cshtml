@@ -1,0 +1,250 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 partnerus-main-image text-center" style="background: url(../../Public/images/@Model.partnerWithUsBg.Img); background-size: cover; background-position: center 50%;">
+            <h1>
+                Partner with Us
+            </h1>
+            <a href="index.html">
+                Home
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <a href="index.html">
+                Additional Pages
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <span>
+                Partner with Us
+            </span>
+        </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- PARTNER WITH US SECTION STARTS HERE -->
+<section id="partner-with-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-xs-12 cooperation">
+                <div class="row bordered-row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="col-md-6 col-xs-12 beneficial">
+                            <h3>Beneficial cooperation</h3>
+                            <p>
+                                @Model.cooperation.Content1
+                            </p>
+                            <p>
+                                @Model.cooperation.Content2
+                            </p>
+                        </div>
+                        <div class="col-md-6 col-xs-12 green-large-icons">
+                            @foreach (var item in Model.greeniconsection)
+                            {
+                            <div class="col-md-12 col-xs-12 icon-section-div">
+                                <div class="col-md-2 col-xs-12 green-icon text-center">
+                                    <i class="@item.Icon" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-md-10 col-xs-12 content">
+                                    <h5>@item.Title</h5>
+                                    <p>@item.Content</p>
+                                </div>
+                            </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="row counter-section">
+                    <div class="col-md-12 col-xs-12 text-center">
+                        <div class="col-md-3 col-xs-12 counter-box myCounter1">
+                            <span class="counter-span1">11756</span>
+                            <p>VISITORS PER DAY</p>
+                        </div>
+                        <div class="col-md-3 col-xs-12 counter-box myCounter2">
+                            <span class="counter-span2">
+                                100%
+                            </span>
+                            <p>QUALITY TRAFFIC</p>
+                        </div>
+                        <div class="col-md-3 col-xs-12 counter-box myCounter3">
+                            <span class="counter-span3">35428</span>
+                            <p>VISITS PER MONTH</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row brands">
+                    <div class="col-md-12 col-xs-12 brand-bg-img" style="background: url(../../Public/images/@Model.ourPartner.Background_img); background-size: cover;">
+                        <h3>Our Partners</h3>
+                        <p>
+                            @Model.ourPartner.Content
+                        </p>
+                        <div class="brand-logos">
+                            @foreach (var item in Model.brandimgs)
+                            {
+                            <div class="col-md-3 col-xs-12">
+                                <a href="#">
+                                    <img src="~/Public/images/@item.Img" alt="">
+                                </a>
+                            </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="row example-posts">
+                    <p class="border-bottom">EXAMPLES OF ADVERTISING POSTS</p>
+                    <div class="row beauty-list-posts grid">
+                        <div class="col-md-12 col-xs-12 without-padding grid-item makeup">
+                            <div class="col-md-6 col-xs-12 beauty-img-part">
+                                <a href="single-post.html">
+                                    <img src="~/Public/images/home3-6-585x433.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xs-12 content-with-border">
+                                <div class="beauty-text-panel">
+                                    <a href="#">
+                                        BEAUTY
+                                    </a>
+                                    <span>,</span>
+                                    <a href="#">
+                                        HEALTH
+                                    </a>
+                                </div>
+                                <a href="single-post.html" class="big-a-content">
+                                    Everything Need to Know About a Fashionable Life
+                                </a>
+                                <div class="icon-date">
+                                    <p>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <span>APRIL 27, 2017</span>
+                                    </p>
+                                    <p class="margin-left">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        <span>6424</span>
+                                    </p>
+                                </div>
+                                <p class="bottom-content">
+                                    Discover the latest clothing trends from fashion's top designers—and see what brands and what clothes we recommend you to
+                                    look at.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12 without-padding-2 grid-item hair">
+                            <div class="col-md-6 col-xs-12 content-with-border-2">
+                                <div class="beauty-text-panel">
+                                    <a href="#">
+                                        LIFESTYLE
+                                    </a>
+                                    <span>,</span>
+                                    <a href="#">
+                                        HEALTH
+                                    </a>
+                                </div>
+                                <a href="single-post.html" class="big-a-content">
+                                    How To Increase Workflow and Reduce Stress
+                                </a>
+                                <div class="icon-date">
+                                    <p>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <span>JUNE 25, 2017</span>
+                                    </p>
+                                    <p class="margin-left">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        <span>898</span>
+                                    </p>
+                                </div>
+                                <p class="bottom-content">
+                                    Stress influences our lives not in the best way, and to avoid its effect, everyone needs to learn some stress management
+                                    techniques.
+                                </p>
+                            </div>
+                            <div class="col-md-6 col-xs-12 beauty-img-part-2">
+                                <a href="single-post.html">
+                                    <img src="~/Public/images/home3-7-585x433.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SIDEBAR SECTION STARTS HERE -->
+            <div class="col-md-3 col-xs-12 sidebar">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 wrapper-work-sidebar">
+                        <div class="work-img" style="background-image: url(../../Public/images/@Model.lookingForWork.Img); background-size: cover; background-position: center center;">
+                            <div class="work-text text-center">
+                                <h3>Looking for work?</h3>
+                                <div class="border-bottom-green"></div>
+                                <p>@Model.lookingForWork.Content</p>
+                                <div class="col-md-12 form-group">
+                                    <form action="" class="form-" method="POST">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                        <button class="btn btn-default form-control" type="submit">SUBSCRIBE</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row popular-posts-p">
+                    <p>LATEST POSTS</p>
+                </div>
+                @foreach (var item in Model.sidebar)
+                {
+                     <div class="row popular-posts">
+                    <div class="col-md-12 col-xs-12">
+                        <a href="single-post.html">
+                            <img src="~/Public/images/@item.Img" alt="">
+                        </a>
+                        <a href="single-post.html" class="text-color">
+                           @item.Title
+                        </a>
+                        <div class="icon-date">
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>
+                                    @item.Written_date
+                                </span>
+                            </p>
+                            <p class="margin-left text-right">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>@item.View_Count</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+                <div class="row instagram-feed">
+                    <p>INSTAGRAM FEED</p>
+                </div>
+                <div class="row instagram-pics-part1">
+                    @foreach (var item in Model.minipics)
+                    {
+                    <div class="col-md-4 col-xs-4 min-pics">
+                        <a href="#">
+                            <img src="@item.Img" alt="">
+                        </a>
+                        <div class="caption">
+                            <ul class="list-inline">
+                                <li>
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true">@item.Like_count</i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    }
+                </div>
+            </div>
+            <!-- SIDEBAR SECTION ENDS HERE -->
+        </div>
+    </div>
+</section>
+<!-- PARTNER WITH US SECTION ENDS HERE -->

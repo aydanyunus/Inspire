@@ -1,0 +1,165 @@
+@import '_variables.scss';
+
+.sidebar {
+    margin-bottom: 50px;        
+    .bordered-sidebar {
+        border: 1px solid $bordercolor;
+        text-align: center;
+        padding: 50px 0px;            
+        .free-offer {
+            background: $maincolor;
+            padding: 10px;
+            color: white;
+            display: inline-block;
+        }
+        h5 {
+            color: $simpletext;
+            margin-top: 20px;
+            font-weight: 777;
+        }
+        form {
+            input {
+                margin-top: 20px;
+                background-color: #f5f5f5;
+                color: #9b9b9b;
+                border-radius: 0px;
+                border: none;
+                height: 50px;
+            }
+            .gray-btn {           
+                background: #3e3e3e;
+                color: white;
+                border: none;
+                border-radius: 0px;
+                width: 100%;
+                margin-top: 20px;
+                padding: 12px 16px;
+                &:hover {
+                    background: $maincolor;
+                    transition: 0.3s all ease-in-out;
+                }
+                
+            }
+        }
+        
+    }
+    .popular-posts-p {
+        margin-top: 40px;
+    }
+    .popular-posts {
+        border: 1px solid $bordercolor;
+        text-align: center;
+        padding: 23px;
+        border-bottom: 0px;
+        a {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .text-color {
+            color: $textcolor;
+            &:hover {
+                color: $hovercolor !important;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        .icon-date {
+            margin-top: 20px;
+            i, span {
+                color: $simpletext;
+                font-size: 13px;
+                font-weight: 777;
+            }
+            p {
+                display: inline;
+            }
+            .margin-left {
+                margin-left: 20px;
+                text-align: right;
+            }
+        } 
+        &:hover {
+            background: #3e3e3e;
+            transition: 0.3s all ease-in-out; 
+            border-right-color: $maincolor;  
+            .text-color {
+                color: white;
+            }        
+        }   
+        &:last-child {
+            border-bottom: 1px solid $bordercolor;
+        }
+    }
+   
+    .banner-img {
+        margin-top: 20px;
+        img {
+            width: 100%;
+            max-width: 100%;
+            
+        }
+    }
+    .instagram-feed {
+        margin-top: 40px;
+        p {
+            color: $textcolor;
+        }
+
+    }
+    .instagram-pics-part1  {  
+        .min-pics {
+            padding-left: 0px;
+            position: relative;
+            padding-bottom: 10px;
+            img {
+                width: 100%;
+                max-width: 100%;
+            }
+            &:hover {
+                .caption {
+                    transition: 0.3s all ease-in-out;                                            
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+        }
+        .caption {
+            bottom: 9%;
+            left: 0;
+            right: 14%;
+            top: 0;    
+            overflow: hidden;        
+            position: absolute;
+            background-color: rgba(95, 195, 213, 0.34);
+            display: none;
+            text-align: center;
+            @media screen and (max-width: 980px) {
+                bottom: 3%;
+                right: 5%;
+            }
+            @media screen and (max-width: 400px) {
+                bottom: 8%;
+                right: 11%;
+            }            
+            ul {
+                li {
+                    i {
+                        color: white;
+                        margin-top: 40px;
+                        font-size: 17px;
+                        @media screen and (max-width: 980px) {
+                           margin-top: 125px;
+                        }
+                        @media screen and (max-width: 400px) {
+                            margin-top: 50px;
+                         }
+                    }
+                }
+            }
+           
+        }        
+    }
+    .instagram-pics-part2 {
+        margin-top: 15px;
+    }
+    
+}

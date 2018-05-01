@@ -1,0 +1,139 @@
+@import '_variables.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#coming-soon {
+    height: 100vh; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .text-center {
+        margin-top: 30px;
+        a {
+            img {
+                max-width: 100%;
+                display: inline-block;
+                height: auto;
+            }
+        }
+        h3 {
+            color: white;
+            font-size: 36px;
+            padding-bottom: 25px;
+            &::before {
+                background: $hovercolor;
+                position: absolute;
+                content: '';
+                height: 2px;
+                width: 45px;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%)
+            }
+        }
+    }
+    #timer {
+        .countdown-container {
+            .clock {
+                .clock-item {
+                    .clock-canvas {
+                        background: transparent;
+                    }
+                    .text {
+                        color: white;
+                        top: 60%;
+                    }
+                }
+            }
+        }
+    }
+    .footer-form{
+        p {
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 13px;
+        }
+        form {
+            input {
+                background: rgba(255, 255, 255, 0.47);
+                border-radius: 0px;
+                border: none;
+                min-height: 50px;
+                padding: 13px 30px;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;     
+                outline: none;
+                &:focus {
+                    outline: none;
+                } 
+            }
+            button {
+                min-height: 50px;
+                border-radius: 0px;
+                font-size: 14px;
+                font-weight: 700;
+                background: $hovercolor;
+                border-color: $hovercolor;
+                width: 100%;
+                position:relative;
+                color: $textcolor;
+                z-index:2;
+                &:before {
+                    transition:0.2s all ease;
+                    position:absolute;
+                    top:0;
+                    left:50%;
+                    right:50%;
+                    bottom:0;
+                    opacity:0;
+                    content:'';
+                    background: $maincolor;
+                    border-color: $maincolor;                                      
+                    z-index:-1;
+                }
+                &:hover {
+                    &:before {
+                        transition:0.2s all ease;
+                        left:0;
+                        right:0;
+                        opacity:1;
+                        border-color: $maincolor;                  
+                        
+                    }
+                    background: $maincolor;
+                    border-color: $maincolor;                  
+                    color: white;
+                    transition: 0.2s all ease-in-out;
+                }
+            }
+            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: white;
+            }
+        }
+        footer {
+            p {
+                font-size: 14px;
+                color: $simpletext;
+                a {
+                    color: $simpletext;   
+                    &:hover {
+                        color: $hovercolor;
+                        transition: 0.3s all ease-in-out;
+                    }             
+                }
+            }
+        }
+    }
+   
+}

@@ -1,0 +1,122 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .type-main-image {
+        background: url("../images/breadcrumbs-typography.jpg");
+        background-position: center 50%;
+        padding: 102px 15px;
+        background-size: cover;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#grid-header { 
+    h1, p {
+        font-weight: 777;
+    }
+    h1 {
+        color: $textcolor;
+        margin-top: 50px;
+        margin-bottom: 20px;             
+    }
+    p {
+        color: $simpletext;
+        font-size: 17px;
+    }
+}
+#grid {
+    font-weight: bold;
+    .row {
+        margin-left: 0px;  
+        .full-width {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        } 
+        h6 {
+            color: $textcolor;
+            font-size: 17px;
+            margin-top: 20px;
+        }  
+        p {
+            color: $simpletext;
+            margin-top: 20px;
+            margin-bottom: 20px;         
+            font-size: 13px;          
+        }       
+    }
+    .bordered {
+        border: 1px solid $bordercolor;
+        padding-left: 15px;              
+    }
+    .bottom-right-border {    
+        border-bottom: 1px solid $bordercolor;
+        border-left: 1px solid $bordercolor;
+        padding-left: 15px;              
+        .brd {
+            border-right: 1px solid $bordercolor;
+        }
+        .col-xs-2 {
+            @media screen and (max-width: 400px) {
+               padding: 0px;
+            }
+        }
+    }
+}
+#boxed-grid {
+    font-weight: bold;
+    .boxed-grid-system {
+        margin-top: 150px;
+        margin-bottom: 30px;
+    }
+    .container {
+        h6 {
+            color: $textcolor;
+            font-size: 17px;
+            margin-top: 20px;
+        }
+        p {
+            color: $simpletext;
+            margin-top: 20px;
+            margin-bottom: 20px;         
+            font-size: 13px; 
+        }
+        .border-btm {
+            border-bottom: 1px solid $bordercolor;
+        }
+        .last-row {
+            margin-bottom: 50px;
+        }
+    }
+}
+@import '_footer.scss';

@@ -1,0 +1,326 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="shortcut icon" href="~/Public/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Public/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Public/styles/swiper.min.css">
+    <link rel="stylesheet" href="~/Public/styles/style.css">
+</head>
+<body>
+    <!-- navbar starts here -->
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href="index.html" class="navbar-brand">
+                <img src="~/Public/images/logo-dark-165x53.png" alt="Bravana Logo">
+            </a>
+            <ul class="nav navbar-nav secondary-navbar-nav">
+                <li class="dropdown dropdown-cart">
+                    <a href="cart-page.html" class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count">2</span>
+                    </a>
+                    <a href="search-results.html" class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <div id="main-nav-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav main-navbar-nav">
+                    <li class="dropdown">
+                        <a href="fitness.html" class="dropdown-toggle">
+                            FITNESS
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="food.html" class="dropdown-toggle">
+                            FOOD
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="health.html" class="dropdown-toggle">
+                            HEALTH
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="love.html" class="dropdown-toggle">
+                            LOVE
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            BEAUTY
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="beauty.html">Beauty</a>
+                            </li>
+                            <li>
+                                <a href="beauty-list.html">Beauty List</a>
+                            </li>
+                            <li>
+                                <a href="single-post.html">Single Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-mega" data-parallax="scroll">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            PAGES
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-mega-menu-container">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 1
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href="about-us.html">About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href="careers.html">Careers</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop.html">Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-list.html">Shop List</a>
+                                            </li>
+                                            <li>
+                                                <a href="single-product.html">Single Product</a>
+                                            </li>
+                                            <li>
+                                                <a href="cart-page.html">Cart Page</a>
+                                            </li>
+                                            <li>
+                                                <a href="competitions.html">
+                                                    Competitions
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="partner-with-us.html">Partner With Us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 2
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href="coming-soon.html">Coming Soon</a>
+                                            </li>
+                                            <li>
+                                                <a href="503.html">503</a>
+                                            </li>
+                                            <li>
+                                                <a href="404.html">404</a>
+                                            </li>
+                                            <li>
+                                                <a href="site-map.html">Site Map</a>
+                                            </li>
+                                            <li>
+                                                <a href="privacy-policy.html">Privacy Policy</a>
+                                            </li>
+                                            <li>
+                                                <a href="maintenance.html">Maintenance</a>
+                                            </li>
+                                            <li>
+                                                <a href="contacts.html">
+                                                    Contacts
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    ELEMENTS
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href="typography.html">Typography</a>
+                                            </li>
+                                            <li>
+                                                <a href="forms.html">Forms</a>
+                                            </li>
+                                            <li>
+                                                <a href="buttons.html">Buttons</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Progress Bars</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Tabs & Accordions</a>
+                                            </li>
+                                            <li>
+                                                <a href="tables.html">Tables</a>
+                                            </li>
+                                            <li>
+                                                <a href="grid.html">
+                                                    Grid
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 3
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href="fitness.html">Fitness</a>
+                                            </li>
+                                            <li>
+                                                <a href="food.html">Food</a>
+                                            </li>
+                                            <li>
+                                                <a href="health.html">Health</a>
+                                            </li>
+                                            <li>
+                                                <a href="love.html">Love</a>
+                                            </li>
+                                            <li>
+                                                <a href="beauty.html">Beauty</a>
+                                            </li>
+                                            <li>
+                                                <a href="beauty-list.html">Beauty List</a>
+                                            </li>
+                                            <li>
+                                                <a href="single-post.html">
+                                                    Single Post
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    @RenderBody();
+
+    <!-- FOOTER STARTS HERE -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 inner-footer">
+                    <div class="col-md-4 col-xs-12 logo">
+                        <a href="index.html">
+                            <img src="~/Public/images/logo-white-165x53.png" alt="">
+                        </a>
+                        <p>
+                           @Model.footer.Title
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-xs-12 links">
+                        <h2>Links</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6 display-block">
+                                <a href="about-us.html">
+                                    ABOUT
+                                </a>
+                                <a href="food.html">
+                                    FOOD
+                                </a>
+                                <a href="fitness.html">
+                                    FITNESS
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xs-6 display-block">
+                                <a href="health.html">
+                                    HEALTH
+                                </a>
+                                <a href="love.html">
+                                    LOVE
+                                </a>
+                                <a href="beauty.html">
+                                    BEAUTY
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-xs-12 form">
+                        <h2>Join Our Newsletter</h2>
+                        <form action="" method="post" class="form-inline">
+                            <div class="form-wrapper">
+                                <input type="email" class="form-control" name="Email" id="email" placeholder="E-mail">
+                                <button class="btn btn-default" type="submit">SUBSCRIBE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 col-xs-12 footer-bottom">
+                    <div class="col-md-4 col-xs-12 copyright text-left">
+                        <p>
+                            Inspire © <span>@Model.footer.Copywrite_date</span>.
+                            <span>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-xs-12 social text-center">
+                        <a href="@Model.footer.Instagram_link">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="@Model.footer.Facebook_link">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="@Model.footer.Twitter_link">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-xs-12 info-email text-right text-xs-left">
+                        <a href="#">
+                            @Model.footer.Adress
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER ENDS HERE -->
+    <!-- return to top -->
+    <a href="javascript:" id="return-to-top">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+    <!-- js scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/Public/scripts/bootstrap.min.js"></script>
+    <script src="~/Public/scripts/swiper.min.js"></script>
+    <script src="~/Public/scripts/main.js"></script>
+    <script src="~/Public/scripts/scrool-top.js"></script>
+</body>
+</html>

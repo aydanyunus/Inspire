@@ -1,0 +1,87 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .main-image {      
+        padding: 102px 15px !important;     
+        h1 {
+            color: white;
+            font-size: 50px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+    }
+}
+#timer {
+    margin-top: 50px;
+    text-align: center;
+    h5 {
+        color: $simpletext;
+        font-size: 18px;
+    }
+    h2 {
+        color: $textcolor;
+        font-size: 48px;
+    }
+    .countdown-container {
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 70px;
+        .clock-item {
+            .inner {
+                height: 0px;
+                padding-bottom: 100%;
+                position: relative;
+                width: 100%;
+                .clock-canvas {
+                    background-color: rgba(255, 255, 255, .1);
+                    border-radius: 50%;
+                    height: 0px;
+                    padding-bottom: 100%;
+                    position: relative;
+                    .canvas {
+                       
+                    }
+                    
+                    @media (min-width: 768px) and (max-width: 991px) {
+                        .clock-item {
+                        margin-bottom: 30px;
+                        }
+                    }
+                    @media (max-width: 767px) {
+                        .clock-item {
+                        margin: 0px 30px 30px 30px;
+                        }
+                    }
+                }   
+            }
+        } 
+        .text {
+            position: absolute;                        
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: -50px;
+            top: 60%;
+            text-align: center;
+            width: 100%;                            
+        }  
+        .type-time {
+            font-size: 13px;
+            color: $simpletext;
+        }  
+        .val {
+            font-size: 48px;
+        }        
+    }
+}
+@import '_footer.scss';

@@ -1,0 +1,119 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 contacts-main-image text-center" style="background: url(../../Public/images/@Model.contactsBg.Img);background-position: center 50%;background-size: cover;">
+        <h1>
+            Contacts
+        </h1>
+        <a href="index.html">
+            Home
+        </a>
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <a href="index.html">
+            Additional Pages
+        </a>
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <span>
+            Contacts
+        </span>
+    </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- CONTACTS SECTION STARTS HERE -->
+<section id="contacts">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12 forms">
+                <h2>Get in Touch</h2>
+                <p>
+                    @Model.Contact.Content
+                </p>
+                <form action="">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" placeholder="Your Name">
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" placeholder="Phone">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <textarea name="textarea" id="textarea" rows="6">Your Message</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <input type="email" placeholder="E-mail">
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <button type="submit">SEND MESSAGE</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-xs-12 get-social">
+                <div class="row with-padding">
+                    <div class="sidebar-items">
+                        <p>GET SOCIAL</p>
+                        <ul>
+                            <li>
+                                <a href="@Model.Contact.Facebook_link">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Model.Contact.Twitter_link">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Model.Contact.Google_link">
+                                    <i class="fa fa-google" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Model.Contact.Youtube_link">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-items">
+                        <p>PHONE</p>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <a href="#">@Model.Contact.Phone</a>
+                    </div>
+                    <div class="sidebar-items">
+                        <p>E-MAIL</p>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <a href="#">@Model.Contact.Email</a>
+                    </div>
+                    <div class="sidebar-items">
+                        <p>ADDRESS</p>
+                        <div class="adress col-md-12 col-xs-12 col-md-offset-0 col-xs-offset-2">
+                            <div class="col-md-1 col-xs-1 px0">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-8 col-xs-8 px0">
+                                <a href="#">@Model.Contact.Address</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- CONTACTS SECTION ENDS HERE -->
+  

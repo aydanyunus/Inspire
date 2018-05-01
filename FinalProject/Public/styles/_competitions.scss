@@ -1,0 +1,242 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .competitions-main-image {     
+        padding: 102px 15px;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#competitions {
+    margin-top: 50px;
+    .blog-posts {
+        .row {
+            margin-top: 30px;
+            .leftside {
+                max-height: 383px;            
+                a {
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+            .rightside {
+                max-height: 383px;
+                padding: 30px 40px;
+                margin-left: -15px;
+                border: 1px solid $bordercolor;
+                @media screen and (max-width: 400px) {
+                    margin-left: 0px;
+                }
+                a{
+                    color: $textcolor;
+                    font-size: 24px;
+                    &:hover {
+                        color: $hovercolor;
+                        transition: 0.3s all ease-in-out;
+                    }
+                }
+                .icon-date {
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+                    font-weight: bold;
+                    i, span {
+                        color: $simpletext;
+                        font-size: 13px;
+                    }
+                    p {
+                        display: inline;
+                    }
+                    .margin-left {
+                        margin-left: 15px;
+                    }
+                } 
+                .content {
+                    color: $simpletext;
+                    font-size: 13px;
+                    font-weight: 700;
+                    line-height: 1.5;
+                }
+                .read-more-btn {
+                    color: white;
+                    background: #3e3e3e;
+                    font-weight: 700;
+                    font-size: 14px;
+                    border-color: #3e3e3e;
+                    border-radius: 0px;
+                    padding: 16px 49px;
+                    margin-top: 30px;
+                    &:hover {
+                        background: $maincolor;
+                        transition: 0.3s all ease-in-out;
+                        color: white;
+                        border-color: $maincolor;
+                    }
+                }
+            }
+            &:first-child {
+                margin-top: 0px;
+            } 
+        }
+        nav {
+            margin-top: 70px;
+            margin-bottom: 50px;      
+            ul {
+                font-size: 16px;
+                font-weight: 700;
+                li {   
+                    .active {
+                        background: $maincolor;
+                        color: white;
+                    }                                  
+                    a{
+                        margin-right: 5px;                        
+                        background-color: transparent;
+                        color: #aaa;
+                        border: none;
+                        border-radius: 0px;
+                        &:hover {
+                            background: $maincolor;
+                            color: white;
+                        }
+                    }
+                    span {
+                        background-color: transparent;
+                        color: #aaa;
+                        border: none;
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                    
+                }
+                
+            }
+        }
+   
+    }        
+    .sidebar {
+        margin-bottom: 50px;        
+        .bordered-sidebar {
+            border: 1px solid $bordercolor;
+            text-align: center;
+            padding: 50px 0px;            
+            .free-offer {
+                background: $maincolor;
+                padding: 10px;
+                color: white;
+                display: inline-block;
+            }
+            h5 {
+                color: $simpletext;
+                margin-top: 20px;
+                font-weight: 777;
+            }
+            form {
+                input {
+                    margin-top: 20px;
+                    background-color: #f5f5f5;
+                    color: #9b9b9b;
+                    border-radius: 0px;
+                    border: none;
+                    height: 50px;
+                }
+                .gray-btn {           
+                    background: #3e3e3e;
+                    color: white;
+                    border: none;
+                    border-radius: 0px;
+                    width: 100%;
+                    margin-top: 20px;
+                    padding: 12px 16px;
+                    
+                }
+            }
+            
+        }
+        .popular-posts-p {
+            margin-top: 40px;
+        }
+        .popular-posts {
+            border: 1px solid $bordercolor;
+            text-align: center;
+            padding: 23px;
+            border-bottom: 0px;
+            
+            a {
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            .text-color {
+                color: $textcolor;
+                &:hover {
+                    color: $hovercolor;
+                    transition: 0.3s all ease-in-out;
+                }
+            }
+            .icon-date {
+                margin-top: 20px;
+                i, span {
+                    color: $simpletext;
+                    font-size: 13px;
+                    font-weight: 777;
+                }
+                p {
+                    display: inline;
+                }
+                .margin-left {
+                    margin-left: 20px;
+                    text-align: right;
+                }
+            } 
+            &:hover {
+                background: #3e3e3e;
+                transition: 0.3s all ease-in-out;                
+                .text-color {
+                    color: white;
+                }
+            }   
+            &:last-child {
+                border-bottom: 1px solid $bordercolor;
+            }
+        }
+        .with-border-bottom{
+            border-bottom: 1px solid $bordercolor;
+        }
+    }
+  
+}
+
+@import '_footer.scss';

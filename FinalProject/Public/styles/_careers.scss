@@ -1,0 +1,252 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;    
+    .careers-main-image {
+        padding: 102px 15px;
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#career{
+    margin-top: 50px;
+    .career-team {
+        margin-left: -25px;
+        @media screen and (max-width: 400px) {
+            margin-left: 0px;
+        }
+        .bordered {
+            border: 1px solid $bordercolor;
+            padding: 40px 15px;            
+            .img-part {
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+            .text-part{
+                max-width: 95%;
+                h3 {
+                    font-weight: 700;
+                    margin-top: 0px; 
+                }
+                p {
+                    color: $simpletext;
+                    font-weight: 700;
+                    font-size: 14px;
+                    margin-top: 15px;
+                    margin-bottom: 30px;
+                }
+                .left-list{
+                    padding-left: 0px;                   
+                    display: inline-block;  
+                    margin-bottom: 10px;
+                    i {
+                        color: $simpletext;
+                    }
+                    span {
+                        color: $textcolor;
+                        padding-left: 15px;
+                    }                       
+                    
+                }
+                .black-btn {
+                    margin-top: 50px;
+                    border-radius: 0px;
+                    border: 2px solid black;
+                    color: black;
+                    padding: 10px 34px;
+                    font-weight: 700;
+                    &:hover {
+                        background: $maincolor;
+                        color: white;
+                        transition: 0.3s all ease-in-out;
+                        border-color: $maincolor;
+                    }
+                }
+               
+            }
+        }    
+        .positions {
+            margin-top: 50px;
+            background: #f7f8f9;
+            padding: 40px 15px;  
+            h1 {
+                text-align: center;
+                font-weight: 700;
+            }
+            p {
+                text-align: center;
+                font-size: 13px;
+                font-weight: 700;
+                color: $simpletext;
+                margin-bottom: 50px;
+                a {
+                    color: $simpletext;
+                    &:hover {
+                        color: $maincolor;
+                        transition: 0.3s all ease-in-out;
+                    }
+                }
+            }
+            .wrapper-bg-white {
+                margin-bottom: 50px;
+                margin-top: 30px;
+                .bg-white {
+                    max-width: 50%;
+                    max-height: 132px;
+                    margin-bottom: 20px;
+                    padding: 37px 30px;
+                    background: #fff;
+                    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.13);
+                    @media screen and(max-width: 400px) {
+                        padding: 37px 5px;
+                        max-width: 100%;
+                    }
+                    &:nth-child(odd) {
+                        margin-left: -15px;
+                        margin-right: 15px;  
+                        @media screen and(max-width: 400px) {
+                            margin-left: 0px;
+                            margin-right: 0px; 
+                        }
+                    }
+                    a {
+                        font-size: 20px;
+                        color: $textcolor;
+                        &:hover {
+                            color: $maincolor;
+                            transition: 0.3s all ease-in-out;
+                        }
+                    }
+                    .group-icons {
+                        margin-top: 10px;
+                        i {
+                            color: $maincolor;
+                            margin-right: 5px;
+                            font-weight: 700;      
+                            font-size: 17px;                              
+                            padding-right: 5px;
+                            span {
+                                color: $simpletext;
+                                font-weight: 700;                                    
+                                font-size: 13px;
+                                margin-left: 5px;                        
+                            }
+                        }
+                    }
+                }
+            }
+           
+        }   
+    }
+    .sidebar {
+        margin-left: 24px;
+        @media screen and(max-width: 400px) {
+            margin-left: 0px;
+        }
+        .wrapper-work-sidebar {
+            padding-left: 0px;
+            .work-img {
+                min-height: 525px;      
+                background-position: center center;
+                background-repeat: no-repeat;
+                padding-top: 40px;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0.65;
+                    background-image: linear-gradient(transparent, #000 83%, #000);
+                    background-repeat: no-repeat;
+                }
+                .work-text {
+                    color: white;
+                    font-weight: 400;
+                    position: relative;
+                    margin-top: 50px;                    
+                    h3 {
+                        font-size: 36px;
+                    }
+                    p {
+                        margin-top: 30px;
+                    }
+                    .border-bottom-green {
+                        height: 5px;
+                        width: 69px;
+                        background: $hovercolor;
+                        margin-top: 25px;     
+                        margin-left: auto;
+                        margin-right: auto;               
+                    }
+                    .form-group {
+                        text-align: left;   
+                        margin-top: 50px;                 
+                        input {
+                            min-height: 60px;
+                            padding-top: 18px;
+                            padding-bottom: 18px;
+                            border: none;
+                            border-radius: 0px;
+                            background: white;
+                            color: $textcolor;
+                            margin-bottom: 20px;
+                        }
+                        button {
+                            border-radius: 0px;
+                            padding: 30px 30px;
+                            color: black;
+                            background: $hovercolor;
+                            border-color: $hovercolor;
+                            width: 100%;
+                            font-size: 14px;
+                            line-height: 0px;
+                            font-weight: 700;
+                            &:hover {
+                                color: white;
+                                background: $maincolor;
+                                border-color: $maincolor;
+                                transition: 0.3s all ease-in-out;
+                            }
+                        }                 
+                    }
+                }
+            }
+        }      
+    }  
+}
+@import '_footer.scss';

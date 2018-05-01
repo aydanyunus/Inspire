@@ -1,0 +1,63 @@
+@import '_variables.scss';
+@import '_header.scss';
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+#main {
+    margin-top: 100px;        
+    .map-main-image {            
+        padding: 102px 15px;       
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 777;
+            margin-bottom: 30px;
+        }
+        a {
+            color: $hovercolor;
+            font-size: 15px;
+            &:hover {
+                color: white;
+                transition: 0.3s all ease-in-out;
+            }
+        }
+        i {
+            color: $simpletext;
+            margin-left: 7px;
+            margin-right: 7px;            
+        }
+        span {
+            font-size: 15px;            
+            color: white;
+        }
+    }
+}
+#map {
+    margin-bottom: 30px;
+    li {
+        padding: 10px 0px;
+    }
+    h4 {
+        font-weight: 777;
+        border-bottom: 1px solid $bordercolor;
+        padding: 10px 0px;
+        color: $textcolor;
+        margin-top: 50px;
+    }
+    a {
+        color: $textcolor;
+        font-weight: 777;
+        &:hover {
+            color: $maincolor;
+            transition: 0.3s all ease-in-out;
+        }
+    }
+}
+
+@import '_footer.scss';

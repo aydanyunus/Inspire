@@ -1,0 +1,192 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+@{
+ViewBag.Title = "Index";
+Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+       
+        <div class="col-md-12 col-xs-12 competitions-main-image text-center" style="  background: url(../../Public/images/@Model.competitionsBg.Img); bacground-size: cover; background-position: center 50%;">
+            <h1>
+                Competitions
+            </h1>
+            <a href="index.html">
+                Home
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <a href="index.html">
+                Additional Pages
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <span>
+                Competitions
+            </span>
+        </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- COMPETITIONS STARTS HERE -->
+<section id="competitions">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-xs-12 blog-posts">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 leftside">
+                        <a href="single-post.html">
+                            <img src="~/Public/images/home3-1-299x280.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xs-12 rightside">
+                        <a href="single-post.html">
+                            Put Your Best Face to Enjoy This Summer
+                        </a>
+                        <div class="icon-date">
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>MAY 6, 2017</span>
+                            </p>
+                            <p class="margin-left">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>6424</span>
+                            </p>
+                        </div>
+                        <p class="content">
+                            Summer is the time when all of our layers from winter and spring come off and we are finally
+                            ready for some good solid fun in the sun. Not only is more of our skin exposed in bright
+                            colored tank tops, skirts and dresses, we are all looking...
+                        </p>
+                        <a href="single-post.html" class="btn read-more-btn btn-default">READ MORE</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 leftside">
+                        <a href="single-post.html">
+                            <img src="~/Public/images/home3-2-299x280.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xs-12 rightside">
+                        <a href="single-post.html">
+                            6 Facts - The Health Benefits of Surfing
+                        </a>
+                        <div class="icon-date">
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>FEBRUARY 24, 2017</span>
+                            </p>
+                            <p class="margin-left">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>898</span>
+                            </p>
+                        </div>
+                        <p class="content">
+                            In our today’s issue of “6 Facts” weekly blog series we would like to share what health benefits
+                            surfing has. You may have noticed that many surfers don’t look their age, are usually in
+                            a good mood, and genuinely look forward to being...
+                        </p>
+                        <a href="single-post.html" class="btn read-more-btn btn-default">READ MORE</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 leftside">
+                        <a href="single-post.html">
+                            <img src="~/Public/images/home3-3-299x280.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xs-12 rightside">
+                        <a href="single-post.html">
+                            PLipstick Tricks You Don’t Know About
+                        </a>
+                        <div class="icon-date">
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span> MARCH 12, 2017 </span>
+                            </p>
+                            <p class="margin-left">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>6424</span>
+                            </p>
+                        </div>
+                        <p class="content">
+                            You don’t have to be a makeup genius to know that lipstick can make a big impact—taking your
+                            face from drab to dramatic or simple to sexy—in seconds. But these brilliant expert tips
+                            will show you how to make it look better, last longer...
+                        </p>
+                        <a href="single-post.html" class="btn read-more-btn btn-default">READ MORE</a>
+                    </div>
+                </div>
+                <nav aria-label="Page navigation" class="col-md-12 col-xs-12 text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" class="active">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <span>...</span>
+                        </li>
+                        <li>
+                            <a href="#">12</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-3 col-xs-12 sidebar">
+                <div class="row bordered-sidebar">
+                    <div class="col-md-12 col-xs-12">
+                        <p class="free-offer">FREE OFFER</p>
+                        <h4>@Model.freeOffer.SupTitle</h4>
+                        <h5>@Model.freeOffer.Title</h5>
+                        <form action="" method="POST">
+                            <div class="col-md-12 col-xs-12 form-group">
+                                <input type="email" class="form-control" placeholder="Email">
+                                <button type="submit" class="btn-lg gray-btn">SUBSCRIBE</button>
+                            </div>
+                        </form>
+                        <h5>@Model.freeOffer.SubTitle</h5>
+                    </div>
+                </div>
+                <div class="row popular-posts-p">
+                    <p>POPULAR POSTS</p>
+                </div>
+                @foreach (var item in Model.sidebar)
+                {
+                <div class="row popular-posts">
+                    <div class="col-md-12 col-xs-12">
+                        <a href="single-post.html">
+                            <img src="~/Public/images/@item.Img" alt="">
+                        </a>
+                        <a href="single-post.html" class="text-color">
+                           @item.Title
+                        </a>
+                        <div class="icon-date">
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>
+                                    @item.Written_date
+                                </span>
+                            </p>
+                            <p class="margin-left text-right">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>@item.View_Count</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- COMPETITIONS ENDS HERE -->
