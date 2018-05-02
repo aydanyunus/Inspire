@@ -47,6 +47,7 @@ namespace FinalProject.ViewModels.HomeViewModel
         public List<ProductImgSingleMini> ProductImgSingleMini { get; set; }
         public AdminInfo AdminInfo { get; set; }
         public List<Post> mustread { get; set; }
+        public Post video { get; set; }
 
     }
 }

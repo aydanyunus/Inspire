@@ -18,7 +18,7 @@ namespace FinalProject.Models
         public string Title { get; set; }
         public string Content { get; set; }
         public string Written_date { get; set; }
-        public Nullable<int> Wiew_Count { get; set; }
+        public Nullable<int> View_Count { get; set; }
         public Nullable<int> SinglePost_id { get; set; }
         public Nullable<int> ImgMedium_id { get; set; }
         public Nullable<int> ImgSmall_id { get; set; }
@@ -35,19 +35,19 @@ namespace FinalProject.Models
         public Nullable<int> Page_Isotop_id { get; set; }
         public Nullable<int> Page_Partner_id { get; set; }
     
+        public virtual Author Author { get; set; }
         public virtual CompetitionsImg CompetitionsImg { get; set; }
         public virtual HomePageImg HomePageImg { get; set; }
-        public virtual PostImgMedium PostImgMedium { get; set; }
-        public virtual PostImgSmall PostImgSmall { get; set; }
-        public virtual SinglePost SinglePost { get; set; }
-        public virtual PostCategory PostCategory { get; set; }
-        public virtual PostCategory PostCategory1 { get; set; }
-        public virtual Author Author { get; set; }
         public virtual Page Page { get; set; }
         public virtual Page Page1 { get; set; }
         public virtual Page Page2 { get; set; }
         public virtual Page Page3 { get; set; }
         public virtual Page Page4 { get; set; }
         public virtual Page Page5 { get; set; }
+        public virtual PostCategory PostCategory { get; set; }
+        public virtual PostCategory PostCategory1 { get; set; }
+        public virtual PostImgMedium PostImgMedium { get; set; }
+        public virtual PostImgSmall PostImgSmall { get; set; }
+        public virtual SinglePost SinglePost { get; set; }
     }
 }

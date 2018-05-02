@@ -9,6 +9,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="AdminInfoes">
+      <EntityTypeMapping TypeName="BlogInspireModel.AdminInfo">
+        <MappingFragment StoreEntitySet="AdminInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Authors">
       <EntityTypeMapping TypeName="BlogInspireModel.Author">
         <MappingFragment StoreEntitySet="Authors">
@@ -81,6 +90,14 @@
           <ScalarProperty Name="Bg_img" ColumnName="Bg_img" />
           <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
           <ScalarProperty Name="Copywrite" ColumnName="Copywrite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompetitionsBgs">
+      <EntityTypeMapping TypeName="BlogInspireModel.CompetitionsBg">
+        <MappingFragment StoreEntitySet="CompetitionsBg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -211,6 +228,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LookingForWorks">
+      <EntityTypeMapping TypeName="BlogInspireModel.LookingForWork">
+        <MappingFragment StoreEntitySet="LookingForWork">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="LoveBgs">
       <EntityTypeMapping TypeName="BlogInspireModel.LoveBg">
         <MappingFragment StoreEntitySet="LoveBg">
@@ -260,6 +286,14 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Img" ColumnName="Img" />
           <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="BlogInspireModel.Page">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -326,26 +360,26 @@
     <EntitySetMapping Name="Posts">
       <EntityTypeMapping TypeName="BlogInspireModel.Post">
         <MappingFragment StoreEntitySet="Posts">
-          <ScalarProperty Name="Page_Partner_id" ColumnName="Page_Partner_id" />
-          <ScalarProperty Name="Page_Isotop_id" ColumnName="Page_Isotop_id" />
-          <ScalarProperty Name="Page_SinglePost_id" ColumnName="Page_SinglePost_id" />
-          <ScalarProperty Name="Page_List_id" ColumnName="Page_List_id" />
-          <ScalarProperty Name="Page_Competitions_id" ColumnName="Page_Competitions_id" />
-          <ScalarProperty Name="Page_home_id" ColumnName="Page_home_id" />
-          <ScalarProperty Name="Author_id" ColumnName="Author_id" />
-          <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
-          <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="Written_date" ColumnName="Written_date" />
-          <ScalarProperty Name="Wiew_Count" ColumnName="Wiew_Count" />
+          <ScalarProperty Name="View_Count" ColumnName="View_Count" />
           <ScalarProperty Name="SinglePost_id" ColumnName="SinglePost_id" />
           <ScalarProperty Name="ImgMedium_id" ColumnName="ImgMedium_id" />
           <ScalarProperty Name="ImgSmall_id" ColumnName="ImgSmall_id" />
           <ScalarProperty Name="ImgCompetitions_id" ColumnName="ImgCompetitions_id" />
           <ScalarProperty Name="ImgHomePage_id" ColumnName="ImgHomePage_id" />
           <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+          <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
+          <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
+          <ScalarProperty Name="Author_id" ColumnName="Author_id" />
+          <ScalarProperty Name="Page_home_id" ColumnName="Page_home_id" />
+          <ScalarProperty Name="Page_Competitions_id" ColumnName="Page_Competitions_id" />
+          <ScalarProperty Name="Page_List_id" ColumnName="Page_List_id" />
+          <ScalarProperty Name="Page_SinglePost_id" ColumnName="Page_SinglePost_id" />
+          <ScalarProperty Name="Page_Isotop_id" ColumnName="Page_Isotop_id" />
+          <ScalarProperty Name="Page_Partner_id" ColumnName="Page_Partner_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -531,13 +565,13 @@
     <EntitySetMapping Name="Sliders">
       <EntityTypeMapping TypeName="BlogInspireModel.Slider">
         <MappingFragment StoreEntitySet="Slider">
-          <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
-          <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Background_img" ColumnName="Background_img" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Written_date" ColumnName="Written_date" />
           <ScalarProperty Name="View_Count" ColumnName="View_Count" />
+          <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
+          <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -576,31 +610,6 @@
         <MappingFragment StoreEntitySet="Vacancies">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LookingForWorks">
-      <EntityTypeMapping TypeName="BlogInspireModel.LookingForWork">
-        <MappingFragment StoreEntitySet="LookingForWork">
-          <ScalarProperty Name="Img" ColumnName="Img" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CompetitionsBgs">
-      <EntityTypeMapping TypeName="BlogInspireModel.CompetitionsBg">
-        <MappingFragment StoreEntitySet="CompetitionsBg">
-          <ScalarProperty Name="Img" ColumnName="Img" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Pages">
-      <EntityTypeMapping TypeName="BlogInspireModel.Page">
-        <MappingFragment StoreEntitySet="Pages">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

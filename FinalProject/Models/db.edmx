@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BlogInspireModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BlogInspireModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AboutUsBg">
           <Key>
             <PropertyRef Name="Id" />
@@ -329,7 +329,7 @@
           <Property Name="Title" Type="nvarchar" MaxLength="250" />
           <Property Name="Content" Type="text" />
           <Property Name="Written_date" Type="nvarchar" MaxLength="150" />
-          <Property Name="Wiew_Count" Type="int" />
+          <Property Name="View_Count" Type="int" />
           <Property Name="SinglePost_id" Type="int" />
           <Property Name="ImgMedium_id" Type="int" />
           <Property Name="ImgSmall_id" Type="int" />
@@ -1067,7 +1067,8 @@
             <End Role="Slider" EntitySet="Slider" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BlogInspireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1078,13 +1079,21 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="AdminInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Posts" Relationship="BlogInspireModel.FK__Posts__Author_id__2610A626" FromRole="Author" ToRole="Post" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__Author_id__2610A626" FromRole="Authors" ToRole="Posts" />
         </EntityType>
         <EntityType Name="Banner">
           <Key>
@@ -1144,6 +1153,13 @@
           <Property Name="Bg_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SubTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Copywrite" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CompetitionsBg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CompetitionsImg">
           <Key>
@@ -1261,6 +1277,14 @@
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Like_count" Type="Int32" />
         </EntityType>
+        <EntityType Name="LookingForWork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="LoveBg">
           <Key>
             <PropertyRef Name="Id" />
@@ -1307,6 +1331,19 @@
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__Page_Comp__56B3DD81" FromRole="Pages" ToRole="Posts" />
+          <NavigationProperty Name="Posts1" Relationship="Self.FK__Posts__Page_home__55BFB948" FromRole="Pages" ToRole="Posts" />
+          <NavigationProperty Name="Posts2" Relationship="Self.FK__Posts__Page_Isot__59904A2C" FromRole="Pages" ToRole="Posts" />
+          <NavigationProperty Name="Posts3" Relationship="Self.FK__Posts__Page_List__57A801BA" FromRole="Pages" ToRole="Posts" />
+          <NavigationProperty Name="Posts4" Relationship="Self.FK__Posts__Page_Part__5A846E65" FromRole="Pages" ToRole="Posts" />
+          <NavigationProperty Name="Posts5" Relationship="Self.FK__Posts__Page_Sing__589C25F3" FromRole="Pages" ToRole="Posts" />
+        </EntityType>
         <EntityType Name="PartnerProgram">
           <Key>
             <PropertyRef Name="Id" />
@@ -1338,8 +1375,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Posts" Relationship="BlogInspireModel.FK__Posts__Category1__1B9317B3" FromRole="PostCategory" ToRole="Post" />
-          <NavigationProperty Name="Posts1" Relationship="BlogInspireModel.FK__Posts__Category2__1C873BEC" FromRole="PostCategory" ToRole="Post" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK__Posts__Category1__1B9317B3" FromRole="PostCategories" ToRole="Posts" />
+          <NavigationProperty Name="Posts1" Relationship="Self.FK__Posts__Category2__1C873BEC" FromRole="PostCategories" ToRole="Posts" />
         </EntityType>
         <EntityType Name="PostImgLarge">
           <Key>
@@ -1372,37 +1409,37 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Written_date" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
-          <Property Name="Wiew_Count" Type="Int32" />
+          <Property Name="Written_date" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="View_Count" Type="Int32" />
           <Property Name="SinglePost_id" Type="Int32" />
           <Property Name="ImgMedium_id" Type="Int32" />
           <Property Name="ImgSmall_id" Type="Int32" />
           <Property Name="ImgCompetitions_id" Type="Int32" />
           <Property Name="ImgHomePage_id" Type="Int32" />
           <Property Name="SubTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CompetitionsImg" Relationship="Self.FK__Posts__ImgCompet__6EC0713C" FromRole="Posts" ToRole="CompetitionsImgs" />
-          <NavigationProperty Name="HomePageImg" Relationship="Self.FK__Posts__ImgHomePa__6FB49575" FromRole="Posts" ToRole="HomePageImgs" />
-          <NavigationProperty Name="PostImgMedium" Relationship="Self.FK__Posts__ImgMedium__6CD828CA" FromRole="Posts" ToRole="PostImgMedium" />
-          <NavigationProperty Name="PostImgSmall" Relationship="Self.FK__Posts__ImgSmall___6DCC4D03" FromRole="Posts" ToRole="PostImgSmall" />
-          <NavigationProperty Name="SinglePost" Relationship="Self.FK__Posts__SinglePos__6BE40491" FromRole="Posts" ToRole="SinglePost" />
           <Property Name="Category1_id" Type="Int32" />
           <Property Name="Category2_id" Type="Int32" />
-          <NavigationProperty Name="PostCategory" Relationship="BlogInspireModel.FK__Posts__Category1__1B9317B3" FromRole="Post" ToRole="PostCategory" />
-          <NavigationProperty Name="PostCategory1" Relationship="BlogInspireModel.FK__Posts__Category2__1C873BEC" FromRole="Post" ToRole="PostCategory" />
           <Property Name="Author_id" Type="Int32" />
-          <NavigationProperty Name="Author" Relationship="BlogInspireModel.FK__Posts__Author_id__2610A626" FromRole="Post" ToRole="Author" />
           <Property Name="Page_home_id" Type="Int32" />
           <Property Name="Page_Competitions_id" Type="Int32" />
           <Property Name="Page_List_id" Type="Int32" />
           <Property Name="Page_SinglePost_id" Type="Int32" />
           <Property Name="Page_Isotop_id" Type="Int32" />
           <Property Name="Page_Partner_id" Type="Int32" />
-          <NavigationProperty Name="Page" Relationship="BlogInspireModel.FK__Posts__Page_Comp__56B3DD81" FromRole="Post" ToRole="Page" />
-          <NavigationProperty Name="Page1" Relationship="BlogInspireModel.FK__Posts__Page_home__55BFB948" FromRole="Post" ToRole="Page" />
-          <NavigationProperty Name="Page2" Relationship="BlogInspireModel.FK__Posts__Page_Isot__59904A2C" FromRole="Post" ToRole="Page" />
-          <NavigationProperty Name="Page3" Relationship="BlogInspireModel.FK__Posts__Page_List__57A801BA" FromRole="Post" ToRole="Page" />
-          <NavigationProperty Name="Page4" Relationship="BlogInspireModel.FK__Posts__Page_Part__5A846E65" FromRole="Post" ToRole="Page" />
-          <NavigationProperty Name="Page5" Relationship="BlogInspireModel.FK__Posts__Page_Sing__589C25F3" FromRole="Post" ToRole="Page" />
+          <NavigationProperty Name="Author" Relationship="Self.FK__Posts__Author_id__2610A626" FromRole="Posts" ToRole="Authors" />
+          <NavigationProperty Name="CompetitionsImg" Relationship="Self.FK__Posts__ImgCompet__6EC0713C" FromRole="Posts" ToRole="CompetitionsImgs" />
+          <NavigationProperty Name="HomePageImg" Relationship="Self.FK__Posts__ImgHomePa__6FB49575" FromRole="Posts" ToRole="HomePageImgs" />
+          <NavigationProperty Name="Page" Relationship="Self.FK__Posts__Page_Comp__56B3DD81" FromRole="Posts" ToRole="Pages" />
+          <NavigationProperty Name="Page1" Relationship="Self.FK__Posts__Page_home__55BFB948" FromRole="Posts" ToRole="Pages" />
+          <NavigationProperty Name="Page2" Relationship="Self.FK__Posts__Page_Isot__59904A2C" FromRole="Posts" ToRole="Pages" />
+          <NavigationProperty Name="Page3" Relationship="Self.FK__Posts__Page_List__57A801BA" FromRole="Posts" ToRole="Pages" />
+          <NavigationProperty Name="Page4" Relationship="Self.FK__Posts__Page_Part__5A846E65" FromRole="Posts" ToRole="Pages" />
+          <NavigationProperty Name="Page5" Relationship="Self.FK__Posts__Page_Sing__589C25F3" FromRole="Posts" ToRole="Pages" />
+          <NavigationProperty Name="PostCategory" Relationship="Self.FK__Posts__Category1__1B9317B3" FromRole="Posts" ToRole="PostCategories" />
+          <NavigationProperty Name="PostCategory1" Relationship="Self.FK__Posts__Category2__1C873BEC" FromRole="Posts" ToRole="PostCategories" />
+          <NavigationProperty Name="PostImgMedium" Relationship="Self.FK__Posts__ImgMedium__6CD828CA" FromRole="Posts" ToRole="PostImgMedium" />
+          <NavigationProperty Name="PostImgSmall" Relationship="Self.FK__Posts__ImgSmall___6DCC4D03" FromRole="Posts" ToRole="PostImgSmall" />
+          <NavigationProperty Name="SinglePost" Relationship="Self.FK__Posts__SinglePos__6BE40491" FromRole="Posts" ToRole="SinglePost" />
         </EntityType>
         <EntityType Name="PrivacyPolicy">
           <Key>
@@ -1520,8 +1557,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Old_price" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Old_price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Count" Type="Int32" />
@@ -1556,7 +1593,7 @@
           <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="View_Count" Type="Int32" />
-          <Property Name="Written_date" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Written_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SinglePost">
           <Key>
@@ -1599,8 +1636,8 @@
           <Property Name="View_Count" Type="Int32" />
           <Property Name="Category1_id" Type="Int32" />
           <Property Name="Category2_id" Type="Int32" />
-          <NavigationProperty Name="SliderCategory" Relationship="BlogInspireModel.FK__Slider__Category__19AACF41" FromRole="Slider" ToRole="SliderCategory" />
-          <NavigationProperty Name="SliderCategory1" Relationship="BlogInspireModel.FK__Slider__Category__1A9EF37A" FromRole="Slider" ToRole="SliderCategory" />
+          <NavigationProperty Name="SliderCategory" Relationship="Self.FK__Slider__Category__19AACF41" FromRole="Slider" ToRole="SliderCategories" />
+          <NavigationProperty Name="SliderCategory1" Relationship="Self.FK__Slider__Category__1A9EF37A" FromRole="Slider" ToRole="SliderCategories" />
         </EntityType>
         <EntityType Name="SliderCategory">
           <Key>
@@ -1608,8 +1645,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Sliders" Relationship="BlogInspireModel.FK__Slider__Category__19AACF41" FromRole="SliderCategory" ToRole="Slider" />
-          <NavigationProperty Name="Sliders1" Relationship="BlogInspireModel.FK__Slider__Category__1A9EF37A" FromRole="SliderCategory" ToRole="Slider" />
+          <NavigationProperty Name="Sliders" Relationship="Self.FK__Slider__Category__19AACF41" FromRole="SliderCategories" ToRole="Slider" />
+          <NavigationProperty Name="Sliders1" Relationship="Self.FK__Slider__Category__1A9EF37A" FromRole="SliderCategories" ToRole="Slider" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1629,7 +1666,7 @@
           <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="View_Count" Type="Int32" />
-          <Property Name="Written_date" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Written_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Vacancy">
           <Key>
@@ -1638,6 +1675,18 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+        <Association Name="FK__Posts__Author_id__2610A626">
+          <End Role="Authors" Type="Self.Author" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Author_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Posts__ImgCompet__6EC0713C">
           <End Role="CompetitionsImgs" Type="Self.CompetitionsImg" Multiplicity="0..1" />
           <End Role="Posts" Type="Self.Post" Multiplicity="*" />
@@ -1659,6 +1708,102 @@
             </Principal>
             <Dependent Role="Posts">
               <PropertyRef Name="ImgHomePage_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Page_Comp__56B3DD81">
+          <End Role="Pages" Type="Self.Page" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Page_Competitions_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Page_home__55BFB948">
+          <End Role="Pages" Type="Self.Page" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Page_home_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Page_Isot__59904A2C">
+          <End Role="Pages" Type="Self.Page" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Page_Isotop_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Page_List__57A801BA">
+          <End Role="Pages" Type="Self.Page" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Page_List_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Page_Part__5A846E65">
+          <End Role="Pages" Type="Self.Page" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Page_Partner_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Page_Sing__589C25F3">
+          <End Role="Pages" Type="Self.Page" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Page_SinglePost_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Category1__1B9317B3">
+          <End Role="PostCategories" Type="Self.PostCategory" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Category1_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Posts__Category2__1C873BEC">
+          <End Role="PostCategories" Type="Self.PostCategory" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="Category2_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1842,8 +1987,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Slider__Category__19AACF41">
+          <End Role="SliderCategories" Type="Self.SliderCategory" Multiplicity="0..1" />
+          <End Role="Slider" Type="Self.Slider" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SliderCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Slider">
+              <PropertyRef Name="Category1_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Slider__Category__1A9EF37A">
+          <End Role="SliderCategories" Type="Self.SliderCategory" Multiplicity="0..1" />
+          <End Role="Slider" Type="Self.Slider" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SliderCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Slider">
+              <PropertyRef Name="Category2_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BlogInspireEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AboutUsBgs" EntityType="Self.AboutUsBg" />
+          <EntitySet Name="AdminInfoes" EntityType="Self.AdminInfo" />
           <EntitySet Name="Authors" EntityType="Self.Author" />
           <EntitySet Name="Banners" EntityType="Self.Banner" />
           <EntitySet Name="BeautyBgs" EntityType="Self.BeautyBg" />
@@ -1853,6 +2023,7 @@
           <EntitySet Name="Careers" EntityType="Self.Career" />
           <EntitySet Name="CareersBgs" EntityType="Self.CareersBg" />
           <EntitySet Name="ComingSoons" EntityType="Self.ComingSoon" />
+          <EntitySet Name="CompetitionsBgs" EntityType="Self.CompetitionsBg" />
           <EntitySet Name="CompetitionsImgs" EntityType="Self.CompetitionsImg" />
           <EntitySet Name="Contacts" EntityType="Self.Contact" />
           <EntitySet Name="ContactsBgs" EntityType="Self.ContactsBg" />
@@ -1866,12 +2037,14 @@
           <EntitySet Name="HomePageImgs" EntityType="Self.HomePageImg" />
           <EntitySet Name="HowItAllBegans" EntityType="Self.HowItAllBegan" />
           <EntitySet Name="InstagramPics" EntityType="Self.InstagramPic" />
+          <EntitySet Name="LookingForWorks" EntityType="Self.LookingForWork" />
           <EntitySet Name="LoveBgs" EntityType="Self.LoveBg" />
           <EntitySet Name="MaintenanceBgs" EntityType="Self.MaintenanceBg" />
           <EntitySet Name="MiniPics" EntityType="Self.MiniPic" />
           <EntitySet Name="NewsLetters" EntityType="Self.NewsLetter" />
           <EntitySet Name="OurPartners" EntityType="Self.OurPartner" />
           <EntitySet Name="OurTeams" EntityType="Self.OurTeam" />
+          <EntitySet Name="Pages" EntityType="Self.Page" />
           <EntitySet Name="PartnerPrograms" EntityType="Self.PartnerProgram" />
           <EntitySet Name="PartnerWithUsBgs" EntityType="Self.PartnerWithUsBg" />
           <EntitySet Name="Positions" EntityType="Self.Position" />
@@ -1904,12 +2077,48 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Trendings" EntityType="Self.Trending" />
           <EntitySet Name="Vacancies" EntityType="Self.Vacancy" />
+          <AssociationSet Name="FK__Posts__Author_id__2610A626" Association="Self.FK__Posts__Author_id__2610A626">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
           <AssociationSet Name="FK__Posts__ImgCompet__6EC0713C" Association="Self.FK__Posts__ImgCompet__6EC0713C">
             <End Role="CompetitionsImgs" EntitySet="CompetitionsImgs" />
             <End Role="Posts" EntitySet="Posts" />
           </AssociationSet>
           <AssociationSet Name="FK__Posts__ImgHomePa__6FB49575" Association="Self.FK__Posts__ImgHomePa__6FB49575">
             <End Role="HomePageImgs" EntitySet="HomePageImgs" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Page_Comp__56B3DD81" Association="Self.FK__Posts__Page_Comp__56B3DD81">
+            <End Role="Pages" EntitySet="Pages" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Page_home__55BFB948" Association="Self.FK__Posts__Page_home__55BFB948">
+            <End Role="Pages" EntitySet="Pages" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Page_Isot__59904A2C" Association="Self.FK__Posts__Page_Isot__59904A2C">
+            <End Role="Pages" EntitySet="Pages" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Page_List__57A801BA" Association="Self.FK__Posts__Page_List__57A801BA">
+            <End Role="Pages" EntitySet="Pages" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Page_Part__5A846E65" Association="Self.FK__Posts__Page_Part__5A846E65">
+            <End Role="Pages" EntitySet="Pages" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Page_Sing__589C25F3" Association="Self.FK__Posts__Page_Sing__589C25F3">
+            <End Role="Pages" EntitySet="Pages" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Category1__1B9317B3" Association="Self.FK__Posts__Category1__1B9317B3">
+            <End Role="PostCategories" EntitySet="PostCategories" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Posts__Category2__1C873BEC" Association="Self.FK__Posts__Category2__1C873BEC">
+            <End Role="PostCategories" EntitySet="PostCategories" />
             <End Role="Posts" EntitySet="Posts" />
           </AssociationSet>
           <AssociationSet Name="FK__SinglePos__Img_i__57DD0BE4" Association="Self.FK__SinglePos__Img_i__57DD0BE4">
@@ -1972,223 +2181,15 @@
             <End Role="ProductImgSmall" EntitySet="ProductImgSmalls" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__Slider__Category__19AACF41" Association="BlogInspireModel.FK__Slider__Category__19AACF41">
-            <End Role="SliderCategory" EntitySet="SliderCategories" />
+          <AssociationSet Name="FK__Slider__Category__19AACF41" Association="Self.FK__Slider__Category__19AACF41">
+            <End Role="SliderCategories" EntitySet="SliderCategories" />
             <End Role="Slider" EntitySet="Sliders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Slider__Category__1A9EF37A" Association="BlogInspireModel.FK__Slider__Category__1A9EF37A">
-            <End Role="SliderCategory" EntitySet="SliderCategories" />
+          <AssociationSet Name="FK__Slider__Category__1A9EF37A" Association="Self.FK__Slider__Category__1A9EF37A">
+            <End Role="SliderCategories" EntitySet="SliderCategories" />
             <End Role="Slider" EntitySet="Sliders" />
           </AssociationSet>
-          <AssociationSet Name="FK__Posts__Category1__1B9317B3" Association="BlogInspireModel.FK__Posts__Category1__1B9317B3">
-            <End Role="PostCategory" EntitySet="PostCategories" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Posts__Category2__1C873BEC" Association="BlogInspireModel.FK__Posts__Category2__1C873BEC">
-            <End Role="PostCategory" EntitySet="PostCategories" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Posts__Author_id__2610A626" Association="BlogInspireModel.FK__Posts__Author_id__2610A626">
-            <End Role="Author" EntitySet="Authors" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <EntitySet Name="LookingForWorks" EntityType="BlogInspireModel.LookingForWork" />
-          <EntitySet Name="CompetitionsBgs" EntityType="BlogInspireModel.CompetitionsBg" />
-          <EntitySet Name="Pages" EntityType="BlogInspireModel.Page" />
-          <AssociationSet Name="FK__Posts__Page_Comp__56B3DD81" Association="BlogInspireModel.FK__Posts__Page_Comp__56B3DD81">
-            <End Role="Page" EntitySet="Pages" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Posts__Page_home__55BFB948" Association="BlogInspireModel.FK__Posts__Page_home__55BFB948">
-            <End Role="Page" EntitySet="Pages" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Posts__Page_Isot__59904A2C" Association="BlogInspireModel.FK__Posts__Page_Isot__59904A2C">
-            <End Role="Page" EntitySet="Pages" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Posts__Page_List__57A801BA" Association="BlogInspireModel.FK__Posts__Page_List__57A801BA">
-            <End Role="Page" EntitySet="Pages" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Posts__Page_Part__5A846E65" Association="BlogInspireModel.FK__Posts__Page_Part__5A846E65">
-            <End Role="Page" EntitySet="Pages" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Posts__Page_Sing__589C25F3" Association="BlogInspireModel.FK__Posts__Page_Sing__589C25F3">
-            <End Role="Page" EntitySet="Pages" />
-            <End Role="Post" EntitySet="Posts" />
-          </AssociationSet>
-          <EntitySet Name="AdminInfoes" EntityType="BlogInspireModel.AdminInfo" />
         </EntityContainer>
-        <Association Name="FK__Slider__Category__19AACF41">
-          <End Type="BlogInspireModel.SliderCategory" Role="SliderCategory" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Slider" Role="Slider" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SliderCategory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Slider">
-              <PropertyRef Name="Category1_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Slider__Category__1A9EF37A">
-          <End Type="BlogInspireModel.SliderCategory" Role="SliderCategory" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Slider" Role="Slider" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SliderCategory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Slider">
-              <PropertyRef Name="Category2_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Category1__1B9317B3">
-          <End Type="BlogInspireModel.PostCategory" Role="PostCategory" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PostCategory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Category1_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Category2__1C873BEC">
-          <End Type="BlogInspireModel.PostCategory" Role="PostCategory" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PostCategory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Category2_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Author_id__2610A626">
-          <End Type="BlogInspireModel.Author" Role="Author" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Author">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Author_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="LookingForWork">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="CompetitionsBg">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Page">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Posts" Relationship="BlogInspireModel.FK__Posts__Page_Comp__56B3DD81" FromRole="Page" ToRole="Post" />
-          <NavigationProperty Name="Posts1" Relationship="BlogInspireModel.FK__Posts__Page_home__55BFB948" FromRole="Page" ToRole="Post" />
-          <NavigationProperty Name="Posts2" Relationship="BlogInspireModel.FK__Posts__Page_Isot__59904A2C" FromRole="Page" ToRole="Post" />
-          <NavigationProperty Name="Posts3" Relationship="BlogInspireModel.FK__Posts__Page_List__57A801BA" FromRole="Page" ToRole="Post" />
-          <NavigationProperty Name="Posts4" Relationship="BlogInspireModel.FK__Posts__Page_Part__5A846E65" FromRole="Page" ToRole="Post" />
-          <NavigationProperty Name="Posts5" Relationship="BlogInspireModel.FK__Posts__Page_Sing__589C25F3" FromRole="Page" ToRole="Post" />
-        </EntityType>
-        <Association Name="FK__Posts__Page_Comp__56B3DD81">
-          <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Page">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Page_Competitions_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Page_home__55BFB948">
-          <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Page">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Page_home_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Page_Isot__59904A2C">
-          <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Page">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Page_Isotop_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Page_List__57A801BA">
-          <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Page">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Page_List_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Page_Part__5A846E65">
-          <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Page">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Page_Partner_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Posts__Page_Sing__589C25F3">
-          <End Type="BlogInspireModel.Page" Role="Page" Multiplicity="0..1" />
-          <End Type="BlogInspireModel.Post" Role="Post" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Page">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Post">
-              <PropertyRef Name="Page_SinglePost_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="AdminInfo">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2200,6 +2201,15 @@
               <MappingFragment StoreEntitySet="AboutUsBg">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminInfoes">
+            <EntityTypeMapping TypeName="BlogInspireModel.AdminInfo">
+              <MappingFragment StoreEntitySet="AdminInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2275,6 +2285,14 @@
                 <ScalarProperty Name="Bg_img" ColumnName="Bg_img" />
                 <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
                 <ScalarProperty Name="Copywrite" ColumnName="Copywrite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompetitionsBgs">
+            <EntityTypeMapping TypeName="BlogInspireModel.CompetitionsBg">
+              <MappingFragment StoreEntitySet="CompetitionsBg">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2405,6 +2423,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LookingForWorks">
+            <EntityTypeMapping TypeName="BlogInspireModel.LookingForWork">
+              <MappingFragment StoreEntitySet="LookingForWork">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="LoveBgs">
             <EntityTypeMapping TypeName="BlogInspireModel.LoveBg">
               <MappingFragment StoreEntitySet="LoveBg">
@@ -2454,6 +2481,14 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pages">
+            <EntityTypeMapping TypeName="BlogInspireModel.Page">
+              <MappingFragment StoreEntitySet="Pages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2520,26 +2555,26 @@
           <EntitySetMapping Name="Posts">
             <EntityTypeMapping TypeName="BlogInspireModel.Post">
               <MappingFragment StoreEntitySet="Posts">
-                <ScalarProperty Name="Page_Partner_id" ColumnName="Page_Partner_id" />
-                <ScalarProperty Name="Page_Isotop_id" ColumnName="Page_Isotop_id" />
-                <ScalarProperty Name="Page_SinglePost_id" ColumnName="Page_SinglePost_id" />
-                <ScalarProperty Name="Page_List_id" ColumnName="Page_List_id" />
-                <ScalarProperty Name="Page_Competitions_id" ColumnName="Page_Competitions_id" />
-                <ScalarProperty Name="Page_home_id" ColumnName="Page_home_id" />
-                <ScalarProperty Name="Author_id" ColumnName="Author_id" />
-                <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
-                <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="Written_date" ColumnName="Written_date" />
-                <ScalarProperty Name="Wiew_Count" ColumnName="Wiew_Count" />
+                <ScalarProperty Name="View_Count" ColumnName="View_Count" />
                 <ScalarProperty Name="SinglePost_id" ColumnName="SinglePost_id" />
                 <ScalarProperty Name="ImgMedium_id" ColumnName="ImgMedium_id" />
                 <ScalarProperty Name="ImgSmall_id" ColumnName="ImgSmall_id" />
                 <ScalarProperty Name="ImgCompetitions_id" ColumnName="ImgCompetitions_id" />
                 <ScalarProperty Name="ImgHomePage_id" ColumnName="ImgHomePage_id" />
                 <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
+                <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
+                <ScalarProperty Name="Author_id" ColumnName="Author_id" />
+                <ScalarProperty Name="Page_home_id" ColumnName="Page_home_id" />
+                <ScalarProperty Name="Page_Competitions_id" ColumnName="Page_Competitions_id" />
+                <ScalarProperty Name="Page_List_id" ColumnName="Page_List_id" />
+                <ScalarProperty Name="Page_SinglePost_id" ColumnName="Page_SinglePost_id" />
+                <ScalarProperty Name="Page_Isotop_id" ColumnName="Page_Isotop_id" />
+                <ScalarProperty Name="Page_Partner_id" ColumnName="Page_Partner_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2725,13 +2760,13 @@
           <EntitySetMapping Name="Sliders">
             <EntityTypeMapping TypeName="BlogInspireModel.Slider">
               <MappingFragment StoreEntitySet="Slider">
-                <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
-                <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Background_img" ColumnName="Background_img" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Written_date" ColumnName="Written_date" />
                 <ScalarProperty Name="View_Count" ColumnName="View_Count" />
+                <ScalarProperty Name="Category1_id" ColumnName="Category1_id" />
+                <ScalarProperty Name="Category2_id" ColumnName="Category2_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2770,40 +2805,6 @@
               <MappingFragment StoreEntitySet="Vacancies">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LookingForWorks">
-            <EntityTypeMapping TypeName="BlogInspireModel.LookingForWork">
-              <MappingFragment StoreEntitySet="LookingForWork">
-                <ScalarProperty Name="Img" ColumnName="Img" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CompetitionsBgs">
-            <EntityTypeMapping TypeName="BlogInspireModel.CompetitionsBg">
-              <MappingFragment StoreEntitySet="CompetitionsBg">
-                <ScalarProperty Name="Img" ColumnName="Img" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Pages">
-            <EntityTypeMapping TypeName="BlogInspireModel.Page">
-              <MappingFragment StoreEntitySet="Pages">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AdminInfoes">
-            <EntityTypeMapping TypeName="BlogInspireModel.AdminInfo">
-              <MappingFragment StoreEntitySet="AdminInfo">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

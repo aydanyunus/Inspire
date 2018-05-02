@@ -29,7 +29,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 if (admin.Email == email && Crypto.VerifyHashedPassword(admin.Password, password))
                 {
                     Session["AdminLogged"] = true;
-                    return Content("I");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -40,7 +40,7 @@ namespace FinalProject.Areas.Admin.Controllers
             {
                 ViewBag.Error = "Email or Password cannot be empty!";
             }
-            return Content("ksjh");
+            return View();
         }
 
         public ActionResult Logout()

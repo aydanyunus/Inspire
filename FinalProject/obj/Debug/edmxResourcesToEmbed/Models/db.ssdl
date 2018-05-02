@@ -7,6 +7,14 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Img" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="AdminInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="Authors">
     <Key>
       <PropertyRef Name="Id" />
@@ -316,7 +324,7 @@
     <Property Name="Title" Type="nvarchar" MaxLength="250" />
     <Property Name="Content" Type="text" />
     <Property Name="Written_date" Type="nvarchar" MaxLength="150" />
-    <Property Name="Wiew_Count" Type="int" />
+    <Property Name="View_Count" Type="int" />
     <Property Name="SinglePost_id" Type="int" />
     <Property Name="ImgMedium_id" Type="int" />
     <Property Name="ImgSmall_id" Type="int" />
@@ -877,6 +885,7 @@
   </Association>
   <EntityContainer Name="BlogInspireModelStoreContainer">
     <EntitySet Name="AboutUsBg" EntityType="Self.AboutUsBg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminInfo" EntityType="Self.AdminInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BeautyBg" EntityType="Self.BeautyBg" Schema="dbo" store:Type="Tables" />

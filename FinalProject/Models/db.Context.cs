@@ -26,6 +26,7 @@ namespace FinalProject.Models
         }
     
         public virtual DbSet<AboutUsBg> AboutUsBgs { get; set; }
+        public virtual DbSet<AdminInfo> AdminInfoes { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Banner> Banners { get; set; }
         public virtual DbSet<BeautyBg> BeautyBgs { get; set; }
@@ -35,6 +36,7 @@ namespace FinalProject.Models
         public virtual DbSet<Career> Careers { get; set; }
         public virtual DbSet<CareersBg> CareersBgs { get; set; }
         public virtual DbSet<ComingSoon> ComingSoons { get; set; }
+        public virtual DbSet<CompetitionsBg> CompetitionsBgs { get; set; }
         public virtual DbSet<CompetitionsImg> CompetitionsImgs { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<ContactsBg> ContactsBgs { get; set; }
@@ -48,12 +50,14 @@ namespace FinalProject.Models
         public virtual DbSet<HomePageImg> HomePageImgs { get; set; }
         public virtual DbSet<HowItAllBegan> HowItAllBegans { get; set; }
         public virtual DbSet<InstagramPic> InstagramPics { get; set; }
+        public virtual DbSet<LookingForWork> LookingForWorks { get; set; }
         public virtual DbSet<LoveBg> LoveBgs { get; set; }
         public virtual DbSet<MaintenanceBg> MaintenanceBgs { get; set; }
         public virtual DbSet<MiniPic> MiniPics { get; set; }
         public virtual DbSet<NewsLetter> NewsLetters { get; set; }
         public virtual DbSet<OurPartner> OurPartners { get; set; }
         public virtual DbSet<OurTeam> OurTeams { get; set; }
+        public virtual DbSet<Page> Pages { get; set; }
         public virtual DbSet<PartnerProgram> PartnerPrograms { get; set; }
         public virtual DbSet<PartnerWithUsBg> PartnerWithUsBgs { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
@@ -86,9 +90,5 @@ namespace FinalProject.Models
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Trending> Trendings { get; set; }
         public virtual DbSet<Vacancy> Vacancies { get; set; }
-        public virtual DbSet<LookingForWork> LookingForWorks { get; set; }
-        public virtual DbSet<CompetitionsBg> CompetitionsBgs { get; set; }
-        public virtual DbSet<Page> Pages { get; set; }
-        public virtual DbSet<AdminInfo> AdminInfoes { get; set; }
     }
 }

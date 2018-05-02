@@ -1,6 +1,5 @@
 ﻿@using FinalProject.ViewModels.HomeViewModel;
 @model HomeViewModel
-@using FinalProject.Models;
 
 @{
     ViewBag.Title = "Home Page";
@@ -77,7 +76,7 @@
                             </p>
                             <p class="margin-left">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
-                                <span>@item.Wiew_Count</span>
+                                <span>@item.View_Count</span>
                             </p>
                         </div>
                         <p class="simple-text">
@@ -163,23 +162,22 @@
                 <p>VIDEO REVIEW</p>
             </div>
         </div>
-        @foreach (var item in Model.posts.Where(p => p.ImgHomePage_id == 4).ToList())
-        {
         <div class="row">
             <div class="col-md-12 col-xs-12 bg-video">
-                <img src="~/Public/images/@item.HomePageImg.Img" alt="">
+                <img src="~/Uploads/@Model.video.HomePageImg.Img" alt="">
                 <div class="content-body">
                     <div class="border-100-percent col-md-offset-5 col-xs-offset-5">
                         <a href="https://player.vimeo.com/video/59474227?color=ff9933&title=0&byline=0&portrait=0">
                             <i class="fa fa-play fa-2x" aria-hidden="true"></i>
                         </a>
                     </div>
-                    <h1>@item.Title</h1>
-                    <p>@item.SubTitle</p>
+                    <h1>@Model.video.Title</h1>
+                    <p>@Model.video.SubTitle</p>
                 </div>
             </div>
         </div>
-        }
+
+        
     </div>
 </section>
 <!-- VIDEO SECTION ENDS HERE -->
@@ -193,45 +191,40 @@
             </div>
         </div>
         <div class="row">
-            @Session["ad"]
-            
-                    <div class="col-md-12 col-xs-12 without-padding">
+            <div class="col-md-12 col-xs-12 without-padding">
                 <div class="col-md-6 col-xs-12 beauty-img-part">
                     <a href="single-post.html">
-                        <img src="~/Public/images/home3-6-585x433.jpg" alt="">
+                        <img src="~/Uploads/@ViewBag.Mustread.HomePageImgs.Img" alt="">
                     </a>
                 </div>
                 <div class="col-md-6 col-xs-12 content-with-border">
                     <div class="beauty-text-panel">
                         <a href="#">
-                            BEAUTY
+                            @ViewBag.Mustread.PostCategory.Name
                         </a>
                         <span>,</span>
                         <a href="#">
-                            MAKEUP
+                            @ViewBag.Mustread.PostCategory1.Name
                         </a>
                     </div>
                     <a href="single-post.html" class="big-a-content">
-                       
+                        @ViewBag.Mustread.Title
                     </a>
                     <div class="icon-date">
                         <p>
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
-                            <span>APRIL 27, 2017</span>
+                            <span>@ViewBag.Mustread.Written_date</span>
                         </p>
                         <p class="margin-left">
                             <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>6424</span>
+                            <span>@ViewBag.Mustread.View_Count</span>
                         </p>
                     </div>
                     <p class="bottom-content">
                         Discover the latest clothing trends from fashion's top designers—and see what brands and what clothes we recommend you to look at.
                     </p>
                 </div>
-                </div>  
-            
-               
-                                                               
+                </div>                                                                                    
             <div class="col-md-12 col-xs-12 without-padding-2">
                 <div class="col-md-6 col-xs-12 content-with-border-2">
                     <div class="beauty-text-panel">
@@ -265,9 +258,7 @@
                         <img src="~/Public/images/home3-7-585x433.jpg" alt="">
                     </a>
                 </div>
-            </div>
-
-            
+            </div>          
         </div>
     </div>
 </section>

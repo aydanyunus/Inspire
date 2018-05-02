@@ -23,9 +23,10 @@ namespace FinalProject.Controllers
                 sidebar = db.Sidebars.ToList(),
                 trending = db.Trendings.First(),
                 instagramPics = db.InstagramPics.ToList(),
-                posts = db.Posts.ToList()
+                posts = db.Posts.ToList(),
+                video = db.Posts.Where(v => v.ImgHomePage_id == 4).FirstOrDefault()
             };
-           
+            ViewBag.Mustread = db.Posts.Where(p => p.Page_Partner_id == 10).FirstOrDefault();
 
             return View(homeViewModel);
         }
