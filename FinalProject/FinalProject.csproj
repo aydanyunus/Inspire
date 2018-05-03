@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -159,19 +161,37 @@
     <Compile Include="Areas\Admin\Controllers\Bg503Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandImgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CareersBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CareersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ComingSoonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CompetitionsBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactsBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CooperationsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FitnessBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FoodBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FootersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FreeOffersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GreenIconSectionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HealthBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HowItAllBegansController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InstagramPicsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LookingForWorksController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoveBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\MaintenanceBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MiniPicsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsLettersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OurPartnersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OurTeamsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PartnerProgramsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PartnerWithUsBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PositionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PrivacyPolicyBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShopBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SinglePostBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SiteMapBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TrendingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VacanciesController.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\ComingSoonController.cs" />
@@ -403,14 +423,55 @@
     <Compile Include="ViewModels\HomeViewModel\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Public\css\sb-admin.css" />
-    <Content Include="Areas\Admin\Public\css\sb-admin.min.css" />
-    <Content Include="Areas\Admin\Public\js\sb-admin-charts.js" />
-    <Content Include="Areas\Admin\Public\js\sb-admin-charts.min.js" />
-    <Content Include="Areas\Admin\Public\js\sb-admin-datatables.js" />
-    <Content Include="Areas\Admin\Public\js\sb-admin-datatables.min.js" />
-    <Content Include="Areas\Admin\Public\js\sb-admin.js" />
-    <Content Include="Areas\Admin\Public\js\sb-admin.min.js" />
+    <Content Include="Areas\Admin\Public\assets\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Public\assets\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Public\assets\css\demo.css" />
+    <Content Include="Areas\Admin\Public\assets\css\main.css" />
+    <Content Include="Areas\Admin\Public\assets\img\apple-icon.png" />
+    <Content Include="Areas\Admin\Public\assets\img\favicon.png" />
+    <Content Include="Areas\Admin\Public\assets\img\login-bg.jpg" />
+    <Content Include="Areas\Admin\Public\assets\img\logo-dark.png" />
+    <Content Include="Areas\Admin\Public\assets\img\profile-bg.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user-medium.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user1.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user2.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user3.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user4.png" />
+    <Content Include="Areas\Admin\Public\assets\img\user5.png" />
+    <Content Include="Areas\Admin\Public\assets\scripts\klorofil-common.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\js\npm.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist-custom.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\js\chartist.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\js\chartist.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\easypiechart.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\easypiechart.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery\jquery.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.svg" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\style.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.js" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.min.css" />
+    <Content Include="Areas\Admin\Public\assets\vendor\toastr\toastr.min.js" />
     <Content Include="Areas\Admin\Public\Login\css\main.css" />
     <Content Include="Areas\Admin\Public\Login\css\util.css" />
     <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -441,33 +502,6 @@
     <Content Include="Areas\Admin\Public\Login\vendor\select2\select2.js" />
     <Content Include="Areas\Admin\Public\Login\vendor\select2\select2.min.css" />
     <Content Include="Areas\Admin\Public\Login\vendor\select2\select2.min.js" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-grid.css" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.min.js" />
-    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.bundle.js" />
-    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.bundle.min.js" />
-    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.js" />
-    <Content Include="Areas\Admin\Public\vendor\chart.js\Chart.min.js" />
-    <Content Include="Areas\Admin\Public\vendor\datatables\dataTables.bootstrap4.css" />
-    <Content Include="Areas\Admin\Public\vendor\datatables\dataTables.bootstrap4.js" />
-    <Content Include="Areas\Admin\Public\vendor\datatables\jquery.dataTables.js" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\css\font-awesome.css" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="Areas\Admin\Public\vendor\jquery-easing\jquery.easing.compatibility.js" />
-    <Content Include="Areas\Admin\Public\vendor\jquery-easing\jquery.easing.js" />
-    <Content Include="Areas\Admin\Public\vendor\jquery-easing\jquery.easing.min.js" />
-    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.js" />
-    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.min.js" />
-    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.slim.js" />
-    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.slim.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -637,61 +671,6 @@
     <Content Include="Areas\Admin\Views\Shared\_Admin.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminAccount\Login.cshtml" />
-    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_colors.scss" />
-    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_fixed.scss" />
-    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_global.scss" />
-    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_static.scss" />
-    <Content Include="Areas\Admin\Public\scss\navbar\_navbar_toggle.scss" />
-    <Content Include="Areas\Admin\Public\scss\sb-admin.scss" />
-    <Content Include="Areas\Admin\Public\scss\_cards.scss" />
-    <Content Include="Areas\Admin\Public\scss\_footer.scss" />
-    <Content Include="Areas\Admin\Public\scss\_global.scss" />
-    <Content Include="Areas\Admin\Public\scss\_login.scss" />
-    <Content Include="Areas\Admin\Public\scss\_mixins.scss" />
-    <Content Include="Areas\Admin\Public\scss\_utilities.scss" />
-    <Content Include="Areas\Admin\Public\scss\_variables.scss" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.js.map" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.js.map" />
-    <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.min.js.map" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\css\font-awesome.css.map" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\animated.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\core.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\fixed-width.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\font-awesome.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\icons.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\larger.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\list.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\mixins.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\path.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\screen-reader.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\stacked.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\less\variables.less" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\font-awesome.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_animated.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_core.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_icons.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_larger.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_list.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_mixins.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_path.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_screen-reader.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_stacked.scss" />
-    <Content Include="Areas\Admin\Public\vendor\font-awesome\scss\_variables.scss" />
-    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.min.map" />
-    <Content Include="Areas\Admin\Public\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="Areas\Admin\Public\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
@@ -855,6 +834,86 @@
     <Content Include="Areas\Admin\Views\BrandImgs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\BrandImgs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\BrandImgs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Careers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Careers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Careers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ComingSoons\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ComingSoons\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ComingSoons\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Contacts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Cooperations\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Cooperations\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Cooperations\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Footers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Footers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Footers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FreeOffers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\FreeOffers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\FreeOffers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GreenIconSections\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\GreenIconSections\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\GreenIconSections\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HowItAllBegans\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HowItAllBegans\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HowItAllBegans\Index.cshtml" />
+    <Content Include="Areas\Admin\Public\assets\css\demo.css.map" />
+    <Content Include="Areas\Admin\Public\assets\css\main.css.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Public\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\css\chartist-custom.css.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\map\chartist.css.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\map\chartist.min.js.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\chartist\scss\chartist.scss" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Public\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.eot" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.ttf" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
+    <Content Include="Areas\Admin\Public\assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="Areas\Admin\Views\InstagramPics\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\InstagramPics\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\InstagramPics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LookingForWorks\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LookingForWorks\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LookingForWorks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MiniPics\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MiniPics\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MiniPics\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MiniPics\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MiniPics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsLetters\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsLetters\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NewsLetters\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OurPartners\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\OurPartners\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\OurPartners\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeams\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PartnerPrograms\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PartnerPrograms\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PartnerPrograms\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Trendings\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Trendings\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Trendings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Positions\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Positions\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Positions\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Positions\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Positions\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancies\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancies\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancies\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancies\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Vacancies\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\scripts\.DS_Store" />
     <Content Include="Views\AboutUs\Index.cshtml" />
@@ -912,6 +971,7 @@
     <Content Include="Views\Shop\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
@@ -919,6 +979,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

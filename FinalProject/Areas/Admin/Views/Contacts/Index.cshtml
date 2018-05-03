@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FinalProject.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facebook_link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Twitter_link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Google_link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Youtube_link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facebook_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Twitter_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Google_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Youtube_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

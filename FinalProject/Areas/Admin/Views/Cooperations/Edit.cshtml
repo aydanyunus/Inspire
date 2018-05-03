@@ -1,0 +1,51 @@
+﻿@model FinalProject.Models.Cooperation
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@if (ViewBag.EditError != null)
+{
+    <div class="row">
+        <div class="col-md-12 alert-danger">
+            @ViewBag.EditError
+        </div>
+    </div>
+}
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Cooperation</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <textarea rows="10" cols="100" name="Content1">@Model.Content1</textarea>
+                @Html.ValidationMessageFor(model => model.Content1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <textarea rows="10" cols="100" name="Content2">@Model.Content2</textarea>
+                @Html.ValidationMessageFor(model => model.Content2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

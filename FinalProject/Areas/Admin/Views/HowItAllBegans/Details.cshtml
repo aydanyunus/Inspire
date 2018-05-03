@@ -1,0 +1,67 @@
+﻿@model FinalProject.Models.HowItAllBegan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HowItAllBegan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Content1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Facebook_link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Facebook_link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Twitter_link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Twitter_link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pinterest_link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pinterest_link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instagram_link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instagram_link)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -8,7 +8,7 @@ Layout = "~/Views/Shared/_Layout.cshtml";
 <!-- MAIN SECTION STARTS HERE -->
 <section id="main">
     <div class="row">
-        <div class="col-md-12 col-xs-12 careers-main-image text-center" style="background: url(../../Public/images/@Model.careersBg.Img); background-position: center 50%; background-size: cover;">
+        <div class="col-md-12 col-xs-12 careers-main-image text-center" style="background: url(../../Uploads/@Model.careersBg.Img); background-position: center 50%; background-size: cover;">
             <h1>
                 Careers
             </h1>
@@ -34,7 +34,7 @@ Layout = "~/Views/Shared/_Layout.cshtml";
             <div class="col-md-9 col-xs-12 career-team">
                 <div class="row bordered">
                     <div class="col-md-6 col-xs-12 img-part">
-                        <img src="~/Public/images/@Model.career.Img" alt="">
+                        <img src="~/Uploads/@Model.career.Img" alt="">
                     </div>
                     <div class="col-md-6 col-xs-12 text-part">
                         <h3>Your career starts here!</h3>
@@ -81,7 +81,7 @@ Layout = "~/Views/Shared/_Layout.cshtml";
             <div class="col-md-3 col-xs-12 sidebar">
                 <div class="row">
                     <div class="col-md-12 col-xs-12 wrapper-work-sidebar">
-                        <div class="work-img" style="background-image: url(../../Public/images/@Model.lookingForWork.Img);background-size: cover;">
+                        <div class="work-img" style="background-image: url(../../Uploads/@Model.lookingForWork.Img);background-size: cover;">
                             <div class="work-text text-center">
                                 <h3>Looking for work?</h3>
                                 <div class="border-bottom-green"></div>
@@ -104,7 +104,7 @@ Layout = "~/Views/Shared/_Layout.cshtml";
                 <div class="row popular-posts">
                     <div class="col-md-12 col-xs-12">
                         <a href="single-post.html">
-                            <img src="~/Public/images/@item.Img" alt="">
+                            <img src="~/Uploads/@item.Img" alt="">
                         </a>
                         <a href="single-post.html" class="text-color">
                            @item.Title

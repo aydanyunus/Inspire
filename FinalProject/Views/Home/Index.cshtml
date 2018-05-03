@@ -11,7 +11,7 @@
         <div class="swiper-wrapper">
             @foreach (var item in Model.Slider)
             {
-                  <div class="swiper-slide slide-2" style=" background: url(../../Public/images/@item.Background_img); background-size: cover;" data-swiper-slide-index="0">
+                  <div class="swiper-slide slide-2" style=" background: url(../../Uploads/@item.Background_img); background-size: cover;" data-swiper-slide-index="0">
                 <div class="borders"></div>
                 <div class="slide-content">
                     <p>
@@ -54,7 +54,7 @@
                 <div class="row margin-top">
                     <div class="col-md-5 col-xs-12 left-side">
                         <a href="single-post.html">
-                            <img src="~/Public/images/@item.HomePageImg.Img" alt="">
+                            <img src="~/Uploads/@item.HomePageImg.Img" alt="">
                         </a>
                     </div>
                     <div class="col-md-7 col-xs-12 right-side">
@@ -97,7 +97,7 @@
                         <div class="col-md-12 col-xs-12 posts-sidebar">
                             <div class="posts-sidebar-left col-md-3 col-xs-3">
                                 <a href="single-post.html">
-                                    <img src="~/Public/images/@item.Img" alt="">
+                                    <img src="~/Uploads/@item.Img" alt="">
                                 </a>
                             </div>
                             <div class="posts-sidebar-right col-md-9 col-xs-9">
@@ -126,7 +126,7 @@
                     <span class="brand">NEW</span>
                 </div>
                 <div class="banner-image-wrapper">
-                    <div class="col-md-12 col-xs-12 banner-image" style="background: url(../../Public/images/@Model.trending.Img);background-size: cover;">
+                    <div class="col-md-12 col-xs-12 banner-image" style="background: url(../../Uploads/@Model.trending.Img);background-size: cover;">
                         <div class="borders">
                         </div>
                         <div class="banner-text">
@@ -255,7 +255,7 @@
                 </div>
                 <div class="col-md-6 col-xs-12 beauty-img-part-2">
                     <a href="single-post.html">
-                        <img src="~/Public/images/home3-7-585x433.jpg" alt="">
+                        <img src="~/Uploads/home3-7-585x433.jpg" alt="">
                     </a>
                 </div>
             </div>          

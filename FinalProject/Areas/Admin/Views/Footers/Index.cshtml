@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FinalProject.Models.Footer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Copywrite_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instagram_link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Facebook_link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Twitter_link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Copywrite_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instagram_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Facebook_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Twitter_link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
