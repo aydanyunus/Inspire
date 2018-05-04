@@ -187,7 +187,9 @@
     <Compile Include="Areas\Admin\Controllers\PartnerProgramsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PartnerWithUsBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PositionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PrivacyPolicyBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Product_to_CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShopBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SidebarsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SinglePostBgsController.cs" />
@@ -941,6 +943,16 @@
     <Content Include="Areas\Admin\Views\Sidebars\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Sidebars\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Sidebars\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_to_Categories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_to_Categories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_to_Categories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_to_Categories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_to_Categories\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\scripts\.DS_Store" />
     <Content Include="Views\AboutUs\Index.cshtml" />
@@ -1009,6 +1021,16 @@
     <Content Include="Views\AdditionalPages\Grid.cshtml" />
     <Content Include="Views\AdditionalPages\Forms.cshtml" />
     <Content Include="Views\AdditionalPages\Search.cshtml" />
+    <Content Include="Views\Posts\Create.cshtml" />
+    <Content Include="Views\Posts\Delete.cshtml" />
+    <Content Include="Views\Posts\Details.cshtml" />
+    <Content Include="Views\Posts\Edit.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
+    <Content Include="Views\Product_to_Categories\Create.cshtml" />
+    <Content Include="Views\Product_to_Categories\Delete.cshtml" />
+    <Content Include="Views\Product_to_Categories\Details.cshtml" />
+    <Content Include="Views\Product_to_Categories\Edit.cshtml" />
+    <Content Include="Views\Product_to_Categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

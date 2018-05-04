@@ -1,0 +1,142 @@
+﻿@model IEnumerable<FinalProject.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Written_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.View_Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompetitionsImg.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomePageImg.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Page.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Page1.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Page2.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Page3.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Page4.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Page5.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostCategory.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostCategory1.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostImgMedium.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostImgSmall.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SinglePost.Content1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Written_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.View_Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompetitionsImg.Img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomePageImg.Img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Page.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Page1.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Page2.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Page3.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Page4.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Page5.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostCategory.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostCategory1.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostImgMedium.Img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostImgSmall.Img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SinglePost.Content1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
