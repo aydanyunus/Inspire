@@ -11,6 +11,7 @@ using FinalProject.Models;
 
 namespace FinalProject.Areas.Admin.Controllers
 {
+    [AuthorizationFilterController]
     public class MiniPicsController : Controller
     {
         private BlogInspireEntities db = new BlogInspireEntities();
@@ -54,7 +55,7 @@ namespace FinalProject.Areas.Admin.Controllers
                 if (Photo != null)
                 {
                     string fileName = null;
-                    if (Photo.ContentLength > 0 && Photo.ContentLength <= 3 * 1024)
+                    if (Photo.ContentLength > 0 && Photo.ContentLength <= 3 * 1024 * 1024)
                     {
                         if (Photo.ContentType.ToLower() == "image/jpeg" ||
                             Photo.ContentType.ToLower() == "image/jpg" ||
@@ -68,9 +69,8 @@ namespace FinalProject.Areas.Admin.Controllers
                             var newFilePath = Path.Combine(Server.MapPath("~/Uploads/"), fileName);
 
                             Photo.SaveAs(newFilePath);
-                            miniPic.Img = fileName;
-                            db.MiniPics.Add(miniPic);
                             db.SaveChanges();
+                            miniPic.Img = fileName;
                         }
                         else
                         {
@@ -84,11 +84,12 @@ namespace FinalProject.Areas.Admin.Controllers
                         return View();
                     }
                 }
-                ViewBag.EditError = "photo can not be empty.";
-                return View();
+                db.MiniPics.Add(miniPic);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-
             return View(miniPic);
+
         }
 
         // GET: Admin/MiniPics/Edit/5

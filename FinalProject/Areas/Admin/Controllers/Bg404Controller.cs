@@ -11,6 +11,7 @@ using FinalProject.Models;
 
 namespace FinalProject.Areas.Admin.Controllers
 {
+    [AuthorizationFilterController]
     public class Bg404Controller : Controller
     {
         private BlogInspireEntities db = new BlogInspireEntities();

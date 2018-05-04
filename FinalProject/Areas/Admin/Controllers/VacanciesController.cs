@@ -10,6 +10,7 @@ using FinalProject.Models;
 
 namespace FinalProject.Areas.Admin.Controllers
 {
+    [AuthorizationFilterController]
     public class VacanciesController : Controller
     {
         private BlogInspireEntities db = new BlogInspireEntities();

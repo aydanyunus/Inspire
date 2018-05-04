@@ -9,6 +9,10 @@ namespace FinalProject.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
+        BlogInspireEntities db = new BlogInspireEntities();
+
+        [AuthorizationFilterController]
+
         // GET: Admin/Home
         public ActionResult Index()
         {

@@ -155,6 +155,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutUsBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminAccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthorizationFilterController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannersController.cs" />
     <Compile Include="Areas\Admin\Controllers\BeautyBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\Bg404Controller.cs" />
@@ -684,6 +685,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\AuthorizationFilter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\web.config" />
