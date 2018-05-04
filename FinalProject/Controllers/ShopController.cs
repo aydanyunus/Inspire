@@ -40,33 +40,25 @@ namespace FinalProject.Controllers
 
         public ActionResult Details()
         {
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //Product product = db.Products.Find(id);
-            //if (product == null)
-            //{
-            //    return HttpNotFound();
-            //}
             HomeViewModel homeViewModel = new HomeViewModel
             {
                 footer = db.Footers.First(),
                 ShopBg = db.ShopBgs.First(),
-                ProductImgSingleLarge = db.ProductImgSingleLarges.ToList(),
-                ProductImgSingleMini = db.ProductImgSingleMinis.ToList(),
                 products = db.Products.ToList()
-
-
             };
-
+            ViewBag.ProductImgSingleMini = db.ProductImgSingleMinis.ToList();
+            ViewBag.ProductImgSingleLarge = db.ProductImgSingleLarges.ToList();
+            ViewBag.products = db.Products.ToList();
             return View(homeViewModel);
         }
         public ActionResult CartPage()
         {
             HomeViewModel homeViewModel = new HomeViewModel
             {
-                footer = db.Footers.First()
+                footer = db.Footers.First(),
+                ShopBg = db.ShopBgs.First(),
+                product_to_categories = db.Product_to_Categories.OrderBy(p => p.Id).Take(2).ToList(),
+                products = db.Products.Where(p => p.ImgMini_id != null).ToList()
             };
             return View(homeViewModel);
         }

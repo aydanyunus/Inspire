@@ -188,11 +188,16 @@
     <Compile Include="Areas\Admin\Controllers\PositionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PrivacyPolicyBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShopBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SidebarsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SinglePostBgsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SiteMapBgsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\TrendingsController.cs" />
     <Compile Include="Areas\Admin\Controllers\VacanciesController.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\AdditionalPagesController.cs" />
+    <Compile Include="Controllers\BeautyController.cs" />
+    <Compile Include="Controllers\BeautyListController.cs" />
     <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\ComingSoonController.cs" />
     <Compile Include="Controllers\CompetitionsController.cs" />
@@ -200,11 +205,15 @@
     <Compile Include="Controllers\Error404Controller.cs" />
     <Compile Include="Controllers\Error503Controller.cs" />
     <Compile Include="Controllers\FitnessController.cs" />
+    <Compile Include="Controllers\FoodController.cs" />
+    <Compile Include="Controllers\HealthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoveController.cs" />
     <Compile Include="Controllers\MaintenanceController.cs" />
     <Compile Include="Controllers\PartnerWithUsController.cs" />
     <Compile Include="Controllers\PrivacyPolicyController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\SinglePostController.cs" />
     <Compile Include="Controllers\SiteMapController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -560,6 +569,10 @@
     <Content Include="Uploads\breadcrumbs-typography.jpg" />
     <Content Include="Uploads\careers-1-466x398.jpg" />
     <Content Include="Public\images\favicon.ico" />
+    <Content Include="Uploads\competitions-2-447x412.jpg" />
+    <Content Include="Uploads\competitions-3-447x412.jpg" />
+    <Content Include="Uploads\competitions-4-447x412.jpg" />
+    <Content Include="Uploads\favicon.ico" />
     <Content Include="Uploads\fitness-1-347x241.jpg" />
     <Content Include="Uploads\fitness-2-347x241.jpg" />
     <Content Include="Uploads\fitness-3-347x241.jpg" />
@@ -587,6 +600,8 @@
     <Content Include="Uploads\home3-7-585x433.jpg" />
     <Content Include="Public\images\logo-dark-165x53.png" />
     <Content Include="Public\images\logo-white-165x53.png" />
+    <Content Include="Uploads\logo-dark-165x53.png" />
+    <Content Include="Uploads\logo-white-165x53.png" />
     <Content Include="Uploads\love-1-347x241.jpg" />
     <Content Include="Uploads\love-2-347x241.jpg" />
     <Content Include="Uploads\love-3-347x241.jpg" />
@@ -649,6 +664,10 @@
     <Content Include="Public\styles\bootstrap.min.css" />
     <Content Include="Public\styles\style.css" />
     <Content Include="Public\styles\swiper.min.css" />
+    <Content Include="Uploads\user-1-65x65.jpg" />
+    <Content Include="Uploads\user-2-65x65.jpg" />
+    <Content Include="Uploads\user-3-65x65.jpg" />
+    <Content Include="Uploads\user-4-65x65.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -914,6 +933,12 @@
     <Content Include="Areas\Admin\Views\Vacancies\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Vacancies\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Vacancies\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sidebars\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Sidebars\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sidebars\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\scripts\.DS_Store" />
     <Content Include="Views\AboutUs\Index.cshtml" />
@@ -969,6 +994,19 @@
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Shop\ShopList.cshtml" />
     <Content Include="Views\Shop\Details.cshtml" />
+    <Content Include="Views\Food\Index.cshtml" />
+    <Content Include="Views\Health\Index.cshtml" />
+    <Content Include="Views\Love\Index.cshtml" />
+    <Content Include="Views\Beauty\Index.cshtml" />
+    <Content Include="Views\BeautyList\Index.cshtml" />
+    <Content Include="Views\SinglePost\Index.cshtml" />
+    <Content Include="Views\Shop\CartPage.cshtml" />
+    <Content Include="Views\AdditionalPages\Typography.cshtml" />
+    <Content Include="Views\AdditionalPages\Buttons.cshtml" />
+    <Content Include="Views\AdditionalPages\Tables.cshtml" />
+    <Content Include="Views\AdditionalPages\Grid.cshtml" />
+    <Content Include="Views\AdditionalPages\Forms.cshtml" />
+    <Content Include="Views\AdditionalPages\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

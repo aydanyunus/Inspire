@@ -20,8 +20,11 @@ namespace FinalProject.Controllers
                 footer = db.Footers.First(),
                 freeOffer = db.FreeOffers.First(),
                 sidebar = db.Sidebars.ToList(),
-                competitionsBg = db.CompetitionsBgs.First()
+                competitionsBg = db.CompetitionsBgs.First(),
+                posts = db.Posts.ToList()
             };
+           
+
             return View(homeViewModel);
         }
 

@@ -21,6 +21,7 @@ namespace FinalProject.Controllers
                 PrivacyPolicyBg = db.PrivacyPolicyBgs.First(),
                 privacypolicy = db.PrivacyPolicies.ToList()
             };
+            ViewBag.Privacy = db.PrivacyPolicies.ToList();
             return View(homeViewModel);
         }
     }

@@ -1,20 +1,239 @@
 ﻿@using FinalProject.ViewModels.HomeViewModel;
 @model HomeViewModel
-
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitness</title>
+    <link rel="shortcut icon" href="~/Public/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Public/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Public/styles/style.css">
+</head>
+<body>
+    <!-- navbar starts here -->
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href=@Url.Action("Index", "Home") class="navbar-brand">
+                <img src="~/Public/images/logo-dark-165x53.png" alt="Bravana Logo">
+            </a>
+            <ul class="nav navbar-nav secondary-navbar-nav">
+                <li class="dropdown dropdown-cart">
+                    <a href=@Url.Action("CartPage", "Shop") class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count">2</span>
+                    </a>
+                    <a href=@Url.Action("Search", "AdditionalPages") class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <div id="main-nav-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav main-navbar-nav">
+                    <li class="dropdown">
+                        <a href=@Url.Action("Index", "Fitness") class="dropdown-toggle">
+                            FITNESS
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href=@Url.Action("Index", "Food") class="dropdown-toggle">
+                            FOOD
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href=@Url.Action("Index", "Health") class="dropdown-toggle">
+                            HEALTH
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href=@Url.Action("Index", "Love") class="dropdown-toggle">
+                            LOVE
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            BEAUTY
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href=@Url.Action("Index", "Beauty")>Beauty</a>
+                            </li>
+                            <li>
+                                <a href=@Url.Action("Index", "BeautyList")>Beauty List</a>
+                            </li>
+                            <li>
+                                <a href=@Url.Action("Index", "SinglePost")>Single Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-mega" data-parallax="scroll">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            PAGES
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-mega-menu-container">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 1
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "AboutUs")>About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Careers")>Careers</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Shop")>Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("ShopList", "Shop")>Shop List</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Details", "Shop")>Single Product</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("CartPage", "Shop")>Cart Page</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Competitions")>
+                                                    Competitions
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "PartnerWithUs")>Partner With Us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 2
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "ComingSoon")>Coming Soon</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Error503")>503</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Error404")>404</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "SiteMap")>Site Map</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "PrivacyPolicy")>Privacy Policy</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Maintenance")>Maintenance</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Contacts")>
+                                                    Contacts
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    ELEMENTS
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Typography", "AdditionalPages")>Typography</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Forms", "AdditionalPages")>Forms</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Buttons", "AdditionalPages")>Buttons</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Progress Bars</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Tabs & Accordions</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Tables", "AdditionalPages")>Tables</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Grid", "AdditionalPages")>
+                                                    Grid
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 3
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Fitness")>Fitness</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Food")>Food</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Health")>Health</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Love")>Love</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Beauty")>Beauty</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "BeautyList")>Beauty List</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "SinglePost")>
+                                                    Single Post
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends here -->
     <!-- MAIN SECTION STARTS HERE -->
     <section id="fitness-main">
         <div class="row">
-            <div class="col-md-12 col-xs-12 fitness-main-image text-center">
+            <div class="col-md-12 col-xs-12 fitness-main-image text-center" style="background: url(../../Uploads/@Model.fitnessBg.Img);background-size: cover;background-position: center 50%;">
                 <h1>
                     Fitness
                 </h1>
-                <a href="index.html">
+                <a href=@Url.Action("Index", "Home")>
                     Home
                 </a>
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -39,22 +258,22 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" data-filter=".hair">
+                                    <a href="#" data-filter=".@ViewBag.fitness[1].PostCategory1.Name">
                                         HAIR
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" data-filter=".makeup">
+                                    <a href="#" data-filter=".@ViewBag.fitness[0].PostCategory1.Name">
                                         MAKEUP
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" data-filter=".nails">
+                                    <a href="#" data-filter=".@ViewBag.fitness[3].PostCategory.Name">
                                         NAILS
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" data-filter=".fashion">
+                                    <a href="#" data-filter=".@ViewBag.fitness[2].PostCategory1.Name">
                                         FASHION
                                     </a>
                                 </li>
@@ -64,12 +283,12 @@
                             <p>
                                 View:
                                 <span>
-                                    <a href="beauty-list.html" class="active">
+                                    <a href=@Url.Action("Index", "BeutyList") class="active">
                                         <i class="fa fa-list" aria-hidden="true"></i>
                                     </a>
                                 </span>
                                 <span>
-                                    <a href="beauty.html">
+                                    <a href=@Url.Action("Index", "Beauty")>
                                         <i class="fa fa-th" aria-hidden="true"></i>
                                     </a>
                                 </span>
@@ -78,134 +297,136 @@
                     </div>
                     <!-- GRID SECTION -->
                     <div class="row margin-top grid">
-                        <div class="col-md-4 col-xs-12 with-hover margin-bottom-30 grid-item makeup">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/fitness-1-347x241.jpg" alt="">
-                            </a>
-                            <div class="bottom-content">
-                                <a href="#">BEAUTY</a>
-                                <span>,</span>
-                                <a href="#">MAKEUP</a>
-                                <a href="single-post.html" class="black">Top 10 Tracks for Your Daily Workout</a>
-                                <p>Some makeup techniques may seem easy to follow, but they show great results...</p>
-                                <div class="icon-date">
-                                    <p>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <span>MAY 6, 2017</span>
-                                    </p>
-                                    <p class="margin-left text-right">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>6424</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-12 with-hover margin-bottom-30 grid-item hair">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/fitness-2-347x241.jpg" alt="">
-                            </a>
-                            <div class="bottom-content">
-                                <a href="#">BEAUTY</a>
-                                <span>,</span>
-                                <a href="#">HAIR</a>
-                                <a href="single-post.html" class="black">
-                                    Pros and Cons of Cardio Training for Beginners
+                        @for (int i = 0; i < 1; i++)
+                        {
+                            <div class="col-md-4 col-xs-12 with-hover margin-bottom-30 grid-item @ViewBag.fitness[0].PostCategory1.Name">
+                                <a href=@Url.Action("Index", "SinglePost")>
+                                    <img src="~/Uploads/@ViewBag.fitness[0].PostImgSmall.Img" alt="">
                                 </a>
-                                <p>Your most beautiful hair color will bring out the subtleties of your skin tone and...</p>
-                                <div class="icon-date">
-                                    <p>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <span>
-                                            JANUARY 15, 2017
-                                        </span>
-                                    </p>
-                                    <p class="margin-left text-right">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>524</span>
-                                    </p>
+                                <div class="bottom-content">
+                                    <a href="#">@ViewBag.fitness[0].PostCategory.Name</a>
+                                    <span>,</span>
+                                    <a href="#">@ViewBag.fitness[0].PostCategory1.Name</a>
+                                    <a href=@Url.Action("Index", "SinglePost") class="black">@ViewBag.fitness[0].Title</a>
+                                    <p>@ViewBag.fitness[0].Content</p>
+                                    <div class="icon-date">
+                                        <p>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            <span>@ViewBag.fitness[0].Written_date</span>
+                                        </p>
+                                        <p class="margin-left text-right">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <span>@ViewBag.fitness[0].View_Count</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-xs-12 with-hover margin-bottom-30 grid-item fashion">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/fitness-3-347x241.jpg" alt="">
-                            </a>
-                            <div class="bottom-content">
-                                <a href="#">BEAUTY</a>
-                                <span>,</span>
-                                <a href="#">FASHION</a>
-                                <a href="single-post.html" class="black">Choosing Shoes for your First Training</a>
-                                <p>Whether you're easing yourself into makeup or would simply like to try...</p>
-                                <div class="icon-date">
-                                    <p>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <span>
-                                            JANUARY 20, 2017
-                                        </span>
-                                    </p>
-                                    <p class="margin-left text-right">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>524</span>
-                                    </p>
+                            <div class="col-md-4 col-xs-12 with-hover margin-bottom-30 grid-item @ViewBag.fitness[1].PostCategory1.Name">
+                                <a href=@Url.Action("Index", "SinglePost")>
+                                    <img src="~/Uploads/@ViewBag.fitness[1].PostImgSmall.Img" alt="">
+                                </a>
+                                <div class="bottom-content">
+                                    <a href="#">@ViewBag.fitness[1].PostCategory.Name</a>
+                                    <span>,</span>
+                                    <a href="#">@ViewBag.fitness[1].PostCategory1.Name</a>
+                                    <a href=@Url.Action("Index", "SinglePost") class="black">
+                                        @ViewBag.fitness[1].Title
+                                    </a>
+                                    <p>@ViewBag.fitness[1].Content</p>
+                                    <div class="icon-date">
+                                        <p>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            <span>
+                                                @ViewBag.fitness[1].Written_date
+                                            </span>
+                                        </p>
+                                        <p class="margin-left text-right">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <span>@ViewBag.fitness[1].View_Count</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-8 col-xs-12 with-hover grid-item nails">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/home1-4-733x241.jpg" alt="">
-                            </a>
-                            <div class="bottom-content">
-                                <a href="#" class="must-read">MUST READ</a>
-                                <a href="single-post.html" class="black">Why Surfing is Beneficial for Your Health</a>
-                                <p>
-                                    A Leather Handbag is an accessory that will often come in handy. A quality leather handbag should last you years. Whether
-                                    you choose a timeless black or brown leather handbag, or something more colourful, it
-                                    should be a design that reflects your personal style. Here are a few tips for choosing...
-                                </p>
-                                <div class="icon-date">
-                                    <p>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <span>
-                                            FEBRUARY 5, 2017
-                                        </span>
-                                    </p>
-                                    <p class="margin-left text-right">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>524</span>
-                                    </p>
+                            <div class="col-md-4 col-xs-12 with-hover margin-bottom-30 grid-item @ViewBag.fitness[2].PostCategory1.Name">
+                                <a href=@Url.Action("Index", "SinglePost")>
+                                    <img src="~/Uploads/@ViewBag.fitness[2].PostImgSmall.Img" alt="">
+                                </a>
+                                <div class="bottom-content">
+                                    <a href="#">@ViewBag.fitness[2].PostCategory.Name</a>
+                                    <span>,</span>
+                                    <a href="#">@ViewBag.fitness[2].PostCategory1.Name</a>
+                                    <a href=@Url.Action("Index", "SinglePost") class="black">@ViewBag.fitness[2].Title</a>
+                                    <p>@ViewBag.fitness[2].Content</p>
+                                    <div class="icon-date">
+                                        <p>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            <span>
+                                                @ViewBag.fitness[2].Written_date
+                                            </span>
+                                        </p>
+                                        <p class="margin-left text-right">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <span>@ViewBag.fitness[2].View_Count</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-xs-12 with-hover grid-item fashion">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/fitness-4-347x241.jpg" alt="">
-                            </a>
-                            <div class="bottom-content">
-                                <a href="#">BEAUTY</a>
-                                <span>,</span>
-                                <a href="#">FASHION</a>
-                                <a href="#" class="black">Get More Athletic with This New Program</a>
-                                <p>You don’t have to be a makeup genius to know that lipstick can make a big...</p>
-                                <div class="icon-date">
+                            <div class="col-md-8 col-xs-12 with-hover grid-item @ViewBag.fitness[3].PostCategory.Name">
+                                <a href=@Url.Action("Index", "SinglePost")>
+                                    <img src="~/Uploads/@ViewBag.fitness[3].PostImgSmall.Img" alt="">
+                                </a>
+                                <div class="bottom-content">
+                                    <a href="#" class="must-read">@ViewBag.fitness[3].PostCategory.Name</a>
+                                    <a href=@Url.Action("Index", "SinglePost") class="black">@ViewBag.fitness[3].Title</a>
                                     <p>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <span>
-                                            MARCH 12, 2017
-                                        </span>
+                                        @ViewBag.fitness[3].Content
                                     </p>
-                                    <p class="margin-left text-right">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>524</span>
-                                    </p>
+                                    <div class="icon-date">
+                                        <p>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            <span>
+                                                @ViewBag.fitness[3].Written_date
+                                            </span>
+                                        </p>
+                                        <p class="margin-left text-right">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <span>@ViewBag.fitness[3].View_Count</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="col-md-4 col-xs-12 with-hover grid-item @ViewBag.fitness[2].PostCategory1.Name">
+                                <a href=@Url.Action("Index", "SinglePost")>
+                                    <img src="~/Uploads/@ViewBag.fitness[4].PostImgSmall.Img" alt="">
+                                </a>
+                                <div class="bottom-content">
+                                    <a href="#">@ViewBag.fitness[2].PostCategory.Name</a>
+                                    <span>,</span>
+                                    <a href="#">@ViewBag.fitness[2].PostCategory1.Name</a>
+                                    <a href="#" class="black">@ViewBag.fitness[4].Title</a>
+                                    <p>@ViewBag.fitness[4].Content</p>
+                                    <div class="icon-date">
+                                        <p>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            <span>
+                                                @ViewBag.fitness[4].Written_date
+                                            </span>
+                                        </p>
+                                        <p class="margin-left text-right">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <span>@ViewBag.fitness[4].View_Count</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
                     </div>
                     <!-- VIDEO SECTION STARTS HERE -->
                     <div class="row video-section">
                         <div class="col-md-12 col-xs-12">
                             <div class="image">
-                                <img src="~/Uploads/fitness-5-1119x593.jpg" alt="">
+                                <img src="~/Uploads/@ViewBag.fitness[5].PostImgSmall.Img" alt="">
                             </div>
                             <div class="video">
                                 <div class="border-100-percent col-md-offset-5 col-xs-offset-5">
@@ -213,8 +434,8 @@
                                         <i class="fa fa-play fa-2x" aria-hidden="true"></i>
                                     </a>
                                 </div>
-                                <h1 class="text-center">How to Enjoy Your Workout the Best Way</h1>
-                                <p class="text-center">Let our fitness experts show you how it's done.</p>
+                                <h1 class="text-center">@ViewBag.fitness[5].Title</h1>
+                                <p class="text-center">@ViewBag.fitness[5].SubTitle</p>
                             </div>
                         </div>
                     </div>
@@ -230,178 +451,170 @@
                     <div class="row bordered-sidebar">
                         <div class="col-md-12 col-xs-12">
                             <p class="free-offer">FREE OFFER</p>
-                            <h4>5 Easy Ways for Women to Get Perfect Skin</h4>
-                            <h5>Enter your e-mail below and get this skincare e-book free!</h5>
+                            <h4>@Model.freeOffer.Title</h4>
+                            <h5>@Model.freeOffer.SupTitle</h5>
                             <form action="" method="POST">
                                 <div class="col-md-12 col-xs-12 form-group">
                                     <input type="email" class="form-control" placeholder="Email">
                                     <button type="submit" class="btn-lg gray-btn">SUBSCRIBE</button>
                                 </div>
                             </form>
-                            <h5>100% Privacy. We will never spam you!</h5>
+                            <h5>@Model.freeOffer.SubTitle</h5>
                         </div>
                     </div>
                     <div class="row popular-posts-p">
                         <p>POPULAR POSTS</p>
                     </div>
-                    <div class="row popular-posts">
-                        <div class="col-md-12 col-xs-12">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/post-sidebar-1-90x98.jpg" alt="">
-                            </a>
-                            <a href="single-post.html" class="text-color">
-                                Getting a Good Night’s Sleep: an Ultimate Guide for Everyone
-                            </a>
-                            <div class="icon-date">
-                                <p>
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <span>
-                                        APRIL 10, 2017
-                                    </span>
-                                </p>
-                                <p class="margin-left text-right">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>524</span>
-                                </p>
+                    @foreach (var item in Model.sidebar)
+                    {
+                        <div class="row popular-posts">
+                            <div class="col-md-12 col-xs-12">
+                                <a href=@Url.Action("Index", "SinglePost")>
+                                    <img src="~/Uploads/@item.Img" alt="">
+                                </a>
+                                <a href=@Url.Action("Index", "SinglePost") class="text-color">
+                                    @item.Title
+                                </a>
+                                <div class="icon-date">
+                                    <p>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <span>
+                                            @item.Written_date
+                                        </span>
+                                    </p>
+                                    <p class="margin-left text-right">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        <span>@item.View_Count</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row popular-posts">
-                        <div class="col-md-12 col-xs-12">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/post-sidebar-2-90x98.jpg" alt="">
-                            </a>
-                            <a href="single-post.html" class="text-color">
-                                Getting a Good Night’s Sleep: an Ultimate Guide for Everyone
-                            </a>
-                            <div class="icon-date">
-                                <p>
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <span>
-                                        APRIL 10, 2017
-                                    </span>
-                                </p>
-                                <p class="margin-left text-right">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>524</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row popular-posts with-border-bottom">
-                        <div class="col-md-12 col-xs-12">
-                            <a href="single-post.html">
-                                <img src="~/Uploads/post-sidebar-3-90x98.jpg" alt="">
-                            </a>
-                            <a href="single-post.html" class="text-color">
-                                Getting a Good Night’s Sleep: an Ultimate Guide for Everyone
-                            </a>
-                            <div class="icon-date">
-                                <p>
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <span>
-                                        APRIL 10, 2017
-                                    </span>
-                                </p>
-                                <p class="margin-left text-right">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>524</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    }
+
                     <div class="row banner-img">
-                        <img src="~/Uploads/banner-2-381x238.jpg" alt="">
+                        <img src="~/Uploads/@Model.banner.Img" alt="">
                     </div>
                     <div class="row instagram-feed">
                         <p>INSTAGRAM FEED</p>
                     </div>
                     <div class="row instagram-pics-part1">
-                        <div class="col-md-4 col-xs-4 min-pics">
-                            <a href="https://scontent.cdninstagram.com/vp/573dc0a812923c0088d65d0939a08156/5B593EB1/t51.2885-15/s640x640/sh0.08/e35/18581146_1770433496602061_179455278498971648_n.jpg">
-                                <img src="images/18581146_1770433496602061_179455278498971648_n.jpg" alt="">
-                            </a>
-                            <div class="caption">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-thumbs-o-up" aria-hidden="true">1</i>
-                                    </li>
-                                </ul>
+                        @foreach (var item in Model.minipics)
+                        {
+                            <div class="col-md-4 col-xs-4 min-pics">
+                                <a href="https://scontent.cdninstagram.com/vp/573dc0a812923c0088d65d0939a08156/5B593EB1/t51.2885-15/s640x640/sh0.08/e35/18581146_1770433496602061_179455278498971648_n.jpg">
+                                    <img src="@item.Img" alt="">
+                                </a>
+                                <div class="caption">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <i class="fa fa-thumbs-o-up" aria-hidden="true">@item.Like_count</i>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-xs-4 min-pics">
-                            <a href="#">
-                                <img src="~/Uploads/18645014_691147511080987_3451970425314082816_n.jpg" alt="">
-                            </a>
-                            <div class="caption">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-thumbs-o-up" aria-hidden="true">1</i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-4 min-pics">
-                            <a href="#">
-                                <img src="~/Uploads/18579555_111589536092225_2690306444074418176_n.jpg" alt="">
-                            </a>
-                            <div class="caption">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-thumbs-o-up" aria-hidden="true">1</i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-4 min-pics">
-                            <a href="#">
-                                <img src="~/Uploads/18580784_433190300380717_2727867294582571008_n.jpg" alt="">
-                            </a>
-                            <div class="caption">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-thumbs-o-up" aria-hidden="true">1</i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-4 min-pics">
-                            <a href="#">
-                                <img src="~/Uploads/18580372_1834573263530458_5410462442704601088_n.jpg" alt="">
-                            </a>
-                            <div class="caption">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-thumbs-o-up" aria-hidden="true">1</i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-4 min-pics">
-                            <a href="#">
-                                <img src="~/Uploads/18514260_210511379459486_5227500697070600192_n.jpg" alt="">
-                            </a>
-                            <div class="caption">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="fa fa-thumbs-o-up" aria-hidden="true">2</i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                        }
 
+                    </div>
                 </div>
                 <!-- SIDEBAR ENDS HERE -->
             </div>
         </div>
     </section>
     <!-- ISOTOP SECTION ENDS HERE -->
+    <!-- FOOTER STARTS HERE -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 inner-footer">
+                    <div class="col-md-4 col-xs-12 logo">
+                        <a href=@Url.Action("Index", "Home")>
+                            <img src="~/Public/images/logo-white-165x53.png" alt="">
+                        </a>
+                        <p>
+                            @Model.footer.Title
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-xs-12 links">
+                        <h2>Links</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6 display-block">
+                                <a href=@Url.Action("Index", "AboutUs")>
+                                    ABOUT
+                                </a>
+                                <a href=@Url.Action("Index", "Food")>
+                                    FOOD
+                                </a>
+                                <a href=@Url.Action("Index", "Fitness")>
+                                    FITNESS
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xs-6 display-block">
+                                <a href=@Url.Action("Index", "Health")>
+                                    HEALTH
+                                </a>
+                                <a href=@Url.Action("Index", "Love")>
+                                    LOVE
+                                </a>
+                                <a href=@Url.Action("Index", "Beauty")>
+                                    BEAUTY
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 form">
+                        <h2>Join Our Newsletter</h2>
+                        <form action="" method="post" class="form-inline">
+                            <div class="form-wrapper">
+                                <input type="email" class="form-control" name="Email" id="email" placeholder="E-mail">
+                                <button class="btn btn-default" type="submit">SUBSCRIBE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 col-xs-12 footer-bottom">
+                    <div class="col-md-4 col-xs-12 copyright text-left">
+                        <p>
+                            Inspire © <span>@Model.footer.Copywrite_date</span>.
+                            <span>
+                                <a href=@Url.Action("Index", "PrivacyPolicy")>Privacy Policy</a>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-xs-12 social text-center">
+                        <a href="@Model.footer.Instagram_link">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="@Model.footer.Facebook_link">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="@Model.footer.Twitter_link">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-xs-12 info-email text-right text-xs-left">
+                        <a href="#">
+                            @Model.footer.Adress
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER ENDS HERE -->
+    <!-- js scripts -->
+    <a href="javascript:" id="return-to-top">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
     <!-- js scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/isotope.pkgd.min.js"></script>
-    <script src="scripts/isotope.js"></script>
-    <script src="scripts/scrool-top.js"></script>
+    <script src="~/Public/scripts/bootstrap.min.js"></script>
+    <script src="~/Public/scripts/isotope.pkgd.min.js"></script>
+    <script src="~/Public/scripts/isotope.js"></script>
+    <script src="~/Public/scripts/scrool-top.js"></script>
 
+</body>
+</html>
 

@@ -23,16 +23,16 @@
                 <span class="sr-only">Toggle Navigation</span>
                 <i class="fa fa-bars"></i>
             </button>
-            <a href="index.html" class="navbar-brand">
+            <a href=@Url.Action("Index", "Home") class="navbar-brand">
                 <img src="~/Public/images/logo-dark-165x53.png" alt="Bravana Logo">
             </a>
             <ul class="nav navbar-nav secondary-navbar-nav">
                 <li class="dropdown dropdown-cart">
-                    <a href="cart-page.html" class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                    <a href=@Url.Action("CartPage", "Shop") class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         <span class="cart-count">2</span>
                     </a>
-                    <a href="search-results.html" class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                    <a href=@Url.Action("Search", "AdditionalPages") class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -40,22 +40,22 @@
             <div id="main-nav-collapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav main-navbar-nav">
                     <li class="dropdown">
-                        <a href="fitness.html" class="dropdown-toggle">
+                        <a href=@Url.Action("Index", "Fitness") class="dropdown-toggle">
                             FITNESS
                         </a>
                     </li>
                     <li class="dropdown ">
-                        <a href="food.html" class="dropdown-toggle">
+                        <a href=@Url.Action("Index", "Food") class="dropdown-toggle">
                             FOOD
                         </a>
                     </li>
                     <li class="dropdown ">
-                        <a href="health.html" class="dropdown-toggle">
+                        <a href=@Url.Action("Index", "Health") class="dropdown-toggle">
                             HEALTH
                         </a>
                     </li>
                     <li class="dropdown ">
-                        <a href="love.html" class="dropdown-toggle">
+                        <a href=@Url.Action("Index", "Love") class="dropdown-toggle">
                             LOVE
                         </a>
                     </li>
@@ -66,13 +66,13 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="beauty.html">Beauty</a>
+                                <a href=@Url.Action("Index", "Beauty")>Beauty</a>
                             </li>
                             <li>
-                                <a href="beauty-list.html">Beauty List</a>
+                                <a href=@Url.Action("Index", "BeautyList")>Beauty List</a>
                             </li>
                             <li>
-                                <a href="single-post.html">Single Post</a>
+                                <a href=@Url.Action("Index", "SinglePost")>Single Post</a>
                             </li>
                         </ul>
                     </li>
@@ -92,30 +92,30 @@
                                                 </span>
                                             </li>
                                             <li>
-                                                <a href="about-us.html">About Us</a>
+                                                <a href=@Url.Action("Index", "AboutUs")>About Us</a>
                                             </li>
                                             <li>
-                                                <a href="careers.html">Careers</a>
+                                                <a href=@Url.Action("Index", "Careers")>Careers</a>
                                             </li>
                                             <li>
-                                                <a href="shop.html">Shop</a>
+                                                <a href=@Url.Action("Index", "Shop")>Shop</a>
                                             </li>
                                             <li>
-                                                <a href="shop-list.html">Shop List</a>
+                                                <a href=@Url.Action("ShopList", "Shop")>Shop List</a>
                                             </li>
                                             <li>
-                                                <a href="single-product.html">Single Product</a>
+                                                <a href=@Url.Action("Details", "Shop")>Single Product</a>
                                             </li>
                                             <li>
-                                                <a href="cart-page.html">Cart Page</a>
+                                                <a href=@Url.Action("CartPage", "Shop")>Cart Page</a>
                                             </li>
                                             <li>
-                                                <a href="competitions.html">
+                                                <a href=@Url.Action("Index", "Competitions")>
                                                     Competitions
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="partner-with-us.html">Partner With Us</a>
+                                                <a href=@Url.Action("Index", "PartnerWithUs")>Partner With Us</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -127,25 +127,25 @@
                                                 </span>
                                             </li>
                                             <li>
-                                                <a href="coming-soon.html">Coming Soon</a>
+                                                <a href=@Url.Action("Index", "ComingSoon")>Coming Soon</a>
                                             </li>
                                             <li>
-                                                <a href="503.html">503</a>
+                                                <a href=@Url.Action("Index", "Error503")>503</a>
                                             </li>
                                             <li>
-                                                <a href="404.html">404</a>
+                                                <a href=@Url.Action("Index", "Error404")>404</a>
                                             </li>
                                             <li>
-                                                <a href="site-map.html">Site Map</a>
+                                                <a href=@Url.Action("Index", "SiteMap")>Site Map</a>
                                             </li>
                                             <li>
-                                                <a href="privacy-policy.html">Privacy Policy</a>
+                                                <a href=@Url.Action("Index", "PrivacyPolicy")>Privacy Policy</a>
                                             </li>
                                             <li>
-                                                <a href="maintenance.html">Maintenance</a>
+                                                <a href=@Url.Action("Index", "Maintenance")>Maintenance</a>
                                             </li>
                                             <li>
-                                                <a href="contacts.html">
+                                                <a href=@Url.Action("Index", "Contacts")>
                                                     Contacts
                                                 </a>
                                             </li>
@@ -159,13 +159,13 @@
                                                 </span>
                                             </li>
                                             <li>
-                                                <a href="typography.html">Typography</a>
+                                                <a href=@Url.Action("Typography", "AdditionalPages")>Typography</a>
                                             </li>
                                             <li>
-                                                <a href="forms.html">Forms</a>
+                                                <a href=@Url.Action("Forms", "AdditionalPages")>Forms</a>
                                             </li>
                                             <li>
-                                                <a href="buttons.html">Buttons</a>
+                                                <a href=@Url.Action("Buttons", "AdditionalPages")>Buttons</a>
                                             </li>
                                             <li>
                                                 <a href="#">Progress Bars</a>
@@ -174,10 +174,10 @@
                                                 <a href="#">Tabs & Accordions</a>
                                             </li>
                                             <li>
-                                                <a href="tables.html">Tables</a>
+                                                <a href=@Url.Action("Tables", "AdditionalPages")>Tables</a>
                                             </li>
                                             <li>
-                                                <a href="grid.html">
+                                                <a href=@Url.Action("Grid", "AdditionalPages")>
                                                     Grid
                                                 </a>
                                             </li>
@@ -191,25 +191,25 @@
                                                 </span>
                                             </li>
                                             <li>
-                                                <a href="fitness.html">Fitness</a>
+                                                <a href=@Url.Action("Index", "Fitness")>Fitness</a>
                                             </li>
                                             <li>
-                                                <a href="food.html">Food</a>
+                                                <a href=@Url.Action("Index", "Food")>Food</a>
                                             </li>
                                             <li>
-                                                <a href="health.html">Health</a>
+                                                <a href=@Url.Action("Index", "Health")>Health</a>
                                             </li>
                                             <li>
-                                                <a href="love.html">Love</a>
+                                                <a href=@Url.Action("Index", "Love")>Love</a>
                                             </li>
                                             <li>
-                                                <a href="beauty.html">Beauty</a>
+                                                <a href=@Url.Action("Index", "Beauty")>Beauty</a>
                                             </li>
                                             <li>
-                                                <a href="beauty-list.html">Beauty List</a>
+                                                <a href=@Url.Action("Index", "BeautyList")>Beauty List</a>
                                             </li>
                                             <li>
-                                                <a href="single-post.html">
+                                                <a href=@Url.Action("Index", "SinglePost")>
                                                     Single Post
                                                 </a>
                                             </li>
@@ -233,7 +233,7 @@
             <div class="row">
                 <div class="col-md-12 col-xs-12 inner-footer">
                     <div class="col-md-4 col-xs-12 logo">
-                        <a href="index.html">
+                        <a href=@Url.Action("Index", "Home")>
                             <img src="~/Public/images/logo-white-165x53.png" alt="">
                         </a>
                         <p>
@@ -244,24 +244,24 @@
                         <h2>Links</h2>
                         <div class="row">
                             <div class="col-md-6 col-xs-6 display-block">
-                                <a href="about-us.html">
+                                <a href=@Url.Action("Index", "AboutUs")>
                                     ABOUT
                                 </a>
-                                <a href="food.html">
+                                <a href=@Url.Action("Index", "Food")>
                                     FOOD
                                 </a>
-                                <a href="fitness.html">
+                                <a href=@Url.Action("Index", "Fitness")>
                                     FITNESS
                                 </a>
                             </div>
                             <div class="col-md-6 col-xs-6 display-block">
-                                <a href="health.html">
+                                <a href=@Url.Action("Index", "Health")>
                                     HEALTH
                                 </a>
-                                <a href="love.html">
+                                <a href=@Url.Action("Index", "Love")>
                                     LOVE
                                 </a>
-                                <a href="beauty.html">
+                                <a href=@Url.Action("Index", "Beauty")>
                                     BEAUTY
                                 </a>
                             </div>
@@ -286,7 +286,7 @@
                         <p>
                             Inspire © <span>@Model.footer.Copywrite_date</span>.
                             <span>
-                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href=@Url.Action("Index", "PrivacyPolicy")>Privacy Policy</a>
                             </span>
                         </p>
                     </div>

@@ -4,7 +4,6 @@
 ViewBag.Title = "Index";
 Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!-- MAIN SECTION STARTS HERE -->
 <section id="main">
     <div class="row">
@@ -12,7 +11,7 @@ Layout = "~/Views/Shared/_Layout.cshtml";
             <h1>
                 Careers
             </h1>
-            <a href="index.html">
+            <a href=@Url.Action("Index", "Home")>
                 Home
             </a>
             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -103,10 +102,10 @@ Layout = "~/Views/Shared/_Layout.cshtml";
                 {
                 <div class="row popular-posts">
                     <div class="col-md-12 col-xs-12">
-                        <a href="single-post.html">
+                        <a href=@Url.Action("Index", "SinglePost")>
                             <img src="~/Uploads/@item.Img" alt="">
                         </a>
-                        <a href="single-post.html" class="text-color">
+                        <a href=@Url.Action("Index", "SinglePost") class="text-color">
                            @item.Title
                         </a>
                         <div class="icon-date">

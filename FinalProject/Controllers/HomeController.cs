@@ -26,7 +26,7 @@ namespace FinalProject.Controllers
                 posts = db.Posts.ToList(),
                 video = db.Posts.Where(v => v.ImgHomePage_id == 4).FirstOrDefault()
             };
-            ViewBag.Mustread = db.Posts.Where(p => p.Page_Partner_id == 10).FirstOrDefault();
+            ViewBag.Mustread = db.Posts.Where(p => p.Page_Partner_id == 10).ToList();
 
             return View(homeViewModel);
         }

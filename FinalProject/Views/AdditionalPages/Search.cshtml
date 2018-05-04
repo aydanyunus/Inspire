@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 search-main-image text-center" style="background: url(../../Uploads/breadcrumbs-contacts.jpg);background-position: center 50%;background-size: cover;">
+            <h1>
+                Search results
+            </h1>
+            <a href=@Url.Action("Index", "Home")>
+                Home
+            </a>
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <span>
+                Search results
+            </span>
+        </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- INPUT SECTION STARTS HERE -->
+<section id="search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <form action="" method="GET">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- INPUT SECTION ENDS HERE -->

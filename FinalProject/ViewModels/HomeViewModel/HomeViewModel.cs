@@ -48,6 +48,13 @@ namespace FinalProject.ViewModels.HomeViewModel
         public AdminInfo AdminInfo { get; set; }
         public List<Post> mustread { get; set; }
         public Post video { get; set; }
-
+        public FitnessBg fitnessBg { get; set; }
+        public Banner banner { get; set; }
+        public FoodBg foodBg { get; set; }
+        public HealthBg healthBg { get; set; }
+        public LoveBg loveBg { get; set; }
+        public BeautyBg beautyBg { get; set; }
+        public SinglePostBg SinglePostBg { get; set; }
+        public SinglePost SinglePost { get; set; }
     }
 }

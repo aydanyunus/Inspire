@@ -24,8 +24,11 @@ namespace FinalProject.Controllers
                 brandimgs = db.BrandImgs.ToList(),
                 sidebar = db.Sidebars.ToList(),
                 lookingForWork = db.LookingForWorks.First(),
-                minipics = db.MiniPics.ToList()
+                minipics = db.MiniPics.ToList(),
+                posts = db.Posts.ToList()
             };
+            ViewBag.Mustread = db.Posts.Where(p => p.Page_Partner_id == 10).ToList();
+
 
             return View(homeViewModel);
         }

@@ -1,0 +1,355 @@
+﻿@using FinalProject.ViewModels.HomeViewModel;
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- MAIN SECTION STARTS HERE -->
+<section id="main">
+    <div class="row">
+        <div class="col-md-12 col-xs-12 singlepost-main-image text-center" style="background: url(../../Uploads/@Model.SinglePostBg.Img);background-position: center 50%;background-size: cover;">
+        <h1>
+            Single Post
+        </h1>
+        <a href=@Url.Action("Index", "Home")>
+            Home
+        </a>
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <a href=@Url.Action("Index", "Home")>
+            Additional Pages
+        </a>
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <span>
+            Single Post
+        </span>
+    </div>
+    </div>
+</section>
+<!-- MAIN SECTION ENDS HERE -->
+<!-- LIST STARTS HERE -->
+<section id="list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="col-md-9 col-xs-12 post-list">
+                    <div class="row bordered">
+                        @foreach (var item in Model.posts.Where(p => p.SinglePost_id != null).ToList())
+                        {
+                        <div class="col-md-12 col-xs-12">
+                            <div class="row icons">
+                                <div class="col-md-12 col-xs-12 brdr-bttm">
+                                    <div class="icons-and-dates pull-left">
+                                        <i class="fa fa-clock-o" aria-hidden="true">
+                                            @item.Written_date
+                                        </i>
+                                        <a href="#">
+                                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                            <span>244</span>
+                                        </a>
+                                        <i class="fa fa-eye" aria-hidden="true">
+                                            @item.View_Count
+                                        </i>
+                                    </div>
+                                    <a href="#" class="pull-right">
+                                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                                        <span>
+                                            by
+                                            <span>@item.Author.Name</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row post-content">
+                                <div class="col-md-12 col-xs-12">
+                                    <h3>@item.Title</h3>
+                                    <p>
+                                      @item.SinglePost.Content1
+                                    </p>
+                                    <img src="~/Uploads/@item.SinglePost.PostImgLarge.Img" alt="">
+                                    <p>
+                                       @item.SinglePost.Content2
+                                    </p>
+                                    <p>
+                                        @item.SinglePost.Content3
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row green-content">
+                                <div class="col-md-12 col-xs-12">
+                                    <h4>
+                                       @item.SinglePost.GreenTitle
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row after-border">
+                                <div class="col-md-12 col-xs-12">
+                                    <p>
+                                       @item.SinglePost.Content4
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row two-images">
+                                <div class="col-md-6 col-xs-12">
+                                    <img src="~/Uploads/@item.SinglePost.BottomImg1" alt="">
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <img src="~/Uploads/@item.SinglePost.BottomImg2" alt="">
+                                </div>
+                                <!-- LINKS -->
+                                <div class="col-md-12 col-xs-12 links">
+                                    <h5 class="pull-left">
+                                        Share this Post:
+                                    </h5>
+                                    <div class="social-buttons pull-right">
+                                        <a href="#" class="btn btn-default btn-sm fb">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            Like
+                                        </a>
+                                        <a href="#" class="btn btn-default btn-sm twitter">
+                                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                                            Tweet
+                                        </a>
+                                        <a href="#" class="btn btn-default btn-sm google">
+                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                            Share
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        }
+                    </div>
+                    <!-- RELATED POSTS STARTS HERE -->
+                    <div class="row related-posts">
+                        <div class="col-md-12 col-xs-12 bordered-p">
+                            <p>RELATED POSTS</p>
+                        </div>
+                        @foreach (var item in Model.posts.Where(p => p.Page_Isotop_id == 6).OrderBy(p =>p.Id).Skip(2).Take(3).ToList())
+                        {
+                        <div class="col-md-4 col-xs-12 post-left">
+                            <a href=@Url.Action("Index", "SinglePost")>
+                                <img src="~/Uploads/@item.PostImgSmall.Img" alt="">
+                            </a>
+                            <div class="content">
+                                <a href="#">
+                                    @item.PostCategory.Name,
+                                </a>
+                                <a href="#">
+                                    @item.PostCategory1.Name
+                                </a>
+                                <a href=@Url.Action("Index", "SinglePost") class="long-a">
+                                   @item.Title
+                                </a>
+                                <p>@item.Content</p>
+                                <div class="date">
+                                    <span>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        @item.Written_date
+                                    </span>
+                                    <span class="pull-right">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        @item.View_Count
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        }
+                    </div>
+                    <!-- RELATED POSTS ENDS HERE -->
+                    <!-- COMMENTS SECTION STARTS HERE -->
+                    <div class="comments">
+                        <div class="col-md-12 col-xs-12 bordered-p">
+                            <p>3 COMMENTS</p>
+                        </div>
+                        <div class="col-md-12 col-xs-12 user-box user-box-first">
+                            <div class="col-md-2 col-xs-12 user-pic">
+                                <img src="~/Uploads/user-1-65x65.jpg" alt="">
+                            </div>
+                            <div class="col-md-10 col-xs-12 comment">
+                                <div class="date-name">
+                                    <p>EDWARD</p>
+                                    <span class="pull-right">3 days ago</span>
+                                </div>
+                                <p class="comment-p">
+                                    Thank you for such an informative post! I wasn’t sure how makeup works for girls, and
+                                    now I have at least some basic understanding of the topic. However, I’m still looking
+                                    for a present for my girlfriend’s birthday. I haven’t found any strict recommendations
+                                    or rules what a girl of her age wants to have as a present (she’s 21). By the way,
+                                    if you are planning to continue your series of posts about healthy food and drinks,
+                                    I’d really appreciate it. Thanks again for this publication!
+                                </p>
+                                <div class="likes-and-reply">
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                    <a href="#">
+                                        32
+                                    </a>
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <a href="#">
+                                        Reply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-xs-12 user-box user-box-second">
+                                <div class="col-md-2 col-xs-12 user-pic">
+                                    <img src="~/Uploads/user-2-65x65.jpg" alt="">
+                                </div>
+                                <div class="col-md-10 col-xs-12 comment">
+                                    <div class="date-name">
+                                        <p>
+                                            NINA
+                                        </p>
+                                        <span class="pull-right">1 days ago</span>
+                                    </div>
+                                    <p class="comment-p">
+                                        I completely agree with you, this article was also very informative for me. Concerning
+                                        your question, I think you should search the website for some tips and tricks
+                                        on presents. There are lots of articles for girls here and some of them are product
+                                        reviews. Don’t forget to read comments to these articles; they may be really
+                                        helpful sometimes.
+                                    </p>
+                                    <div class="likes-and-reply">
+                                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                        <a href="#">
+                                            32
+                                        </a>
+                                        <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                        <a href="#">
+                                            Reply
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12 user-box last">
+                            <div class="col-md-2 col-xs-12 user-pic">
+                                <img src="~/Uploads/user-3-65x65.jpg" alt="">
+                            </div>
+                            <div class="col-md-10 col-xs-12 comment">
+                                <div class="date-name">
+                                    <p>
+                                        JOHN
+                                    </p>
+                                    <span class="pull-right">3 days ago</span>
+                                </div>
+                                <p class="comment-p">
+                                    I think I said it in your recent post but your articles are pure amazement! Always easy
+                                    to read and there’s a lot of interesting information and facts in each article you
+                                    post. This one is no exception. I Don’t Know what hides behind numerous “makeup tips
+                                    and tricks” from many modern makeup artists. Now it’s a little bit clearer for me.
+                                    I think I’ll share this article with my wife; she always reads such articles and
+                                    I hope this one will also be very interesting for her!
+                                </p>
+                                <div class="likes-and-reply">
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                    <a href="#">
+                                        32
+                                    </a>
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <a href="#">
+                                        Reply
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12 user-box user-input">
+                            <div class="col-md-2 col-xs-12 user-pic">
+                                <img src="~/Uploads/user-4-65x65.jpg" alt="">
+                            </div>
+                            <div class="col-md-10 col-xs-12 comment">
+                                <div class="date-name text-center-xs">
+                                    <p>
+                                        MIRANDA
+                                    </p>
+                                </div>
+                                <div class="form-input">
+                                    <form action="" method="POST">
+                                        <textarea name="" id="" cols="87" rows="">Your Comment</textarea>
+                                        <button class="btn btn-default col-xs-offset-4 col-md-offset-0">
+                                            SUBMIT
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- COMMENTS SECTION ENDS HERE -->
+                </div>
+                <!-- SIDEBAR STARTS HERE -->
+                <div class="col-md-3 col-xs-12 sidebar">
+                    <div class="row bordered-sidebar">
+                        <div class="col-md-12 col-xs-12">
+                            <p class="free-offer">FREE OFFER</p>
+                            <h4>@Model.freeOffer.Title</h4>
+                            <h5>@Model.freeOffer.SupTitle</h5>
+                            <form action="" method="POST">
+                                <div class="col-md-12 col-xs-12 form-group">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                    <button type="submit" class="btn-lg gray-btn">SUBSCRIBE</button>
+                                </div>
+                            </form>
+                            <h5>@Model.freeOffer.SubTitle</h5>
+                        </div>
+                    </div>
+                    <div class="row popular-posts-p">
+                        <p>POPULAR POSTS</p>
+                    </div>
+                      @foreach (var item in Model.sidebar)
+                    {
+                        <div class="row popular-posts">
+                            <div class="col-md-12 col-xs-12">
+                                <a href=@Url.Action("Index", "SinglePost")>
+                                    <img src="~/Uploads/@item.Img" alt="">
+                                </a>
+                                <a href=@Url.Action("Index", "SinglePost") class="text-color">
+                                    @item.Title
+                                </a>
+                                <div class="icon-date">
+                                    <p>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <span>
+                                            @item.Written_date
+                                        </span>
+                                    </p>
+                                    <p class="margin-left text-right">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        <span>@item.View_Count</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="row banner-img">
+                        <img src="~/Uploads/@Model.banner.Img" alt="">
+                    </div>
+                    <div class="row instagram-feed">
+                        <p>INSTAGRAM FEED</p>
+                    </div>
+                    <div class="row instagram-pics-part1">
+                           @foreach (var item in Model.minipics)
+                        {
+                            <div class="col-md-4 col-xs-4 min-pics">
+                                <a href="https://scontent.cdninstagram.com/vp/573dc0a812923c0088d65d0939a08156/5B593EB1/t51.2885-15/s640x640/sh0.08/e35/18581146_1770433496602061_179455278498971648_n.jpg">
+                                    <img src="@item.Img" alt="">
+                                </a>
+                                <div class="caption">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <i class="fa fa-thumbs-o-up" aria-hidden="true">@item.Like_count</i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <!-- SIDEBAR ENDS HERE -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- LIST ENDS HERE -->

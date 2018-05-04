@@ -1,0 +1,604 @@
+﻿
+@{
+    ViewBag.Title = "Typography";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Typography</title>
+    <link rel="shortcut icon" href="~/Public/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Public/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Public/styles/style.css">
+</head>
+<body>
+    <!-- navbar starts here -->
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href=@Url.Action("Index", "Home") class="navbar-brand">
+                <img src="~/Public/images/logo-dark-165x53.png" alt="Bravana Logo">
+            </a>
+            <ul class="nav navbar-nav secondary-navbar-nav">
+                <li class="dropdown dropdown-cart">
+                    <a href=@Url.Action("CartPage", "Shop") class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count">2</span>
+                    </a>
+                    <a href=@Url.Action("Search", "AdditionalPages") class="as-icon disabled dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <div id="main-nav-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav main-navbar-nav">
+                    <li class="dropdown">
+                        <a href=@Url.Action("Index", "Fitness") class="dropdown-toggle">
+                            FITNESS
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href=@Url.Action("Index", "Food") class="dropdown-toggle">
+                            FOOD
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href=@Url.Action("Index", "Health") class="dropdown-toggle">
+                            HEALTH
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href=@Url.Action("Index", "Love") class="dropdown-toggle">
+                            LOVE
+                        </a>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            BEAUTY
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href=@Url.Action("Index", "Beauty")>Beauty</a>
+                            </li>
+                            <li>
+                                <a href=@Url.Action("Index", "BeautyList")>Beauty List</a>
+                            </li>
+                            <li>
+                                <a href=@Url.Action("Index", "SinglePost")>Single Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-mega" data-parallax="scroll">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            PAGES
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-mega-menu-container">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 1
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "AboutUs")>About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Careers")>Careers</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Shop")>Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("ShopList", "Shop")>Shop List</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Details", "Shop")>Single Product</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("CartPage", "Shop")>Cart Page</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Competitions")>
+                                                    Competitions
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "PartnerWithUs")>Partner With Us</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 2
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "ComingSoon")>Coming Soon</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Error503")>503</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Error404")>404</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "SiteMap")>Site Map</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "PrivacyPolicy")>Privacy Policy</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Maintenance")>Maintenance</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Contacts")>
+                                                    Contacts
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    ELEMENTS
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Typography", "AdditionalPages")>Typography</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Forms", "AdditionalPages")>Forms</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Buttons", "AdditionalPages")>Buttons</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Progress Bars</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Tabs & Accordions</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Tables", "AdditionalPages")>Tables</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Grid", "AdditionalPages")>
+                                                    Grid
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <ul class="list-unstyled menu-list">
+                                            <li>
+                                                <span>
+                                                    PAGES 3
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Fitness")>Fitness</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Food")>Food</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Health")>Health</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Love")>Love</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "Beauty")>Beauty</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "BeautyList")>Beauty List</a>
+                                            </li>
+                                            <li>
+                                                <a href=@Url.Action("Index", "SinglePost")>
+                                                    Single Post
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar ends here -->
+    <!-- MAIN SECTION STARTS HERE -->
+    <section id="main">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 type-main-image text-center" style="background: url(../../Uploads/breadcrumbs-typography.jpg);background-position: center 50%;background-size: cover;">
+                <h1>
+                    Typography
+                </h1>
+                <a href=@Url.Action("Index", "Home")>
+                    Home
+                </a>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                <a href=@Url.Action("Index", "Home")>
+                    Additional Pages
+                </a>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                <span>
+                    Typography
+                </span>
+            </div>
+        </div>
+    </section>
+    <!-- MAIN SECTION ENDS HERE -->
+    <!-- HEADINGS SECTION STARTS HERE -->
+    <section id="headings">
+        <div class="container">
+            <div class="row head">
+                <div class="col-md-8 col-xs-12">
+                    <h1>H1 Heading</h1>
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                    <h2>H2 Heading</h2>
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                    <h3>H3 Heading</h3>
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                    <h4>H4 Heading</h4>
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                    <h5>H5 Heading</h5>
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                    <h6>H6 Heading</h6>
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                </div>
+            </div>
+            <!-- blockquote -->
+            <div class="row blockquote">
+                <div class="col-md-8 col-xs-12">
+                    <h2>Blockquote</h2>
+                    <div class="row quote">
+                        <div class="col-md-1 col-xs-12">
+                            <i class="fa fa-quote-left fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-11 col-xs-12">
+                            <p>
+                                Welcome to our wonderful world. We sincerely hope that each and every user entering our website
+                                will find exactly what he/she is looking for. With advanced features of activating account
+                                and new login widgets, you will definitely have a great experience of using our web page.
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="quote-bottom">
+                        <span>Dennis Williams</span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- elements -->
+            <div class="row elements">
+                <div class="col-md-8 col-xs-12">
+                    <h2 class="header">HTML Text Elements</h2>
+                    <p>
+                        Welcome to our wonderful world.
+                        <span class="boldtext">
+                            This is a bold text
+                        </span>
+                        <a href="#" class="linktext">
+                            Link text
+                        </a>
+                        <a href="#">
+                            Link hover text
+                        </a>
+                        <a href="#">
+                            Press link
+                        </a>
+                        <span class="tooltip-span" data-toggle="tooltip" data-placement="top" title="Welcome to our wonderful world">
+                            Tooltips
+                        </span>
+                        We sincerely hope that
+                        <span class="span-bg">each and every user</span>
+                        entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                        <span class="line-through">
+                            This is a strickethrough text
+                        </span>
+                        <span class="underline">
+                            This is an underlined text
+                        </span>
+                        .
+                    </p>
+                </div>
+            </div>
+            <!-- unordered lists -->
+            <div class="row list">
+                <div class="col-md-8 col-xs-12">
+                    <h2 class="header">
+                        Unordered List
+                    </h2>
+                    <p>
+                        We specialize in a variety of services. Our aim is to deliver the top level of customer service based
+                        on your requests.
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            Consulting
+                        </li>
+                        <li>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            Customer Service
+                        </li>
+                        <li>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            Innovation
+                        </li>
+                        <li>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            Management
+                        </li>
+                        <li>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            Ethics
+                        </li>
+                    </ul>
+                    <p>
+                        We hope that with our services you will receive the most personalized help in purchasing any kind of
+                        products you are looking for.
+                    </p>
+                </div>
+            </div>
+            <!-- ordered lists -->
+            <div class="row list">
+                <div class="col-md-8 col-xs-12">
+                    <h2 class="header">
+                        Ordered List
+                    </h2>
+                    <p>
+                        We specialize in a variety of services. Our aim is to deliver the top level of customer service based
+                        on your requests.
+                    </p>
+                    <ul>
+                        <li>
+                            <span>1.</span>
+                            Consulting
+                        </li>
+                        <li>
+                            <span>2.</span>
+                            Customer Service
+                        </li>
+                        <li>
+                            <span>3.</span>
+                            Innovation
+                        </li>
+                        <li>
+                            <span>4.</span>
+                            Management
+                        </li>
+                        <li>
+                            <span>5.</span>
+                            Ethics
+                        </li>
+                    </ul>
+                    <p>
+                        We hope that with our services you will receive the most personalized help in purchasing any kind of
+                        products you are looking for.
+                    </p>
+                </div>
+            </div>
+            <!-- icon lists -->
+            <div class="row icon-list">
+                <h3>Icon List</h3>
+                <div class="col-md-4 col-xs-12 text-center">
+                    <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"></i>
+                    <h4>
+                        Best Service
+                    </h4>
+                    <div class="blueline">
+                    </div>
+                    <p>
+                        Our mission is to attract and retain customers by providing Best in Class solutions and fostering a profitable,
+                        disciplined culture of safety, service, and trust.
+                    </p>
+                </div>
+                <div class="col-md-4 col-xs-12 text-center">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    <h4>
+                        Reputation
+                    </h4>
+                    <div class="blueline">
+                    </div>
+                    <p>
+                        We have established a strong presence in the industry. Our award-winning services earn a reputation for
+                        quality and excellence that few can rival.
+                    </p>
+                </div>
+                <div class="col-md-4 col-xs-12 text-center">
+                    <i class="fa fa-lock fa-3x" aria-hidden="true"></i>
+                    <h4>Safety & Security</h4>
+                    <div class="blueline">
+                    </div>
+                    <p>
+                        Safety for our employees, customers and the community we work with will always remain our primary focus
+                        in all the policies, procedures and programs.
+                    </p>
+                </div>
+            </div>
+            <!-- images starts here -->
+            <div class="row images">
+                <h1>Image Centered</h1>
+                <div class="col-md-8 col-xs-12 image-centered">
+                    <img src="~/Uploads/typography-1-770x485.jpg" alt="">
+                    <h5>A Variety of Healthy Recipes</h5>
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                </div>
+            </div>
+            <div class="row images">
+                <h1>Image Left</h1>
+                <div class="col-md-4 col-xs-12 image-centered">
+                    <img src="~/Uploads/typography-1-770x485.jpg" alt="">
+                </div>
+                <div class="col-md-4 col-xs-12 padding-left">
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                </div>
+            </div>
+            <div class="row images">
+                <h1>Image Right</h1>
+                <div class="col-md-4 col-xs-12 padding-left">
+                    <p>
+                        Welcome to our wonderful world. We sincerely hope that each and every user entering our website will
+                        find exactly what he/she is looking for. With advanced features of activating account and new login
+                        widgets, you will definitely have a great experience of using our web page.
+                    </p>
+                </div>
+                <div class="col-md-4 col-xs-12 image-centered">
+                    <img src="~/Uploads/typography-1-770x485.jpg" alt="">
+                </div>
+                <!-- images starts here -->
+            </div>
+            <!-- images ends here -->
+        </div>
+    </section>
+    <!-- HEADINGS SECTION ENDS HERE -->
+    <!-- FOOTER STARTS HERE -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 inner-footer">
+                    <div class="col-md-4 col-xs-12 logo">
+                        <a href=@Url.Action("Index", "Home")>
+                            <img src="~/Public/images/logo-white-165x53.png" alt="">
+                        </a>
+                        <p>
+                            @Model.footer.Title
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-xs-12 links">
+                        <h2>Links</h2>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6 display-block">
+                                <a href=@Url.Action("Index", "AboutUs")>
+                                    ABOUT
+                                </a>
+                                <a href=@Url.Action("Index", "Food")>
+                                    FOOD
+                                </a>
+                                <a href=@Url.Action("Index", "Fitness")>
+                                    FITNESS
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xs-6 display-block">
+                                <a href=@Url.Action("Index", "Health")>
+                                    HEALTH
+                                </a>
+                                <a href=@Url.Action("Index", "Love")>
+                                    LOVE
+                                </a>
+                                <a href=@Url.Action("Index", "Beauty")>
+                                    BEAUTY
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 form">
+                        <h2>Join Our Newsletter</h2>
+                        <form action="" method="post" class="form-inline">
+                            <div class="form-wrapper">
+                                <input type="email" class="form-control" name="Email" id="email" placeholder="E-mail">
+                                <button class="btn btn-default" type="submit">SUBSCRIBE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 col-xs-12 footer-bottom">
+                    <div class="col-md-4 col-xs-12 copyright text-left">
+                        <p>
+                            Inspire © <span>@Model.footer.Copywrite_date</span>.
+                            <span>
+                                <a href=@Url.Action("Index", "PrivacyPolicy")>Privacy Policy</a>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-xs-12 social text-center">
+                        <a href="@Model.footer.Instagram_link">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="@Model.footer.Facebook_link">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="@Model.footer.Twitter_link">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-xs-12 info-email text-right text-xs-left">
+                        <a href="#">
+                            @Model.footer.Adress
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER ENDS HERE -->
+    <!-- return to top -->
+    <a href="javascript:" id="return-to-top">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+    <!-- JS script sources -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/Public/scripts/bootstrap.min.js"></script>
+    <script src="~/Public/scripts/tooltip.js"></script>
+    <script src="~/Public/scripts/scrool-top.js"></script>
+</body>
+</html>
+

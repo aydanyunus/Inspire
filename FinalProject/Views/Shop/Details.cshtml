@@ -1,11 +1,9 @@
 ﻿@using FinalProject.ViewModels.HomeViewModel;
 @model HomeViewModel
-
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!-- MAIN SECTION STARTS HERE -->
 <section id="main">
     <div class="row">
@@ -13,11 +11,11 @@
             <h1>
                 Single Product
             </h1>
-            <a href="index.html">
+            <a href=@Url.Action("Index", "Home")>
                 Home
             </a>
             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            <a href="index.html">
+            <a href=@Url.Action("Index", "Home")>
                 Additional Pages
             </a>
             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
@@ -32,33 +30,43 @@
 <section id="product">
     <div class="container">
         <div class="row">
+        @for (int i = 0; i < 1; i++)
+        {
             <div class="col-md-10 col-md-offset-1 col-xs-12">
                 <!-- product image -->
                 <div class="col-md-5 col-xs-12 imgs">
                     <div class="main-img">
-                        <img src="~/Public/images/product-10-421x388.jpg" alt="">
+                        <img src="~/Uploads/@ViewBag.ProductImgSingleLarge[0].Img" alt="">
                     </div>
                     <div class="mini-bottom-imgs col-md-12">
-                        @foreach (var item in Model.ProductImgSingleMini)
-                        {
-                        <div class="col-md-3 col-xs-3">
-                            <img src="~/Uploads/@item.Img" alt="">
+                        <div class="col-md-3 col-xs-3 active">
+                            <img src="~/Uploads/@ViewBag.ProductImgSingleMini[0].Img" alt="">
                         </div>
-                        }
+                        <div class="col-md-3 col-xs-3">
+                            <img src="~/Uploads/@ViewBag.ProductImgSingleMini[1].Img" alt="">
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <img src="~/Uploads/@ViewBag.ProductImgSingleMini[2].Img" alt="">
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <img src="~/Uploads/@ViewBag.ProductImgSingleMini[3].Img" alt="">
+                        </div>
                     </div>
                 </div>
                 <!-- product review -->
+                @foreach (var item in Model.products.OrderBy(p => p.Id).Skip(1).Take(1).ToList())
+                {
                 <div class="col-md-7 col-xs-12 product-description">
-                    <h4>iStep Fitness Tracker</h4>
-                    <div class="stars">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <h4>@item.Name</h4>
+                    <div class="stars">                       
+                        <i class="@item.Icon1" aria-hidden="true"></i>
+                        <i class="@item.Icon2" aria-hidden="true"></i>
+                        <i class="@item.Icon3" aria-hidden="true"></i>
+                        <i class="@item.Icon4" aria-hidden="true"></i>
+                        <i class="@item.Icon5" aria-hidden="true"></i>                                    
                     </div>
                     <div class="price">
-                        <span>$40.00</span>
+                        <span>$@item.Price</span>
                     </div>
                     <div class="tabs">
                         <!-- Nav tabs -->
@@ -79,8 +87,7 @@
                                 can contact our administratorsand ask a question about the product delviery cycle.
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
-                                This fitness tracker not only counts steps, calories, floors climbed and intensity minutes, it uses GPS satellites to track
-                                how far and how fast you go during almost any activity.
+                                @item.Content
                             </div>
                         </div>
                     </div>
@@ -105,13 +112,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
-                            <a href="cart-page.html" class="btn btn-default">
+                            <a href=@Url.Action("CartPage", "Shop") class="btn btn-default">
                                 ADD TO CART
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                }
+            </div>            
+        }            
         </div>
     </div>
 </section>
@@ -178,35 +188,35 @@
                 <div class="row">
                     @foreach (var item in Model.products.OrderBy(p => p.Id).Take(3).ToList())
                     {
-                    <div class="col-md-4 col-xs-12 product-column">
-                        <div class="product-box">
-                            <a href="single-product.html">
-                                <img src="~/Uploads/@item.ProductImgSmall.Img" alt="">
-                            </a>
-                            <h5>
-                                <a href="single-product.html">
-                                    @item.Name
+                        <div class="col-md-4 col-xs-12 product-column">
+                            <div class="product-box">
+                                <a href=@Url.Action("Details", "Shop")>
+                                    <img src="~/Uploads/@item.ProductImgSmall.Img" alt="">
                                 </a>
-                            </h5>
-                             @if (item.Old_price != null)
-                          {
-                             <span class="line">
-                                $@item.Old_price
-                             </span>
-                          }
-                            <span>
-                                $@item.Price
-                            </span>
-                            <div class="right-side-items">
-                                <a href="#">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
+                                <h5>
+                                    <a href=@Url.Action("Details", "Shop")>
+                                        @item.Name
+                                    </a>
+                                </h5>
+                                @if (item.Old_price != null)
+                                {
+                                    <span class="line">
+                                        $@item.Old_price
+                                    </span>
+                                }
+                                <span>
+                                    $@item.Price
+                                </span>
+                                <div class="right-side-items">
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                     }
                 </div>

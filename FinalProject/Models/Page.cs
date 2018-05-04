@@ -24,7 +24,8 @@ namespace FinalProject.Models
             this.Posts4 = new HashSet<Post>();
             this.Posts5 = new HashSet<Post>();
         }
-    
+
+        public static object Title { get; internal set; }
         public int Id { get; set; }
         public string Name { get; set; }
     
