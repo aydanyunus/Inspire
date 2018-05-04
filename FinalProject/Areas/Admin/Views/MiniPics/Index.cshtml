@@ -24,10 +24,12 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-           <img src="@item.Img" class="img-thumbnail"/>
+           <img src="~/Uploads/@item.Img" class="img-thumbnail"/>
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Like_count)
+            
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

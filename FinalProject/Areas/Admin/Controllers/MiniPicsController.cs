@@ -68,9 +68,13 @@ namespace FinalProject.Areas.Admin.Controllers
                             fileName = beforeStr + Path.GetFileName(Photo.FileName);
                             var newFilePath = Path.Combine(Server.MapPath("~/Uploads/"), fileName);
 
+                            MiniPic pic = new MiniPic();
                             Photo.SaveAs(newFilePath);
+                            pic.Img = fileName;
+                            pic.Like_count = miniPic.Like_count;
+                            db.MiniPics.Add(pic);
                             db.SaveChanges();
-                            miniPic.Img = fileName;
+                            return RedirectToAction("Index");
                         }
                         else
                         {
@@ -84,9 +88,8 @@ namespace FinalProject.Areas.Admin.Controllers
                         return View();
                     }
                 }
-                db.MiniPics.Add(miniPic);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                ViewBag.EditError = "photo can not be empty.";
+                return View();
             }
             return View(miniPic);
 

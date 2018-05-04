@@ -68,10 +68,10 @@ namespace FinalProject.Areas.Admin.Controllers
                             fileName = beforeStr + Path.GetFileName(Photo.FileName);
                             var newFilePath = Path.Combine(Server.MapPath("~/Uploads/"), fileName);
 
-                            BrandImg brandimg = new BrandImg();
+                            BrandImg brand = new BrandImg();
                             Photo.SaveAs(newFilePath);
-                            brandimg.Img = fileName;
-                            db.BrandImgs.Add(brandImg);
+                            brand.Img = fileName;                                    
+                            db.BrandImgs.Add(brand);
                             db.SaveChanges();
                             return RedirectToAction("Index");
                         }

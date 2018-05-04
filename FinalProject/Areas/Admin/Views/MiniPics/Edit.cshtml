@@ -27,7 +27,7 @@
             @Html.LabelFor(model => model.Img, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="file" class="form-control" name="Photo" />
-                <img src="@Model.Img" class="img-thumbnail" />
+                <img src="~/Uploads/@Model.Img" class="img-thumbnail" />
             </div>
         </div>
 
