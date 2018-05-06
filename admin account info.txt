@@ -1,2 +1,0 @@
-email: admin@info.com	
-password: 123
